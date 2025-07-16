@@ -1,0 +1,6 @@
+---
+title: "Bash and Conda"
+subtitle: "Overview of Bash and Conda Tutorial"
+order: 4
+---
+

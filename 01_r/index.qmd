@@ -1,0 +1,12 @@
+---
+title: "R"
+subtitle: "Overview of R Tutorial"
+order: 1
+---
+
+This R tutorial is broken down into three parts:
+
+- [**R Basics**](r-intro.qmd) – Covers the basics of R, including data types, functions, and basic operations.
+- [**Data Manipulation**](r-tidydata.qmd) – Introduces data manipulation and cleaning using the `dplyr` and `tidyr` packages, including filtering, selecting, and summarizing data.
+- [**Data Visualization**](r-plotting.qmd) – Covers data visualization using the `ggplot2` package, including creating basic plots and customizing them.
+

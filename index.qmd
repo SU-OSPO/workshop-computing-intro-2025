@@ -1,16 +1,20 @@
 ---
-title: "[INSERT WORKSHOP SHORT TITLE]"
-subtitle: "[INSERT WORKSHOP EXTENDED TITLE]"
+title: "Computing 101 Workshop – Summer 2025"
+subtitle: "Introduction to GitHub, Programming with Python/R, and Reproducible Environments with Bash and Conda"
 toc: true
 ---
 
-**[INSERT WORKSHOP DATE/TIME]**
+**August 13-15, 2025**
 
-[INSERT WORKSHOP LOCATION]
+Hinds Hall, Syracuse University
 
 # Welcome
 
-[DESCRIPTION OF WORKSHOP]
+This 3-day workshop will cover some of the common tools used in open source development. It is targeted at novice users. The workshop will be broken into three parts:
+
+ - **Programming basics (day 1)** – Topics covered: intro to R/Python, git and GitHub.
+ - **Advancing programming (day 2)** – Topics covered:  data cleaning (R), data visualization (R/Python), loops and classes (Python), miscellaneous advanced topics (Python).
+ - **(optional) Reproducible environments (day 3)** – Topics covered: bash environments, package managers (e.g., conda).
 
 ## Arrival
 

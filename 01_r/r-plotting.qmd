@@ -1,8 +1,13 @@
 ---
-title: "Example R Unit"
-subtitle: "[UNIT LONG NAME]"
-toc: true
-order: 1
+title: "Plotting in R with ggplot2"
+format: html
+execute:
+  warning: false
+  message: false
+editor: 
+  markdown: 
+    wrap: 72
+order: 4
 ---
 
 # Introduction
@@ -365,4 +370,3 @@ ggsave("figures/penguins_1.jpg", gg, height = 10, width = 10)
 ```
 
 Now we'll once again use the git tools within RStudio to commit these files and push them to our GitHub repository. Click on the "Git" tab in the top-right. Clicking this tab will show you all of the files that have been modified since we last committed. In this case, you should see your code file (modified from our last session) and your two new figures. Click the boxes next to these three files to queue them for committing. Then click the <kbd>Commit</kbd> button. Write a succinct commit message in the window, then click the <kbd>Commit</kbd> button, then the <kbd>Push</kbd> button. And that's that!
-

@@ -1,6 +1,6 @@
 ---
-title: "Example Multipage Unit"
-subtitle: "[UNIT LONG NAME]"
+title: "<code>git</code> and GitHub"
+subtitle: "Introduction to <code>git</code> and GitHub"
 toc: true
 order: 3
 ---
