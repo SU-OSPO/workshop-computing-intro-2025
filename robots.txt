@@ -1,1 +1,1 @@
-Sitemap: enter_gitHub_pages_URL_here/sitemap.xml
+Sitemap: https://SU-OSPO.github.io/workshop-computing-intro-2025/sitemap.xml

@@ -1,35 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>enter_gitHub_pages_URL_here/01_r_unit/index.html</loc>
-    <lastmod>2025-07-16T20:48:20.930Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/04_conda/index.html</loc>
+    <lastmod>2025-07-16T22:45:32.457Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/03_multipage_unit/exercise3.html</loc>
-    <lastmod>2025-07-16T20:48:20.931Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/03_multipage_unit/exercise1.html</loc>
-    <lastmod>2025-07-16T20:48:20.931Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/index.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/03_multipage_unit/index.html</loc>
-    <lastmod>2025-07-16T20:48:20.934Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise3.html</loc>
+    <lastmod>2025-07-16T22:45:32.454Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/index.html</loc>
-    <lastmod>2025-07-16T20:48:20.950Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise1.html</loc>
+    <lastmod>2025-07-16T22:45:32.454Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/03_multipage_unit/exercise2.html</loc>
-    <lastmod>2025-07-16T20:48:20.931Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/index.html</loc>
+    <lastmod>2025-07-16T22:45:32.457Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/03_multipage_unit/ssh_setup.html</loc>
-    <lastmod>2025-07-16T20:48:20.934Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-plotting.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
   </url>
   <url>
-    <loc>enter_gitHub_pages_URL_here/02_python_unit/index.html</loc>
-    <lastmod>2025-07-16T20:48:20.931Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/index.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-tidydata.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-intro.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise2.html</loc>
+    <lastmod>2025-07-16T22:45:32.454Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/ssh_setup.html</loc>
+    <lastmod>2025-07-16T22:45:32.457Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/index.html</loc>
+    <lastmod>2025-07-16T22:45:32.469Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-flow.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-apps.html</loc>
+    <lastmod>2025-07-16T22:45:32.453Z</lastmod>
   </url>
 </urlset>

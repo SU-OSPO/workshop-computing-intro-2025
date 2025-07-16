@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Computing 101 Workshop – Summer 2025</title>
+<title>Bash and Conda – Computing 101 Workshop – Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//images/SU-OSPO.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7d1eef07eb2ab6bded2db109ede7330f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../03_github/ssh_setup.html" rel="prev">
+<link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7d1eef07eb2ab6bded2db109ede7330f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,14 +70,14 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Computing 101 Workshop – Summer 2025">
-<meta property="og:description" content="Introduction to GitHub, Programming with Python/R, and Reproducible Environments with Bash and Conda">
+<meta property="og:title" content="Bash and Conda – Computing 101 Workshop – Summer 2025">
+<meta property="og:description" content="Overview of Bash and Conda Tutorial">
 <meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
 <meta property="og:image:height" content="968">
 <meta property="og:image:width" content="968">
-<meta name="twitter:title" content="Computing 101 Workshop – Summer 2025">
-<meta name="twitter:description" content="Introduction to GitHub, Programming with Python/R, and Reproducible Environments with Bash and Conda">
+<meta name="twitter:title" content="Bash and Conda – Computing 101 Workshop – Summer 2025">
+<meta name="twitter:description" content="Overview of Bash and Conda Tutorial">
 <meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta name="twitter:image-height" content="968">
 <meta name="twitter:image-width" content="968">
@@ -90,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Computing 101 Workshop – Summer 2025</span>
     </a>
   </div>
@@ -102,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://opensource.syracuse.edu" target="_blank"> 
-<span class="menu-text"><img src="./images/SU-OSPO_white_border.png" height="23.5" style="padding-bottom:3px"></span></a>
+<span class="menu-text"><img src="../images/SU-OSPO_white_border.png" height="23.5" style="padding-bottom:3px"></span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Computing 101 Workshop – Summer 2025</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_conda/index.html">Bash and Conda</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -126,15 +127,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/SU-OSPO_white_border.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/SU-OSPO_white_border.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./01_r/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../01_r/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -143,19 +144,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_r/r-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_r/r-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_r/r-tidydata.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_r/r-tidydata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R for Data Cleaning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_r/r-plotting.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_r/r-plotting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotting in R with ggplot2</span></a>
   </div>
 </li>
@@ -163,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02_python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../02_python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -172,19 +173,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_python/python-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_python/python-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_python/python-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_python/python-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Control Flow, Loops, and Classes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_python/python-apps.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_python/python-apps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miscellaneous Applications</span></a>
   </div>
 </li>
@@ -192,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03_github/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../03_github/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>git</code> and GitHub</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -201,25 +202,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_github/exercise1.html" class="sidebar-item-text sidebar-link">
+  <a href="../03_github/exercise1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 1: Practice with <code>git</code> on a local repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_github/exercise2.html" class="sidebar-item-text sidebar-link">
+  <a href="../03_github/exercise2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_github/exercise3.html" class="sidebar-item-text sidebar-link">
+  <a href="../03_github/exercise3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 3: Collaborating in GitHub using the Fork and Pull Model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_github/ssh_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../03_github/ssh_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Create and add an ssh key to GitHub</span></a>
   </div>
 </li>
@@ -227,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_conda/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../04_conda/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Bash and Conda</span></a>
   </div>
 </li>
@@ -236,28 +237,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#arrival" id="toc-arrival" class="nav-link" data-scroll-target="#arrival">Arrival</a></li>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
-  <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors">Instructors</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Computing 101 Workshop – Summer 2025</h1>
-<p class="subtitle lead">Introduction to GitHub, Programming with Python/R, and Reproducible Environments with Bash and Conda</p>
+<h1 class="title">Bash and Conda</h1>
+<p class="subtitle lead">Overview of Bash and Conda Tutorial</p>
 </div>
 
 
@@ -274,66 +263,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>August 13-15, 2025</strong></p>
-<p>Hinds Hall, Syracuse University</p>
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
-<p>This 3-day workshop will cover some of the common tools used in open source development. It is targeted at novice users. The workshop will be broken into three parts:</p>
-<ul>
-<li><strong>Programming basics (day 1)</strong> – Topics covered: intro to R/Python, git and GitHub.</li>
-<li><strong>Advancing programming (day 2)</strong> – Topics covered: data cleaning (R), data visualization (R/Python), loops and classes (Python), miscellaneous advanced topics (Python).</li>
-<li><strong>(optional) Reproducible environments (day 3)</strong> – Topics covered: bash environments, package managers (e.g., conda).</li>
-</ul>
-<section id="arrival" class="level2">
-<h2 class="anchored" data-anchor-id="arrival">Arrival</h2>
-<p>The event starts at XXX on the XXX and will take place at XXX.</p>
-</section>
-<section id="schedule" class="level2">
-<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Event</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-<tr class="even">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-<tr class="even">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-<tr class="even">
-<td><strong>PLACEHOLDER</strong></td>
-<td><strong>PLACEHOLDER</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="instructors" class="level2">
-<h2 class="anchored" data-anchor-id="instructors">Instructors</h2>
-</section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -735,6 +666,15 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../03_github/ssh_setup.html" class="pagination-link" aria-label="Create and add an ssh key to GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Create and add an ssh key to GitHub</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
