@@ -10,6 +10,7 @@ website:
   site-url: https://SU-OSPO.github.io/workshop-computing-intro-2025
   repo-url: https://github.com/SU-OSPO/workshop-computing-intro-2025
   page-navigation: true
+  repo-actions: [source, issue]
   navbar:
     border: true
     background: "#F76900"
