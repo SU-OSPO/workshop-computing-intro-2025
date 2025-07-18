@@ -375,11 +375,11 @@ The tidyverse vs Base R
 </section>
 <section id="projects" class="level1">
 <h1>Projects</h1>
-<p>One of the helpful features in RStudio is the ability to create a project. Projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and scripts. You can create a fresh project, base one on an existing directory, or even build one based on a git repository. Since we’re all <a href="../3_github/github-intro.qmd">git experts now</a>, let’s go with that option.</p>
+<p>One of the helpful features in RStudio is the ability to create a project. Projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and scripts. You can create a fresh project, base one on an existing directory, or even build one based on a git repository. Since we’re all <a href="../03_github/index.html">git experts now</a>, let’s go with that option.</p>
 <p>First, we’ll need to create a GitHub repository. For the rest of the workshop, we’ll be using data collected about adult male and female Adélie (<i>P. adeliae</i>), chinstrap (<i>P. antarcticus</i>), and gentoo (<i>P. papua</i>) penguins on three islands (Biscoe, Dream, and Torgersen) within the Palmer Archipelago. For more information about the collection and handling of these data, see <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081">Gorman et al.&nbsp;2014</a> and <a href="https://journal.r-project.org/articles/RJ-2022-020/">Horst et al.&nbsp;2022</a>.</p>
-<p>I’ve hosted these data within a <a href="https://github.com/SyracuseUniversity/penguins_repo">fresh repository</a> on GitHub. Like you did in the <a href="../3_github/github-intro.qmd">git and Github session</a>, go ahead and fork this repository so that you have your own personal copy of it.</p>
+<p>I’ve hosted these data within a <a href="https://github.com/SyracuseUniversity/penguins_repo">fresh repository</a> on GitHub. Like you did in the <a href="../03_github/index.html">git and Github session</a>, go ahead and fork this repository so that you have your own personal copy of it.</p>
 <p><img src="fig/penguins_repo.png" width="600"></p>
-<p>Once you’ve forked the repository, click on the green “Code” button, then click on “SSH” (since we set up SSH with our GitHub account in the <a href="../3_github/github-intro.qmd">Git and GitHub lesson</a>). Then copy the SSH link of the repo:</p>
+<p>Once you’ve forked the repository, click on the green “Code” button, then click on “SSH” (since we set up SSH with our GitHub account in the <a href="../03_github/index.html">Git and GitHub lesson</a>). Then copy the SSH link of the repo:</p>
 <p><img src="fig/git_ssh_link.png" width="600"></p>
 <p>Now, return to your RStudio window. At the top of your screen you’ll see the “File” menu. Select that menu and then the menu for “New Project…”. (You could also use the second button on the second menu row or even the <kbd>Project: (None)</kbd> button in the top right)</p>
 <p><img src="fig/new_project_menu.png" width="600"></p>
@@ -655,7 +655,7 @@ Behind the curtain of functions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.Date</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-16"</code></pre>
+<pre><code>[1] "2025-07-18"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
