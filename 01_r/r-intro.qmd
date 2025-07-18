@@ -68,15 +68,15 @@ From there you will see the ability to alter numerous things about RStudio. Unde
 
 # Projects
 
-One of the helpful features in RStudio is the ability to create a project. Projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and scripts. You can create a fresh project, base one on an existing directory, or even build one based on a git repository. Since we're all [git experts now](../3_github/github-intro.qmd), let's go with that option.
+One of the helpful features in RStudio is the ability to create a project. Projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and scripts. You can create a fresh project, base one on an existing directory, or even build one based on a git repository. Since we're all [git experts now](../03_github/index.qmd), let's go with that option.
 
 First, we'll need to create a GitHub repository. For the rest of the workshop, we'll be using data collected about adult male and female Adélie (<i>P. adeliae</i>), chinstrap (<i>P. antarcticus</i>), and gentoo (<i>P. papua</i>) penguins on three islands (Biscoe, Dream, and Torgersen) within the Palmer Archipelago. For more information about the collection and handling of these data, see [Gorman et al. 2014](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081) and [Horst et al. 2022](https://journal.r-project.org/articles/RJ-2022-020/).
 
-I've hosted these data within a [fresh repository](https://github.com/SyracuseUniversity/penguins_repo) on GitHub. Like you did in the [git and Github session](../3_github/github-intro.qmd), go ahead and fork this repository so that you have your own personal copy of it.
+I've hosted these data within a [fresh repository](https://github.com/SyracuseUniversity/penguins_repo) on GitHub. Like you did in the [git and Github session](../03_github/index.qmd), go ahead and fork this repository so that you have your own personal copy of it.
 
 <img src="fig/penguins_repo.png" width="600"/>
 
-Once you've forked the repository, click on the green "Code" button, then click on "SSH" (since we set up SSH with our GitHub account in the [Git and GitHub lesson](../3_github/github-intro.qmd)). Then copy the SSH link of the repo:
+Once you've forked the repository, click on the green "Code" button, then click on "SSH" (since we set up SSH with our GitHub account in the [Git and GitHub lesson](../03_github/index.qmd)). Then copy the SSH link of the repo:
 
 <img src="fig/git_ssh_link.png" width="600"/>
 
