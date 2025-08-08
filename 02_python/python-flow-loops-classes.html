@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python (Hinds 111): flow, loops, and classes – Computing 101 Workshop – Summer 2025</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../03_github/index.html" rel="next">
+<link href="../02_python/python-apps.html" rel="prev">
+<link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7d1eef07eb2ab6bded2db109ede7330f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Python (Hinds 111): flow, loops, and classes – Computing 101 Workshop – Summer 2025">
+<meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
+<meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
+<meta property="og:image:height" content="968">
+<meta property="og:image:width" content="968">
+<meta name="twitter:title" content="Python (Hinds 111): flow, loops, and classes – Computing 101 Workshop – Summer 2025">
+<meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
+<meta name="twitter:image-height" content="968">
+<meta name="twitter:image-width" content="968">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Computing 101 Workshop – Summer 2025</span>
+    </a>
+  </div>
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/SU-OSPO" target="_blank"> <i class="bi bi-github" role="img" aria-label="SU-OSPO on GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://opensource.syracuse.edu" target="_blank"> 
+<span class="menu-text"><img src="../images/SU-OSPO_white_border.png" height="23.5" style="padding-bottom:3px"></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../02_python/python-flow-loops-classes.html">Python (Hinds 111): flow, loops, and classes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/SU-OSPO_white_border.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01_r/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_r/r-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_r/r-tidydata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R for Data Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_r/r-plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting in R with ggplot2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../02_python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_python/python-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_python/python-flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Control Flow, Loops, and Classes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_python/python-apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous Applications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_python/python-flow-loops-classes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python (Hinds 111): flow, loops, and classes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../03_github/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>git</code> and GitHub</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_github/exercise1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise 1: Practice with <code>git</code> on a local repository</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_github/exercise2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_github/exercise3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise 3: Collaborating in GitHub using the Fork and Pull Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_github/ssh_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create and add an ssh key to GitHub</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04_conda/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash and Conda</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#flow-control" id="toc-flow-control" class="nav-link active" data-scroll-target="#flow-control">1. Flow Control</a>
+  <ul class="collapse">
+  <li><a href="#sequential-execution" id="toc-sequential-execution" class="nav-link" data-scroll-target="#sequential-execution">1.1 Sequential Execution</a></li>
+  <li><a href="#conditional-statements-if-elif-else" id="toc-conditional-statements-if-elif-else" class="nav-link" data-scroll-target="#conditional-statements-if-elif-else">1.2 Conditional Statements (<code>if</code>, <code>elif</code>, <code>else</code>)</a></li>
+  <li><a href="#basic-structure" id="toc-basic-structure" class="nav-link" data-scroll-target="#basic-structure">1.2.1 Basic Structure:</a></li>
+  <li><a href="#multiple-conditions" id="toc-multiple-conditions" class="nav-link" data-scroll-target="#multiple-conditions">1.2.2 Multiple Conditions:</a></li>
+  <li><a href="#conditional-ternary-expressions" id="toc-conditional-ternary-expressions" class="nav-link" data-scroll-target="#conditional-ternary-expressions">1.3 Conditional (Ternary) Expressions</a></li>
+  <li><a href="#pass-break-continue" id="toc-pass-break-continue" class="nav-link" data-scroll-target="#pass-break-continue">1.4 <code>pass</code>, <code>break</code>, <code>continue</code></a></li>
+  </ul></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">2. Loops</a>
+  <ul class="collapse">
+  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops">2.1 <code>for</code> Loops</a></li>
+  <li><a href="#while-loops" id="toc-while-loops" class="nav-link" data-scroll-target="#while-loops">2.2 <code>while</code> Loops</a></li>
+  <li><a href="#nested-loops" id="toc-nested-loops" class="nav-link" data-scroll-target="#nested-loops">2.3 Nested Loops</a></li>
+  <li><a href="#loops-with-else" id="toc-loops-with-else" class="nav-link" data-scroll-target="#loops-with-else">2.4 Loops with <code>else</code></a></li>
+  <li><a href="#enumerate-zip" id="toc-enumerate-zip" class="nav-link" data-scroll-target="#enumerate-zip">2.5 <code>enumerate</code>, <code>zip</code></a></li>
+  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions">2.6 List Comprehensions</a></li>
+  </ul></li>
+  <li><a href="#classes-oop" id="toc-classes-oop" class="nav-link" data-scroll-target="#classes-oop">3. Classes (OOP)</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-class-why-oop" id="toc-what-is-a-class-why-oop" class="nav-link" data-scroll-target="#what-is-a-class-why-oop">3.1 What is a Class? Why OOP?</a></li>
+  <li><a href="#defining-a-class" id="toc-defining-a-class" class="nav-link" data-scroll-target="#defining-a-class">3.2 Defining a Class</a></li>
+  <li><a href="#constructor-method-__init__" id="toc-constructor-method-__init__" class="nav-link" data-scroll-target="#constructor-method-__init__">3.3 Constructor Method <code>__init__</code></a></li>
+  <li><a href="#creating-objects" id="toc-creating-objects" class="nav-link" data-scroll-target="#creating-objects">3.4 Creating Objects</a></li>
+  <li><a href="#instance-methods" id="toc-instance-methods" class="nav-link" data-scroll-target="#instance-methods">3.5 Instance Methods</a></li>
+  <li><a href="#class-attributes-vs.-instance-attributes" id="toc-class-attributes-vs.-instance-attributes" class="nav-link" data-scroll-target="#class-attributes-vs.-instance-attributes">3.6 Class Attributes vs.&nbsp;Instance Attributes</a></li>
+  <li><a href="#inheritance" id="toc-inheritance" class="nav-link" data-scroll-target="#inheritance">3.7 Inheritance</a></li>
+  <li><a href="#method-overriding" id="toc-method-overriding" class="nav-link" data-scroll-target="#method-overriding">3.8 Method Overriding</a></li>
+  <li><a href="#magic-methods-dunder-methods" id="toc-magic-methods-dunder-methods" class="nav-link" data-scroll-target="#magic-methods-dunder-methods">3.9 Magic Methods (Dunder Methods)</a></li>
+  <li><a href="#class-methods-and-static-methods" id="toc-class-methods-and-static-methods" class="nav-link" data-scroll-target="#class-methods-and-static-methods">3.10 Class Methods and Static Methods</a></li>
+  <li><a href="#simple-ai-assistant-class" id="toc-simple-ai-assistant-class" class="nav-link" data-scroll-target="#simple-ai-assistant-class">3.11 Simple AI Assistant Class</a></li>
+  </ul></li>
+  <li><a href="#exceptions" id="toc-exceptions" class="nav-link" data-scroll-target="#exceptions">4. Exceptions</a>
+  <ul class="collapse">
+  <li><a href="#what-is-an-exception" id="toc-what-is-an-exception" class="nav-link" data-scroll-target="#what-is-an-exception">What Is an Exception?</a></li>
+  <li><a href="#basic-structure-1" id="toc-basic-structure-1" class="nav-link" data-scroll-target="#basic-structure-1">Basic Structure</a></li>
+  <li><a href="#common-exceptions" id="toc-common-exceptions" class="nav-link" data-scroll-target="#common-exceptions">Common Exceptions</a></li>
+  <li><a href="#why-handle-exceptions" id="toc-why-handle-exceptions" class="nav-link" data-scroll-target="#why-handle-exceptions">Why Handle Exceptions?</a></li>
+  <li><a href="#practice-exercise" id="toc-practice-exercise" class="nav-link" data-scroll-target="#practice-exercise">Practice Exercise</a></li>
+  </ul></li>
+  <li><a href="#generators-iterators" id="toc-generators-iterators" class="nav-link" data-scroll-target="#generators-iterators">5. Generators (Iterators)</a>
+  <ul class="collapse">
+  <li><a href="#what-is-an-iterator" id="toc-what-is-an-iterator" class="nav-link" data-scroll-target="#what-is-an-iterator">What Is an Iterator?</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-flow-loops-classes.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../02_python/python-flow-loops-classes.html">Python (Hinds 111): flow, loops, and classes</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Python (Hinds 111): flow, loops, and classes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="flow-control" class="level2">
+<h2 class="anchored" data-anchor-id="flow-control">1. Flow Control</h2>
+<section id="sequential-execution" class="level3">
+<h3 class="anchored" data-anchor-id="sequential-execution">1.1 Sequential Execution</h3>
+<p>In Python, code is executed one line at a time, from top to bottom, unless you use something that changes the flow (like a function call or a loop).</p>
+<div id="a9b40f3b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:38:15.635860Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:38:15.630741Z&quot;}}" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 1"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 2"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Step 1
+Step 2
+Step 3</code></pre>
+</div>
+</div>
+<p>Each line is executed in order.</p>
+</section>
+<section id="conditional-statements-if-elif-else" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-statements-if-elif-else">1.2 Conditional Statements (<code>if</code>, <code>elif</code>, <code>else</code>)</h3>
+<p>Conditional statements let your code make decisions based on certain conditions.</p>
+</section>
+<section id="basic-structure" class="level3">
+<h3 class="anchored" data-anchor-id="basic-structure">1.2.1 Basic Structure:</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code runs if condition is True</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> other_condition:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code runs if other_condition is True</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code runs if none of the above are True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6128e548" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:07:04.413473Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:07:04.407968Z&quot;}}" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">24</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You can legally drink alcohol in the U.S."</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are an adult, but not old enough to drink."</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are a minor."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>You can legally drink alcohol in the U.S.</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-conditions">1.2.2 Multiple Conditions:</h3>
+<p>You can also combine conditions using <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+<div id="702e7cf4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:44:25.416537Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:44:25.413266Z&quot;}}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>temperature_f <span class="op">=</span> <span class="dv">75</span>  <span class="co"># Fahrenheit</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>is_raining <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature_f <span class="op">&gt;</span> <span class="dv">70</span> <span class="kw">and</span> <span class="kw">not</span> is_raining:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's a great day for a baseball game!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It's a great day for a baseball game!</code></pre>
+</div>
+</div>
+</section>
+<section id="conditional-ternary-expressions" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-ternary-expressions">1.3 Conditional (Ternary) Expressions</h3>
+<p>A conditional (ternary) expression lets you assign a value based on a condition in a single line.</p>
+<p><strong>Syntax:</strong> <code>x = a if condition else b</code></p>
+<div id="0dadb88d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:45:20.647771Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:45:20.644147Z&quot;}}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="st">"can rent a car"</span> <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">25</span> <span class="cf">else</span> <span class="st">"cannot rent a car yet"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(status)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cannot rent a car yet</code></pre>
+</div>
+</div>
+</section>
+<section id="pass-break-continue" class="level3">
+<h3 class="anchored" data-anchor-id="pass-break-continue">1.4 <code>pass</code>, <code>break</code>, <code>continue</code></h3>
+<p>These keywords control how your code flows in loops and conditionals.</p>
+<section id="pass" class="level4">
+<h4 class="anchored" data-anchor-id="pass"><code>pass</code></h4>
+<p><code>pass</code> does nothing. It’s used as a placeholder when code is required but you have nothing to write yet.</p>
+<div id="762ad034" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:46:27.911777Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:46:27.908680Z&quot;}}" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">True</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span>  <span class="co"># Placeholder for future code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Suppose you’re building a menu system for a fast-food restaurant app, and you haven’t yet decided what to do if the customer selects a menu item that’s “coming soon.” You want your code to run without errors, but you’re not ready to implement that part yet.</p>
+<div id="0b53d30e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:09:40.672657Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:09:40.669092Z&quot;}}" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>menu_item <span class="op">=</span> <span class="st">"Pumpkin Spice Latte"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> menu_item <span class="op">==</span> <span class="st">"Pumpkin Spice Latte"</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Feature coming soon!</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Preparing your </span><span class="sc">{</span>menu_item<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="break" class="level4">
+<h4 class="anchored" data-anchor-id="break"><code>break</code></h4>
+<p><code>break</code> exits the loop immediately.</p>
+<div id="e6036cc2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:08:34.210052Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:08:34.207698Z&quot;}}" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1</code></pre>
+</div>
+</div>
+<p>Imagine you’re searching for a specific item (like your keys) in a list of rooms. As soon as you find the keys, you want to stop searching.</p>
+<div id="09acac79" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:10:09.489247Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:09.485199Z&quot;}}" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rooms <span class="op">=</span> [<span class="st">"kitchen"</span>, <span class="st">"living room"</span>, <span class="st">"bedroom"</span>, <span class="st">"garage"</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> room <span class="kw">in</span> rooms:</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Searching in the </span><span class="sc">{</span>room<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> room <span class="op">==</span> <span class="st">"bedroom"</span>:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Found the keys!"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Searching in the kitchen...
+Searching in the living room...
+Searching in the bedroom...
+Found the keys!</code></pre>
+</div>
+</div>
+</section>
+<section id="continue" class="level4">
+<h4 class="anchored" data-anchor-id="continue"><code>continue</code></h4>
+<p><code>continue</code> skips the rest of the current loop iteration and moves to the next one.</p>
+<div id="74d496ca" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:10:38.221301Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:38.218261Z&quot;}}" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+3
+4</code></pre>
+</div>
+</div>
+<p>Suppose you’re reading through a list of email subject lines. You want to print all of them except spam emails, which contain the word “SPAM.” You skip printing any email that’s spam.</p>
+<div id="a0534ea4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:11:22.905417Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:11:22.901765Z&quot;}}" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>emails <span class="op">=</span> [<span class="st">"Meeting at 10am"</span>, <span class="st">"SPAM: Win a free iPhone"</span>, <span class="st">"Lunch plans?"</span>, <span class="st">"SPAM: Hot deals"</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> subject <span class="kw">in</span> emails:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"SPAM"</span> <span class="kw">in</span> subject:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span>  <span class="co"># Skip spam emails</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Important email: </span><span class="sc">{</span>subject<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Important email: Meeting at 10am
+Important email: Lunch plans?</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="loops" class="level2">
+<h2 class="anchored" data-anchor-id="loops">2. Loops</h2>
+<section id="for-loops" class="level3">
+<h3 class="anchored" data-anchor-id="for-loops">2.1 <code>for</code> Loops</h3>
+<p>A <code>for</code> loop is used to repeat actions a certain number of times or to iterate over a sequence (like a list).</p>
+<div id="30cef2d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:12:40.887230Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:12:40.884900Z&quot;}}" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print numbers from 0 to 4</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2
+3
+4</code></pre>
+</div>
+</div>
+<p>You can loop over the elements of a list like this:</p>
+<div id="977c7c94" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:38:54.655732Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:38:54.652901Z&quot;}}" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cat
+dog
+monkey</code></pre>
+</div>
+</div>
+<p>If you want access to the index of each element within the body of a loop, use the built-in <code>enumerate()</code> function:</p>
+<div id="dc2e95a7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:39:10.688244Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:39:10.685339Z&quot;}}" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'monkey'</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, animal <span class="kw">in</span> <span class="bu">enumerate</span>(animals):</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'#</span><span class="sc">{}</span><span class="st">: </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(index <span class="op">+</span> <span class="dv">1</span>, animal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#1: cat
+#2: dog
+#3: monkey</code></pre>
+</div>
+</div>
+</section>
+<section id="while-loops" class="level3">
+<h3 class="anchored" data-anchor-id="while-loops">2.2 <code>while</code> Loops</h3>
+<p>A <code>while</code> loop repeats actions as long as a condition is true.</p>
+<div id="87e4e615" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:13:01.407363Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:01.404509Z&quot;}}" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2</code></pre>
+</div>
+</div>
+</section>
+<section id="nested-loops" class="level3">
+<h3 class="anchored" data-anchor-id="nested-loops">2.3 Nested Loops</h3>
+<p>A nested loop is a loop inside another loop.</p>
+<div id="52881af6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:13:17.056449Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:17.053423Z&quot;}}" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"i=</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, j=</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>i=0, j=0
+i=0, j=1
+i=1, j=0
+i=1, j=1</code></pre>
+</div>
+</div>
+</section>
+<section id="loops-with-else" class="level3">
+<h3 class="anchored" data-anchor-id="loops-with-else">2.4 Loops with <code>else</code></h3>
+<p>The <code>else</code> part after a loop runs only if the loop was not stopped by a break.</p>
+<div id="6d5b59e5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:14:49.509727Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:14:49.506988Z&quot;}}" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Loop finished without break."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2
+Loop finished without break.</code></pre>
+</div>
+</div>
+</section>
+<section id="enumerate-zip" class="level3">
+<h3 class="anchored" data-anchor-id="enumerate-zip">2.5 <code>enumerate</code>, <code>zip</code></h3>
+<section id="enumerate" class="level4">
+<h4 class="anchored" data-anchor-id="enumerate"><code>enumerate</code></h4>
+<p><code>enumerate</code> gives you both the index and the value when looping over a list.</p>
+<div id="056a8baa" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:15:11.940014Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:15:11.936756Z&quot;}}" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, name <span class="kw">in</span> <span class="bu">enumerate</span>(names):</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(index, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0 Alice
+1 Bob
+2 Charlie</code></pre>
+</div>
+</div>
+</section>
+<section id="zip" class="level4">
+<h4 class="anchored" data-anchor-id="zip"><code>zip</code></h4>
+<p><code>zip</code> lets you loop over two (or more) lists at the same time.</p>
+<div id="f4ce5b60" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:17:23.711921Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:17:23.708177Z&quot;}}" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"red"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span>]</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, color <span class="kw">in</span> <span class="bu">zip</span>(fruits, colors):</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruit, color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>apple red
+banana yellow
+cherry red</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="list-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="list-comprehensions">2.6 List Comprehensions</h3>
+<p>A list comprehension is a short way to create a new list by looping over something.</p>
+<div id="452f465d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:33:21.787169Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:21.777625Z&quot;}}" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+</div>
+</div>
+<div id="75ed1510" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:33:35.127786Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:35.123893Z&quot;}}" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+</div>
+</div>
+<p>We can even add some conditions.</p>
+<div id="de1bf967" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:18.492949Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:18.488531Z&quot;}}" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>[6, 7, 8, 9]</code></pre>
+</div>
+</div>
+<p>Multiples of 2.</p>
+<div id="10dbf777" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:33.343838Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:33.339615Z&quot;}}" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>[0, 2, 4, 6, 8]</code></pre>
+</div>
+</div>
+<p>Powers of 2.</p>
+<div id="4346fa02" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:49.574044Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:49.570928Z&quot;}}" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+</div>
+</div>
+<p>You can nest comprehensions.</p>
+<div id="8c55f81f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:35:04.573267Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:04.568589Z&quot;}}" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>[[[i, j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>[[[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
+ [[0, 1], [1, 1], [2, 1], [3, 1], [4, 1]],
+ [[0, 2], [1, 2], [2, 2], [3, 2], [4, 2]],
+ [[0, 3], [1, 3], [2, 3], [3, 3], [4, 3]],
+ [[0, 4], [1, 4], [2, 4], [3, 4], [4, 4]]]</code></pre>
+</div>
+</div>
+<p>You can concatenate multiple comprehensions.</p>
+<div id="d8b649aa" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:35:17.273795Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:17.270750Z&quot;}}" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>[[i, j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>) <span class="cf">if</span> i <span class="op">&lt;</span> j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>[[0, 1],
+ [0, 2],
+ [0, 3],
+ [0, 4],
+ [1, 2],
+ [1, 3],
+ [1, 4],
+ [2, 3],
+ [2, 4],
+ [3, 4]]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="classes-oop" class="level2">
+<h2 class="anchored" data-anchor-id="classes-oop">3. Classes (OOP)</h2>
+<section id="what-is-a-class-why-oop" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-class-why-oop">3.1 What is a Class? Why OOP?</h3>
+<p>In Python, a <strong>class</strong> is a code construct used to define a new type of object, grouping together data and functions that operate on that data. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made.</p>
+<p><strong>Object-Oriented Programming (OOP)</strong> is a programming paradigm based on the concept of “objects,” which can contain both data (attributes) and code (methods).</p>
+<p>When you create an object using a class, that object is called an <strong>instance</strong> of the class.</p>
+<section id="example-from-the-python-standard-tutorial" class="level4">
+<h4 class="anchored" data-anchor-id="example-from-the-python-standard-tutorial">Example from the Python Standard Tutorial</h4>
+<blockquote class="blockquote">
+<p>“Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.” <em>(Python Official Tutorial)</em></p>
+</blockquote>
+</section>
+<section id="simple-example" class="level4">
+<h4 class="anchored" data-anchor-id="simple-example">Simple Example</h4>
+<p>Here is a simple class that models a basic point in two-dimensional space:</p>
+<div id="81d553b8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-31T00:17:01.963663Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:17:01.960432Z&quot;}}" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A class to represent a point in 2D space."""</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Point(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.x)  <span class="co"># Output: 2</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.y)  <span class="co"># Output: 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+3</code></pre>
+</div>
+</div>
+<p>In this example:</p>
+<ul>
+<li><p>Point is a class.</p></li>
+<li><p>p is an instance of Point, with specific x and y coordinates.</p></li>
+<li><p>The <strong>init</strong> method is called the constructor and initializes the instance attributes.</p></li>
+</ul>
+</section>
+</section>
+<section id="defining-a-class" class="level3">
+<h3 class="anchored" data-anchor-id="defining-a-class">3.2 Defining a Class</h3>
+<p>In Python, a class is defined using the <code>class</code> keyword, followed by the class name and a colon. The body of the class contains statements that define its attributes and methods.</p>
+<p>Here is the simplest possible class definition:</p>
+<div id="9a6141a6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:20:41.208106Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:20:41.205591Z&quot;}}" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span>  <span class="co"># 'pass' is a placeholder indicating an empty block</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This statement defines a new class named <code>Dog</code>. At this stage, the class has no attributes (data) or methods (actions). It serves as a minimal template from which instances can be created.</p>
+<p><strong>Note:</strong> By convention, class names in Python use the CapitalizedWords naming style (also known as CamelCase).</p>
+<section id="explanation" class="level4">
+<h4 class="anchored" data-anchor-id="explanation">Explanation</h4>
+<ul>
+<li><code>class Dog:</code> declares a class named <code>Dog</code>.</li>
+<li>The <code>pass</code> statement is syntactically required because Python expects an indented block after the colon; here, it indicates that the class has no content yet.</li>
+<li>This class can later be extended with attributes (e.g., <code>name</code>, <code>age</code>) and methods (e.g., <code>bark()</code>).</li>
+</ul>
+</section>
+</section>
+<section id="constructor-method-__init__" class="level3">
+<h3 class="anchored" data-anchor-id="constructor-method-__init__">3.3 Constructor Method <code>__init__</code></h3>
+<p>The constructor method <code>__init__</code> is a special method in Python classes. It is called automatically when a new instance of the class is created. This method is commonly used to initialize (set up) the attributes of the new object.</p>
+<ul>
+<li>The first parameter of <code>__init__</code> is always <code>self</code>, which refers to the instance being created.</li>
+<li>Additional parameters allow you to pass in initial values for the object’s attributes.</li>
+</ul>
+<div id="98bd1d17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:21:51.826450Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:21:51.823809Z&quot;}}" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Each dog has a name</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age    <span class="co"># Each dog has an age</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this example, every time a new <code>Dog</code> object is created, you must provide a <code>name</code> and an <code>age</code>, which are stored as attributes of the instance.</p>
+</section>
+<section id="creating-objects" class="level3">
+<h3 class="anchored" data-anchor-id="creating-objects">3.4 Creating Objects</h3>
+<p>To create (or <strong>instantiate</strong>) an object from a class, call the class as if it were a function, passing any required arguments to the constructor (<code>__init__</code> method).</p>
+<div id="bcf30735" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:22:13.975326Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:13.972102Z&quot;}}" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog(<span class="st">"Buddy"</span>, <span class="dv">3</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dog.name)  <span class="co"># Output: Buddy</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dog.age)   <span class="co"># Output: 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Buddy
+3</code></pre>
+</div>
+</div>
+<p>Here,</p>
+<ul>
+<li><code>my_dog</code> is an instance of the <code>Dog</code> class, initialized with the name <code>"Buddy"</code> and age <code>3</code>.</li>
+<li>The attributes <code>name</code> and <code>age</code> are accessed using dot notation (for example, <code>my_dog.name</code>).</li>
+</ul>
+<p><strong>Summary:</strong> Instantiating a class creates a new object with its own unique set of data, as specified by the constructor.</p>
+</section>
+<section id="instance-methods" class="level3">
+<h3 class="anchored" data-anchor-id="instance-methods">3.5 Instance Methods</h3>
+<p><strong>Instance methods</strong> are functions defined inside a class that operate on individual instances of that class. They can access and modify the data (attributes) that belong to the specific object.</p>
+<ul>
+<li>Every instance method has <code>self</code> as its first parameter. <code>self</code> refers to the instance through which the method is called, allowing access to the object’s attributes.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div id="e1ec0f80" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:22:39.747187Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:39.744005Z&quot;}}" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bark(<span class="va">self</span>):</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> says woof!"</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>my_dog.bark()  <span class="co"># Output: Buddy says woof!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Buddy says woof!</code></pre>
+</div>
+</div>
+<p>In this example:</p>
+<ul>
+<li><code>bark</code> is an instance method.</li>
+<li>It uses <code>self.name</code> to access data specific to that instance.</li>
+<li>When you call <code>my_dog.bark()</code>, the method prints <code>"Buddy says woof!"</code>.</li>
+</ul>
+<p><strong>Summary:</strong> Instance methods enable each object created from a class to perform behaviors that may depend on its own data.</p>
+</section>
+<section id="class-attributes-vs.-instance-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="class-attributes-vs.-instance-attributes">3.6 Class Attributes vs.&nbsp;Instance Attributes</h3>
+<p>Class attributes are shared by all objects of the class. Instance attributes belong only to one specific object.</p>
+<div id="35a7dcff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:23:05.891598Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:05.888082Z&quot;}}" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    species <span class="op">=</span> <span class="st">"Canine"</span>  <span class="co"># Class attribute</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Instance attribute</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>dog1 <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>dog2 <span class="op">=</span> Dog(<span class="st">"Bella"</span>)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog1.species)  <span class="co"># Output: Canine</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog2.species)  <span class="co"># Output: Canine</span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog1.name)     <span class="co"># Output: Buddy</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog2.name)     <span class="co"># Output: Bella</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Canine
+Canine
+Buddy
+Bella</code></pre>
+</div>
+</div>
+<ul>
+<li><code>species</code> is a <strong>class attribute</strong>. It is shared by all instances of the class <code>Dog</code>.</li>
+<li><code>name</code> is an <strong>instance attribute</strong>. Each object has its own separate value for <code>name</code>.</li>
+</ul>
+<p>When you access <code>dog1.species</code> or <code>dog2.species</code>, both will return <code>"Canine"</code>, because <code>species</code> is shared.</p>
+<p>When you access <code>dog1.name</code> and <code>dog2.name</code>, they return <code>"Buddy"</code> and <code>"Bella"</code> respectively, because <code>name</code> is specific to each object.</p>
+</section>
+<section id="inheritance" class="level3">
+<h3 class="anchored" data-anchor-id="inheritance">3.7 Inheritance</h3>
+<p><strong>Inheritance</strong> is a fundamental feature of object-oriented programming. It allows you to define a new class (called a <strong>subclass</strong> or <strong>derived class</strong>) based on an existing class (called a <strong>superclass</strong> or <strong>base class</strong>). The subclass inherits all the attributes and methods of the superclass, and can also introduce its own or override existing ones.</p>
+<p>This enables code reuse and logical hierarchy between classes.</p>
+<p><strong>Example:</strong></p>
+<div id="cd6116c2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:23:41.310320Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:41.307213Z&quot;}}" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"This animal makes a sound."</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bark(<span class="va">self</span>):</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Woof!"</span>)</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog()</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>my_dog.speak()  <span class="co"># Output: This animal makes a sound.</span></span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>my_dog.bark()   <span class="co"># Output: Woof!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This animal makes a sound.
+Woof!</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>Animal</code> is the <strong>superclass</strong>.</li>
+<li><code>Dog</code> is the <strong>subclass</strong>, which inherits from <code>Animal</code>.</li>
+<li><code>Dog</code> automatically has the <code>speak</code> method from <code>Animal</code>, and also defines its own <code>bark</code> method.</li>
+<li>When you create an instance of <code>Dog</code>, you can call both <code>speak</code> (inherited) and <code>bark</code> (defined in <code>Dog</code>).</li>
+</ul>
+<p><strong>Summary:</strong> Inheritance lets you build classes that share common behaviors, reducing code duplication and making code easier to maintain.</p>
+</section>
+<section id="method-overriding" class="level3">
+<h3 class="anchored" data-anchor-id="method-overriding">3.8 Method Overriding</h3>
+<p><strong>Method overriding</strong> allows a subclass to provide a specific implementation of a method that is already defined in its superclass. This enables a subclass to change or extend the behavior of inherited methods.</p>
+<p><strong>Example:</strong></p>
+<div id="6ebf2c3d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:24:05.042638Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:05.039314Z&quot;}}" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Animal sound"</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Bark!"</span>)  <span class="co"># Overrides the speak method</span></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog()</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>my_dog.speak()  <span class="co"># Output: Bark!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bark!</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>The <code>Animal</code> class defines a method called <code>speak</code>.</li>
+<li>The <code>Dog</code> subclass defines its own <code>speak</code> method, which <strong>overrides</strong> the one inherited from <code>Animal</code>.</li>
+<li>When <code>speak()</code> is called on a <code>Dog</code> instance, the version in <code>Dog</code> is executed instead of the version in <code>Animal</code>.</li>
+</ul>
+<p><strong>Summary:</strong> Method overriding allows subclasses to modify or completely replace behaviors inherited from a parent class.</p>
+</section>
+<section id="magic-methods-dunder-methods" class="level3">
+<h3 class="anchored" data-anchor-id="magic-methods-dunder-methods">3.9 Magic Methods (Dunder Methods)</h3>
+<p><strong>Magic methods</strong> (also known as <strong>dunder methods</strong>, because they start and end with double underscores) are special methods in Python that allow you to define how your objects interact with Python’s built-in functions and operators.</p>
+<p>Some commonly used magic methods include:</p>
+<ul>
+<li><code>__init__</code> — called when a new object is created (the constructor)</li>
+<li><code>__str__</code> — defines what should be returned when the object is printed with <code>print()</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div id="5d9d807f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:24:40.147409Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:40.144009Z&quot;}}" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"This dog's name is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">."</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dog)  <span class="co"># Output: This dog's name is Buddy.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This dog's name is Buddy.</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>The <code>__init__</code> method initializes the <code>name</code> attribute when a new <code>Dog</code> object is created.</li>
+<li>The <code>__str__</code> method returns a string representation of the object, which is used when you call <code>print()</code> on the object.</li>
+</ul>
+<p><strong>Summary:</strong> Magic methods let you customize how your objects behave with standard Python operations, such as printing, addition, comparison, and more.</p>
+</section>
+<section id="class-methods-and-static-methods" class="level3">
+<h3 class="anchored" data-anchor-id="class-methods-and-static-methods">3.10 Class Methods and Static Methods</h3>
+<ul>
+<li><p>Class methods affect the class itself, not just one object.</p></li>
+<li><p>Static methods are like normal functions, but live inside the class.</p></li>
+</ul>
+<div id="5a893ab0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:25:07.995373Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:25:07.991928Z&quot;}}" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    dogs_count <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Class attribute</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>        Dog.dogs_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_dogs_count(cls):</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> cls.dogs_count</span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bark():</span>
+<span id="cb66-14"><a href="#cb66-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Woof!"</span>)</span>
+<span id="cb66-15"><a href="#cb66-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-16"><a href="#cb66-16" aria-hidden="true" tabindex="-1"></a>dog1 <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb66-17"><a href="#cb66-17" aria-hidden="true" tabindex="-1"></a>dog2 <span class="op">=</span> Dog(<span class="st">"Bella"</span>)</span>
+<span id="cb66-18"><a href="#cb66-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Dog.get_dogs_count())  <span class="co"># Output: 2</span></span>
+<span id="cb66-19"><a href="#cb66-19" aria-hidden="true" tabindex="-1"></a>Dog.bark()  <span class="co"># Output: Woof!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+Woof!</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>dogs_count</code> is a class attribute, shared by all instances of the <code>Dog</code> class.</li>
+<li>The <code>@classmethod</code> decorator is used to define a class method. Class methods receive the class itself as the first argument, conventionally named <code>cls</code>.
+<ul>
+<li><code>get_dogs_count</code> returns the current count of all <code>Dog</code> instances.</li>
+</ul></li>
+<li>The <code>@staticmethod</code> decorator is used to define a static method. Static methods do not receive an implicit first argument (neither the class nor the instance).
+<ul>
+<li><code>bark</code> can be called on the class itself, and behaves like a regular function, but lives inside the class’s namespace.</li>
+</ul></li>
+</ul>
+<p><strong>Summary:</strong> - Class methods can modify or access class-level data that is shared across all instances. - Static methods are utility functions that have a logical connection to the class, but do not access or modify class or instance data.</p>
+</section>
+<section id="simple-ai-assistant-class" class="level3">
+<h3 class="anchored" data-anchor-id="simple-ai-assistant-class">3.11 Simple AI Assistant Class</h3>
+<p>This example builds a basic AI Assistant class. The assistant can answer questions, remember a history of questions, and keep track of how many questions it has been asked.</p>
+<div id="3d776296" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:26:31.762902Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:26:31.757553Z&quot;}}" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AIAssistant:</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    total_questions <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Class attribute to count total questions asked to all assistants</span></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.question_history <span class="op">=</span> []  <span class="co"># Instance attribute to store asked questions</span></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> answer(<span class="va">self</span>, question):</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Answer a question and save it to history."""</span></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>        AIAssistant.total_questions <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.question_history.append(question)</span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: You asked, '</span><span class="sc">{</span>question<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Very basic response logic:</span></span>
+<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"weather"</span> <span class="kw">in</span> question.lower():</span>
+<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"I'm not connected to the internet, but I hope it's sunny!"</span>)</span>
+<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="st">"name"</span> <span class="kw">in</span> question.lower():</span>
+<span id="cb68-17"><a href="#cb68-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"My name is </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb68-18"><a href="#cb68-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb68-19"><a href="#cb68-19" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"That's an interesting question!"</span>)</span>
+<span id="cb68-20"><a href="#cb68-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-21"><a href="#cb68-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show_history(<span class="va">self</span>):</span>
+<span id="cb68-22"><a href="#cb68-22" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Show all questions this assistant has been asked."""</span></span>
+<span id="cb68-23"><a href="#cb68-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Questions asked to </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb68-24"><a href="#cb68-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> q <span class="kw">in</span> <span class="va">self</span>.question_history:</span>
+<span id="cb68-25"><a href="#cb68-25" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"- </span><span class="sc">{</span>q<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb68-26"><a href="#cb68-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-27"><a href="#cb68-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb68-28"><a href="#cb68-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show_total_questions(cls):</span>
+<span id="cb68-29"><a href="#cb68-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Show how many questions have been asked to all AI assistants."""</span></span>
+<span id="cb68-30"><a href="#cb68-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Total questions asked to all assistants: </span><span class="sc">{</span>cls<span class="sc">.</span>total_questions<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb68-31"><a href="#cb68-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-32"><a href="#cb68-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb68-33"><a href="#cb68-33" aria-hidden="true" tabindex="-1"></a>ai1 <span class="op">=</span> AIAssistant(<span class="st">"Alexa"</span>)</span>
+<span id="cb68-34"><a href="#cb68-34" aria-hidden="true" tabindex="-1"></a>ai2 <span class="op">=</span> AIAssistant(<span class="st">"Siri"</span>)</span>
+<span id="cb68-35"><a href="#cb68-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-36"><a href="#cb68-36" aria-hidden="true" tabindex="-1"></a>ai1.answer(<span class="st">"What's the weather today?"</span>)</span>
+<span id="cb68-37"><a href="#cb68-37" aria-hidden="true" tabindex="-1"></a>ai1.answer(<span class="st">"What's your name?"</span>)</span>
+<span id="cb68-38"><a href="#cb68-38" aria-hidden="true" tabindex="-1"></a>ai2.answer(<span class="st">"Can you help me with my homework?"</span>)</span>
+<span id="cb68-39"><a href="#cb68-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-40"><a href="#cb68-40" aria-hidden="true" tabindex="-1"></a>ai1.show_history()</span>
+<span id="cb68-41"><a href="#cb68-41" aria-hidden="true" tabindex="-1"></a>ai2.show_history()</span>
+<span id="cb68-42"><a href="#cb68-42" aria-hidden="true" tabindex="-1"></a>AIAssistant.show_total_questions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alexa: You asked, 'What's the weather today?'
+I'm not connected to the internet, but I hope it's sunny!
+Alexa: You asked, 'What's your name?'
+My name is Alexa.
+Siri: You asked, 'Can you help me with my homework?'
+That's an interesting question!
+Questions asked to Alexa:
+- What's the weather today?
+- What's your name?
+Questions asked to Siri:
+- Can you help me with my homework?
+Total questions asked to all assistants: 3</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exceptions" class="level2">
+<h2 class="anchored" data-anchor-id="exceptions">4. Exceptions</h2>
+<section id="what-is-an-exception" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-an-exception">What Is an Exception?</h3>
+<p>An <strong>exception</strong> is a special object that signals an error or an unexpected situation in your program. For example, dividing by zero or trying to open a file that does not exist will cause an exception.</p>
+<p>Python uses a <code>try/except</code> block to <strong>handle</strong> exceptions, so your program doesn’t crash when something goes wrong.</p>
+</section>
+<section id="basic-structure-1" class="level3">
+<h3 class="anchored" data-anchor-id="basic-structure-1">Basic Structure</h3>
+<p>Here is the basic structure of handling exceptions in Python:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code that might cause an exception</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> SomeException:</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code that runs if that specific exception happens</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="co">### Full Example</span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>Let<span class="st">'s see how it works in practice:</span></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="er">::: {#a4cdc133 .cell quarto-private-1='{"key":"ExecuteTime","value":{"end_time":"2025-07-31T00:12:12.548173Z","start_time":"2025-07-31T00:12:12.545420Z"}}' execution_count=37}</span></span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>``` {.python .cell<span class="op">-</span>code}</span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try to do something risky</span></span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">1</span>  <span class="co"># Change this to 1 / 0 to see an exception</span></span>
+<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span> <span class="im">as</span> e:</span>
+<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Caught a ZeroDivisionError!"</span>)</span>
+<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(e)</span>
+<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Caught a general exception."</span>)</span>
+<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(e)</span>
+<span id="cb70-22"><a href="#cb70-22" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb70-23"><a href="#cb70-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"There were no exceptions."</span>)</span>
+<span id="cb70-24"><a href="#cb70-24" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb70-25"><a href="#cb70-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"This is always executed (cleanup, closing files, etc.)."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>There were no exceptions.
+This is always executed (cleanup, closing files, etc.).</code></pre>
+</div>
+<p>:::</p>
+</section>
+<section id="common-exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="common-exceptions">Common Exceptions</h3>
+<p>Here are some common Python exceptions you might see:</p>
+<ul>
+<li><p>ZeroDivisionError – trying to divide by zero</p></li>
+<li><p>ValueError – wrong value type (e.g., int(“abc”))</p></li>
+<li><p>TypeError – wrong type used (e.g., adding a string to a number)</p></li>
+<li><p>FileNotFoundError – file doesn’t exist</p></li>
+<li><p>IndexError – list index out of range</p></li>
+</ul>
+</section>
+<section id="why-handle-exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="why-handle-exceptions">Why Handle Exceptions?</h3>
+<p>If you don’t handle exceptions, your program will crash as soon as it encounters an error. Handling exceptions lets your program keep running or fail gracefully.</p>
+<p>Real-life analogy: Exception handling is like wearing a seatbelt. If something unexpected happens, you stay safe instead of getting hurt!</p>
+</section>
+<section id="practice-exercise" class="level3">
+<h3 class="anchored" data-anchor-id="practice-exercise">Practice Exercise</h3>
+<p>Try dividing by zero and catch the exception:</p>
+<div id="b3896d31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-31T00:13:32.087618Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:13:32.085402Z&quot;}}" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Oops! You can't divide by zero."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oops! You can't divide by zero.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="generators-iterators" class="level2">
+<h2 class="anchored" data-anchor-id="generators-iterators">5. Generators (Iterators)</h2>
+<section id="what-is-an-iterator" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-an-iterator">What Is an Iterator?</h3>
+<p>An <strong>iterator</strong> is an object that lets you access items in a collection, one at a time. You can get the next item from an iterator using the <code>next()</code> function.</p>
+<ul>
+<li><strong>Lists, tuples, dictionaries, and strings</strong> are all <em>iterable</em>, meaning you can loop through them using a <code>for</code> loop.</li>
+</ul>
+<p>The <strong><code>yield</code></strong> statement allows you to create your own iterator, called a generator. Generators are a memory-efficient way to produce values one at a time, only when you need them.</p>
+<div id="8473e483" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:13.105705Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:13.103582Z&quot;}}" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> range_custom(n):</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> n:</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> i</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create the generator.</p>
+<div id="319ee24f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:25.804161Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:25.801857Z&quot;}}" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>gen <span class="op">=</span> range_custom(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The type of the variable named <code>gen</code> is <code>generator.</code></p>
+<div id="25bbe937" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:47.616799Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:47.612186Z&quot;}}" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>generator</code></pre>
+</div>
+</div>
+<p>Iterate through the generator values.</p>
+<div id="ed91672f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:02.468704Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:02.465220Z&quot;}}" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="901988aa" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:07.107411Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:07.104401Z&quot;}}" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="bfd6deca" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:13.039402Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:13.036290Z&quot;}}" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>2</code></pre>
+</div>
+</div>
+<p>The generator raises an exception when it reaches the end. If you keep calling <code>next()</code> after the generator is finished, you will get a <code>StopIteration</code> error.</p>
+<div id="5f6e6b89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:32.380102Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:32.272095Z&quot;}}" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the following call will raise an exception</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="co"># next(gen)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/SU-OSPO\.github\.io\/workshop-computing-intro-2025");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../02_python/python-apps.html" class="pagination-link" aria-label="Miscellaneous Applications">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Miscellaneous Applications</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../03_github/index.html" class="pagination-link" aria-label="<code>git</code> and GitHub">
+        <span class="nav-page-text"><code>git</code> and GitHub</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, <a href="https://opensource.syracuse.edu/">Syracuse University Open Source Program Office</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-flow-loops-classes.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
