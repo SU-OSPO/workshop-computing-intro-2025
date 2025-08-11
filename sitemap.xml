@@ -2,106 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/data_with_pandas.html</loc>
-    <lastmod>2025-08-11T13:52:33.206Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.441Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-flow-loops-classes.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.413Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/06-Intro-to-Python-dictionaries.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/03-Intro-to-Python-numbers.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/data_with_pandas.html</loc>
-    <lastmod>2025-08-11T13:52:33.176Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.411Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.176Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.181Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise2.html</loc>
-    <lastmod>2025-08-11T13:52:33.178Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise3.html</loc>
-    <lastmod>2025-08-11T13:52:33.178Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.175Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-plotting.html</loc>
-    <lastmod>2025-08-11T13:52:33.175Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/decisionTree_sklearn.html</loc>
-    <lastmod>2025-08-11T13:52:33.206Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/04_conda/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.181Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-tidydata.html</loc>
-    <lastmod>2025-08-11T13:52:33.175Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-intro.html</loc>
-    <lastmod>2025-08-11T13:52:33.175Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/index.html</loc>
-    <lastmod>2025-08-11T13:52:33.207Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/ssh_setup.html</loc>
-    <lastmod>2025-08-11T13:52:33.181Z</lastmod>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/decisionTree_sklearn.html</loc>
+    <lastmod>2025-08-11T13:53:10.411Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise1.html</loc>
-    <lastmod>2025-08-11T13:52:33.178Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/ssh_setup.html</loc>
+    <lastmod>2025-08-11T13:53:10.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/index.html</loc>
+    <lastmod>2025-08-11T13:53:10.442Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-intro.html</loc>
+    <lastmod>2025-08-11T13:53:10.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-tidydata.html</loc>
+    <lastmod>2025-08-11T13:53:10.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/04_conda/index.html</loc>
+    <lastmod>2025-08-11T13:53:10.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/decisionTree_sklearn.html</loc>
+    <lastmod>2025-08-11T13:53:10.442Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/r-plotting.html</loc>
+    <lastmod>2025-08-11T13:53:10.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/01_r/index.html</loc>
+    <lastmod>2025-08-11T13:53:10.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise3.html</loc>
+    <lastmod>2025-08-11T13:53:10.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/exercise2.html</loc>
+    <lastmod>2025-08-11T13:53:10.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/index.html</loc>
+    <lastmod>2025-08-11T13:53:10.417Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-apps.html</loc>
-    <lastmod>2025-08-11T13:52:33.176Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/visualization_with_matplotlib.html</loc>
-    <lastmod>2025-08-11T13:52:33.178Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.413Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/02-Intro-to-Python-operations.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/05-Intro-to-Python-lists.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/01-Intro-to-Python-basic.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-intro/04-Intro-to-Python-strings.html</loc>
-    <lastmod>2025-08-11T13:52:33.177Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.412Z</lastmod>
   </url>
   <url>
     <loc>https://SU-OSPO.github.io/workshop-computing-intro-2025/visualization_with_matplotlib.html</loc>
-    <lastmod>2025-08-11T13:52:33.208Z</lastmod>
+    <lastmod>2025-08-11T13:53:10.443Z</lastmod>
   </url>
 </urlset>
