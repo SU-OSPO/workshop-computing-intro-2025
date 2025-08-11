@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-description','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-author"],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -295,19 +295,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02_python/python-apps/data_with_pandas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data with Pandas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/python-apps/decisionTree_sklearn.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DecisionTree Sklearn</span></a>
+ <span class="menu-text">Handling Data with Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02_python/python-apps/visualization_with_matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization with Matplotlib</span></a>
+ <span class="menu-text">Data Visualization with Matplotlib</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-apps/decisionTree_sklearn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Trees with Scikit-learn</span></a>
   </div>
 </li>
       </ul>
@@ -410,57 +410,47 @@ Reading Time
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-file-modified-sort="1754927009836" data-listing-filename-sort="decisionTree_sklearn.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1754946616732" data-listing-reading-time-sort="6" data-listing-word-count-sort="1195" data-listing-title-sort="Handling Data with Pandas" data-listing-filename-sort="data_with_pandas.qmd">
 <td>
-<a href="../../02_python/python-apps/decisionTree_sklearn.html" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-description">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">from</span> google.colab <span class="im">import</span> files</span>
-<span id="cb1-2">uploaded <span class="op">=</span> files.upload()</span></code></pre></div>
-<div class="cell-output cell-output-display">
-
-     <input type="file" id="files-948fe957-3cd1-4c04-8a75-090cb771bc95" name="files[]" multiple="" disabled="" style="border:none">
-     <output id="result-948fe957-3cd1-4c04-8a75-090cb771bc95">
-      Upload widget is only available when the cell has been executed in the
-      current browser…</output><script></script></div><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></span>
-</td>
-<td>
-<span class="listing-reading-time">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-file-modified-sort="1754927009837" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-filename-sort="visualization_with_matplotlib.ipynb">
-<td>
-<a href="../../02_python/python-apps/visualization_with_matplotlib.html" class="title listing-title">&nbsp;</a>
-</td>
-<td>
-<span class="listing-description">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">from</span> google.colab <span class="im">import</span> files</span>
-<span id="cb1-2">uploaded <span class="op">=</span> files.upload()</span></code></pre></div>
-<div class="cell-output cell-output-display">
-
-     <input type="file" id="files-cc14eb8c-9d42-4a76-a040-f981d6580132" name="files[]" multiple="" disabled="" style="border:none">
-     <output id="result-cc14eb8c-9d42-4a76-a040-f981d6580132">
-      Upload widget is only available when the cell has been executed in the
-      current browser…</output><script></script></div><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-file-modified-sort="1754927009835" data-listing-reading-time-sort="1" data-listing-word-count-sort="58" data-listing-filename-sort="data_with_pandas.ipynb">
-<td>
-<a href="../../02_python/python-apps/data_with_pandas.html" class="title listing-title">&nbsp;</a>
+<a href="../../02_python/python-apps/data_with_pandas.html" class="title listing-title">Handling Data with Pandas</a>
 </td>
 <td>
 <span class="listing-description">768 rows × 9 columns</span>
 </td>
 <td>
-<span class="listing-reading-time">1 min</span>
+<span class="listing-reading-time">6 min</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-file-modified-sort="1754946616734" data-listing-reading-time-sort="2" data-listing-word-count-sort="363" data-listing-title-sort="Data Visualization with Matplotlib" data-listing-filename-sort="visualization_with_matplotlib.qmd">
+<td>
+<a href="../../02_python/python-apps/visualization_with_matplotlib.html" class="title listing-title">Data Visualization with Matplotlib</a>
+</td>
+<td>
+<span class="listing-description">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-file-modified-sort="1754946616733" data-listing-reading-time-sort="2" data-listing-word-count-sort="201" data-listing-title-sort="Decision Trees with Scikit-learn" data-listing-filename-sort="decisionTree_sklearn.qmd">
+<td>
+<a href="../../02_python/python-apps/decisionTree_sklearn.html" class="title listing-title">Decision Trees with Scikit-learn</a>
+</td>
+<td>
+<span class="listing-description">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
 </td>
 
 </tr>
@@ -875,8 +865,8 @@ Reading Time
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../02_python/python-apps/data_with_pandas.html" class="pagination-link" aria-label="Data with Pandas">
-        <span class="nav-page-text">Data with Pandas</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../02_python/python-apps/data_with_pandas.html" class="pagination-link" aria-label="Handling Data with Pandas">
+        <span class="nav-page-text">Handling Data with Pandas</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
