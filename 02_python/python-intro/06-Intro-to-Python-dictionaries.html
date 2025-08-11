@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Number Types in Python – Computing 101 Workshop – Summer 2025</title>
+<title>Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../02_python/session 1/04-Intro-to-Python-strings.html" rel="next">
-<link href="../../02_python/session 1/02- Intro-to-python-operations.html" rel="prev">
+<link href="../../02_python/python-flow.html" rel="next">
+<link href="../../02_python/python-intro/05-Intro-to-Python-lists.html" rel="prev">
 <link href="../..//images/SU-OSPO.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -106,13 +106,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Number Types in Python – Computing 101 Workshop – Summer 2025">
+<meta property="og:title" content="Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
 <meta property="og:image:height" content="968">
 <meta property="og:image:width" content="968">
-<meta name="twitter:title" content="Number Types in Python – Computing 101 Workshop – Summer 2025">
+<meta name="twitter:title" content="Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta name="twitter:image-height" content="968">
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/session 1/01-Intro-to-Python-basic.html">session 1</a></li><li class="breadcrumb-item"><a href="../../02_python/session 1/03-Intro-to-Python-numbers.html">Number Types in Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/index.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html">Using Dictionaries to Represent Single and Multiple Items</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -207,12 +207,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../02_python/python-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_python/python-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Python</span></a>
+  <a href="../../02_python/python-intro/01-Intro-to-Python-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is Python?</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-intro/02-Intro-to-Python-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Operations in Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-intro/03-Intro-to-Python-numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Number Types in Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-intro/04-Intro-to-Python-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strings in Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-intro/05-Intro-to-Python-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Using Dictionaries to Represent Single and Multiple Items</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02_python/python-flow.html" class="sidebar-item-text sidebar-link">
@@ -231,53 +272,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Python (Hinds 111): flow, loops, and classes</span></a>
   </div>
 </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">session 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/01-Intro-to-Python-basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. What is Python?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/02- Intro-to-python-operations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Operations in Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/03-Intro-to-Python-numbers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Number Types in Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/04-Intro-to-Python-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Strings in Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/05-Intro-to-Python-lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../02_python/session 1/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Using Dictionaries to Represent Single and Multiple Items</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -331,22 +325,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#integers-int" id="toc-integers-int" class="nav-link active" data-scroll-target="#integers-int">Integers (<code>int</code>)</a></li>
-  <li><a href="#floating-point-numbers-float" id="toc-floating-point-numbers-float" class="nav-link" data-scroll-target="#floating-point-numbers-float">Floating Point Numbers (<code>float</code>)</a></li>
-  <li><a href="#complex-numbers-complex" id="toc-complex-numbers-complex" class="nav-link" data-scroll-target="#complex-numbers-complex">Complex Numbers (<code>complex</code>)</a></li>
-  <li><a href="#why-use-j-for-complex-numbers-in-python" id="toc-why-use-j-for-complex-numbers-in-python" class="nav-link" data-scroll-target="#why-use-j-for-complex-numbers-in-python">Why Use <code>j</code> for Complex Numbers in Python?</a></li>
-  <li><a href="#type-conversions" id="toc-type-conversions" class="nav-link" data-scroll-target="#type-conversions">Type Conversions</a></li>
-  <li><a href="#checking-types" id="toc-checking-types" class="nav-link" data-scroll-target="#checking-types">Checking Types</a></li>
-  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common Pitfalls</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/session 1/03-Intro-to-Python-numbers.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-intro/06-Intro-to-Python-dictionaries.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/session 1/01-Intro-to-Python-basic.html">session 1</a></li><li class="breadcrumb-item"><a href="../../02_python/session 1/03-Intro-to-Python-numbers.html">Number Types in Python</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/index.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html">Using Dictionaries to Represent Single and Multiple Items</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Number Types in Python</h1>
+<h1 class="title">Using Dictionaries to Represent Single and Multiple Items</h1>
 </div>
 
 
@@ -363,159 +351,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This notebook introduces Python’s built-in number-related types: integers, floats, and complex numbers, along with type conversion, type checking, and small exercises.</p>
-<section id="integers-int" class="level3">
-<h3 class="anchored" data-anchor-id="integers-int">Integers (<code>int</code>)</h3>
-<p>Integers are whole numbers (positive, negative, or zero) without decimal points.</p>
-<p><strong>Examples:</strong></p>
-<div id="1b966d66" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Python, a <strong>dictionary</strong> represents one item (e.g., one student). To store multiple such items, we use a <strong>list of dictionaries</strong>.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p><strong>One Dictionary for One Student</strong></p>
+<div id="ae2242ed" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>student <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name"</span>: <span class="st">"Alice"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: <span class="dv">21</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"major"</span>: <span class="st">"Computer Science"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student[<span class="st">"name"</span>])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student[<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>10 -5 0</code></pre>
+<pre><code>Alice
+Computer Science</code></pre>
 </div>
 </div>
-<p><strong>Exercise:</strong> Create two integer variables and print their sum.</p>
-<div id="bc8b8093" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">12</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>List of Dictionaries for Multiple Students</strong></p>
+<div id="c348f247" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">21</span>, <span class="st">"major"</span>: <span class="st">"CS"</span>},</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Bob"</span>, <span class="st">"age"</span>: <span class="dv">22</span>, <span class="st">"major"</span>: <span class="st">"Math"</span>},</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Cara"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"major"</span>: <span class="st">"Biology"</span>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing second student's major</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(students[<span class="dv">1</span>][<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Sum: 19</code></pre>
+<pre><code>Math</code></pre>
 </div>
 </div>
-</section>
-<section id="floating-point-numbers-float" class="level3">
-<h3 class="anchored" data-anchor-id="floating-point-numbers-float">Floating Point Numbers (<code>float</code>)</h3>
-<p>Floats are numbers with decimal points or in scientific notation.</p>
-<p><strong>Examples:</strong></p>
-<div id="9fcd4e05" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tax_rate <span class="op">=</span> <span class="fl">0.07</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>distance <span class="op">=</span> <span class="op">-</span><span class="fl">2.5</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>avogadro <span class="op">=</span> <span class="fl">6.022e23</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi, tax_rate, distance, avogadro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Looping Through a List of Dictionaries</strong></p>
+<div id="07600006" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(student[<span class="st">"name"</span>], <span class="st">"is studying"</span>, student[<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3.14159 0.07 -2.5 6.022e+23</code></pre>
+<pre><code>Alice is studying CS
+Bob is studying Math
+Cara is studying Biology</code></pre>
 </div>
 </div>
-<p><strong>Exercise:</strong> Create a float variable for temperature and print it in a sentence using an f-string.</p>
-<div id="a775539f" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">23.5</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The current temperature is </span><span class="sc">{</span>temperature<span class="sc">}</span><span class="ss">°C."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Exercise</strong> - Add a new student to the <code>students</code> list. - Print each student’s name and age. - Try changing a student’s major.</p>
+<div id="a0eea3b8" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Kate"</span>, <span class="st">"age"</span>: <span class="dv">21</span>, <span class="st">"major"</span>: <span class="st">"Computer Science"</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>students.append(new_student)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>student[<span class="st">'name'</span>]<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>student[<span class="st">'age'</span>]<span class="sc">}</span><span class="ss"> years old."</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> student[<span class="st">"name"</span>] <span class="op">==</span> <span class="st">"Bob"</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        student[<span class="st">"major"</span>] <span class="op">=</span> <span class="st">"Political Science"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>The current temperature is 23.5°C.</code></pre>
-</div>
-</div>
-</section>
-<section id="complex-numbers-complex" class="level3">
-<h3 class="anchored" data-anchor-id="complex-numbers-complex">Complex Numbers (<code>complex</code>)</h3>
-<p>Complex numbers have a real and imaginary part, written as <code>a + bj</code>.</p>
-<p><strong>Examples:</strong></p>
-<div id="08079885" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>z1 <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="ot">3j</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>z2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="ot">4j</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"z1:"</span>, z1)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"z2:"</span>, z2)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, z1 <span class="op">+</span> z2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>z1: (2+3j)
-z2: (1-4j)
-Sum: (3-1j)</code></pre>
-</div>
-</div>
-</section>
-<section id="why-use-j-for-complex-numbers-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-j-for-complex-numbers-in-python">Why Use <code>j</code> for Complex Numbers in Python?</h3>
-<p>In mathematics, the imaginary unit is often written as <code>i</code>. However, in engineering, <code>i</code> is commonly used to represent electric current. To avoid confusion, Python uses <code>j</code> to represent the imaginary unit (<code>√-1</code>).</p>
-<p><strong>Example:</strong> - <code>1j</code> means the imaginary number 0 + 1×j. - <code>2 + 3j</code> means a complex number with real part 2 and imaginary part 3.</p>
-<div id="0f048ed1" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Complex number example with j</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="ot">3j</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)        <span class="co"># prints 2 + 3j</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing real and imaginary parts</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Real part:"</span>, z.real)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Imaginary part:"</span>, z.imag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(2+3j)
-Real part: 2.0
-Imaginary part: 3.0</code></pre>
-</div>
-</div>
-<p><strong>Exercise:</strong> Create two complex numbers and multiply them.</p>
-<div id="4a1867a5" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>z1 <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="ot">3j</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>z2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="ot">4j</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> z1 <span class="op">*</span> z2</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Multiplication result:"</span>, result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Multiplication result: (14-5j)</code></pre>
-</div>
-</div>
-</section>
-<section id="type-conversions" class="level3">
-<h3 class="anchored" data-anchor-id="type-conversions">Type Conversions</h3>
-<p>Convert between number types using <code>int()</code>, <code>float()</code>, and <code>complex()</code>.</p>
-<div id="67d8f374" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">int</span>(<span class="fl">3.7</span>))</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="dv">5</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">complex</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3
-5.0
-(2+3j)</code></pre>
-</div>
-</div>
-<p><strong>Exercise:</strong> Convert an integer to a float and a float to an integer, then print the results.</p>
-<div id="d053c56c" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_int <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_float <span class="op">=</span> <span class="fl">5.99</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>converted_to_float <span class="op">=</span> <span class="bu">float</span>(my_int)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>converted_to_int <span class="op">=</span> <span class="bu">int</span>(my_float)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Integer to float:"</span>, converted_to_float)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Float to integer:"</span>, converted_to_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Integer to float: 10.0
-Float to integer: 5</code></pre>
-</div>
-</div>
-</section>
-<section id="checking-types" class="level3">
-<h3 class="anchored" data-anchor-id="checking-types">Checking Types</h3>
-<div id="83e2dde8" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">10</span>))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span><span class="op">+</span><span class="ot">3j</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'float'&gt;
-&lt;class 'complex'&gt;</code></pre>
-</div>
-</div>
-<p><strong>Exercise:</strong> Use <code>type()</code> to check the type of a number you define.</p>
-<div id="d7fbd029" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="fl">42.0</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'float'&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="common-pitfalls" class="level3">
-<h3 class="anchored" data-anchor-id="common-pitfalls">Common Pitfalls</h3>
-<div id="8613d5be" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span> <span class="op">==</span> <span class="fl">0.3</span>)  <span class="co"># Floating-point precision issue</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">/</span> <span class="dv">2</span>)             <span class="co"># Division returns float</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">//</span> <span class="dv">2</span>)            <span class="co"># Floor division returns int</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>False
-2.5
-2</code></pre>
+<pre><code>Alice is 21 years old.
+Bob is 22 years old.
+Cara is 20 years old.
+Kate is 21 years old.
+[{'name': 'Alice', 'age': 21, 'major': 'CS'}, {'name': 'Bob', 'age': 22, 'major': 'Political Science'}, {'name': 'Cara', 'age': 20, 'major': 'Biology'}, {'name': 'Kate', 'age': 21, 'major': 'Computer Science'}]</code></pre>
 </div>
 </div>
 
@@ -924,13 +819,13 @@ Float to integer: 5</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../02_python/session 1/02- Intro-to-python-operations.html" class="pagination-link" aria-label="Operations in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Operations in Python</span>
+      <a href="../../02_python/python-intro/05-Intro-to-Python-lists.html" class="pagination-link" aria-label="Lists">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lists</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../02_python/session 1/04-Intro-to-Python-strings.html" class="pagination-link" aria-label="Strings in Python">
-        <span class="nav-page-text">Strings in Python</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../02_python/python-flow.html" class="pagination-link" aria-label="Control Flow, Loops, and Classes">
+        <span class="nav-page-text">Control Flow, Loops, and Classes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -942,7 +837,7 @@ Float to integer: 5</code></pre>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/session 1/03-Intro-to-Python-numbers.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-intro/06-Intro-to-Python-dictionaries.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

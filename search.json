@@ -66,6 +66,41 @@
     ]
   },
   {
+    "objectID": "02_python/python-intro/index.html",
+    "href": "02_python/python-intro/index.html",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Title\n\n\n\nDescription\n\n\n\nReading Time\n\n\n\n\n\n\n\n\nOperations in Python\n\n\n\n\n\n2 min\n\n\n\n\n\n\nNumber Types in Python\n\n\n\n\n\n1 min\n\n\n\n\n\n\nLists\n\n\n\n\n\n2 min\n\n\n\n\n\n\nUsing Dictionaries to Represent Single and Multiple Items\n\n\n\n\n\n1 min\n\n\n\n\n\n\nWhat is Python?\n\n\n\n\n\n4 min\n\n\n\n\n\n\nStrings in Python\n\n\n\n\n\n1 min\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Python",
+      "Introduction to Python"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/06-Intro-to-Python-dictionaries.html",
+    "href": "02_python/python-intro/06-Intro-to-Python-dictionaries.html",
+    "title": "Using Dictionaries to Represent Single and Multiple Items",
+    "section": "",
+    "text": "In Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\n\nExamples\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\nExercise - Add a new student to the students list. - Print each student’s name and age. - Try changing a student’s major.\n\nnew_student = {\"name\": \"Kate\", \"age\": 21, \"major\": \"Computer Science\"}\nstudents.append(new_student)\n\nfor student in students:\n    print(f\"{student['name']} is {student['age']} years old.\")\n\nfor student in students:\n    if student[\"name\"] == \"Bob\":\n        student[\"major\"] = \"Political Science\"\n\nprint(students)\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nKate is 21 years old.\n[{'name': 'Alice', 'age': 21, 'major': 'CS'}, {'name': 'Bob', 'age': 22, 'major': 'Political Science'}, {'name': 'Cara', 'age': 20, 'major': 'Biology'}, {'name': 'Kate', 'age': 21, 'major': 'Computer Science'}]",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Using Dictionaries to Represent Single and Multiple Items"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/03-Intro-to-Python-numbers.html",
+    "href": "02_python/python-intro/03-Intro-to-Python-numbers.html",
+    "title": "Number Types in Python",
+    "section": "",
+    "text": "This notebook introduces Python’s built-in number-related types: integers, floats, and complex numbers, along with type conversion, type checking, and small exercises.\n\nIntegers (int)\nIntegers are whole numbers (positive, negative, or zero) without decimal points.\nExamples:\n\na = 10\nb = -5\nc = 0\nprint(a, b, c)\n\n10 -5 0\n\n\nExercise: Create two integer variables and print their sum.\n\nx = 7\ny = 12\nprint(\"Sum:\", x + y)\n\nSum: 19\n\n\n\n\nFloating Point Numbers (float)\nFloats are numbers with decimal points or in scientific notation.\nExamples:\n\npi = 3.14159\ntax_rate = 0.07\ndistance = -2.5\navogadro = 6.022e23\nprint(pi, tax_rate, distance, avogadro)\n\n3.14159 0.07 -2.5 6.022e+23\n\n\nExercise: Create a float variable for temperature and print it in a sentence using an f-string.\n\ntemperature = 23.5\nprint(f\"The current temperature is {temperature}°C.\")\n\nThe current temperature is 23.5°C.\n\n\n\n\nComplex Numbers (complex)\nComplex numbers have a real and imaginary part, written as a + bj.\nExamples:\n\nz1 = 2 + 3j\nz2 = 1 - 4j\nprint(\"z1:\", z1)\nprint(\"z2:\", z2)\nprint(\"Sum:\", z1 + z2)\n\nz1: (2+3j)\nz2: (1-4j)\nSum: (3-1j)\n\n\n\n\nWhy Use j for Complex Numbers in Python?\nIn mathematics, the imaginary unit is often written as i. However, in engineering, i is commonly used to represent electric current. To avoid confusion, Python uses j to represent the imaginary unit (√-1).\nExample: - 1j means the imaginary number 0 + 1×j. - 2 + 3j means a complex number with real part 2 and imaginary part 3.\n\n# Complex number example with j\nz = 2 + 3j\nprint(z)        # prints 2 + 3j\n\n# Accessing real and imaginary parts\nprint(\"Real part:\", z.real)\nprint(\"Imaginary part:\", z.imag)\n\n(2+3j)\nReal part: 2.0\nImaginary part: 3.0\n\n\nExercise: Create two complex numbers and multiply them.\n\nz1 = 2 + 3j\nz2 = 1 - 4j\nresult = z1 * z2\nprint(\"Multiplication result:\", result)\n\nMultiplication result: (14-5j)\n\n\n\n\nType Conversions\nConvert between number types using int(), float(), and complex().\n\nprint(int(3.7))\nprint(float(5))\nprint(complex(2, 3))\n\n3\n5.0\n(2+3j)\n\n\nExercise: Convert an integer to a float and a float to an integer, then print the results.\n\nmy_int = 10\nmy_float = 5.99\n\nconverted_to_float = float(my_int)\nconverted_to_int = int(my_float)\n\nprint(\"Integer to float:\", converted_to_float)\nprint(\"Float to integer:\", converted_to_int)\n\nInteger to float: 10.0\nFloat to integer: 5\n\n\n\n\nChecking Types\n\nprint(type(10))\nprint(type(3.14))\nprint(type(2+3j))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'complex'&gt;\n\n\nExercise: Use type() to check the type of a number you define.\n\nvalue = 42.0\nprint(type(value))\n\n&lt;class 'float'&gt;\n\n\n\n\nCommon Pitfalls\n\nprint(0.1 + 0.2 == 0.3)  # Floating-point precision issue\nprint(5 / 2)             # Division returns float\nprint(5 // 2)            # Floor division returns int\n\nFalse\n2.5\n2",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Number Types in Python"
+    ]
+  },
+  {
     "objectID": "02_python/index.html",
     "href": "02_python/index.html",
     "title": "Python",
@@ -73,102 +108,6 @@
     "text": "This Python tutorial is broken down into three parts:\n\nPython Basics – Covers the basics of Python, including data types, functions, and basic operations.\nFlow, Loops, and Classes – Introduces control flow, loops, and classes in Python, including how to write functions and use loops effectively.\nMiscellaneous Applications – Covers miscellaneous applications of Python, including data manipulation and analysis with pandas, data visualization with matplotlib, and machine learning.",
     "crumbs": [
       "Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/04-Intro-to-Python-strings.html",
-    "href": "02_python/session 1/04-Intro-to-Python-strings.html",
-    "title": "Strings in Python",
-    "section": "",
-    "text": "A string is a sequence of characters. In Python, strings are immutable and can be created with single, double, or triple quotes.\n\nCreating Strings\n\n# Single quotes\nname = 'Alice'\nprint(name)\n\n# Double quotes\ngreeting = \"Hello\"\nprint(greeting)\n\n# Triple quotes for multi-line strings\nmessage = '''This is\na multi-line\nstring.'''\nprint(message)\n\nAlice\nHello\nThis is\na multi-line\nstring.\n\n\nExercise: Create a string with your name and another string with your favorite hobby, then print them together.\n\nname = \"Alice\"\nhobby = \"painting\"\nprint(name + \" enjoys \" + hobby)\n\nAlice enjoys painting\n\n\n\n\nString Length\n\ntext = \"Hello\"\nprint(len(text))\n\n\n\nAccessing Characters (Indexing & Slicing)\n\nword = \"Python\"\nprint(word[0])    # First character\nprint(word[-1])   # Last character\nprint(word[0:3])  # Slice from index 0 to 2\n\nExercise: Print the first three letters of your name using slicing.\n\nname = \"Alice\"\nprint(name[:3])\n\nAli\n\n\n\n\nString Operations\n\nfirst = \"Hello\"\nsecond = \"World\"\nprint(first + \" \" + second)  # Concatenation\nlaugh = \"ha\"\nprint(laugh * 3)              # Repetition\n\nExercise: Concatenate your first and last name with a space between them.\n\nfirst_name = \"Alice\"\nlast_name = \"Smith\"\nfull_name = first_name + \" \" + last_name\nprint(full_name)\n\nAlice Smith\n\n\n\n\nString Methods\n\ns = \"  Hello World  \"\nprint(s.lower())\nprint(s.upper())\nprint(s.title())\nprint(s.strip())\nprint(s.replace(\"World\", \"Python\"))\nprint(s.split())\nprint(\"-\".join([\"a\", \"b\", \"c\"]))\n\nExercise: Take a sentence and: 1. Convert it to uppercase. 2. Replace one word with another. 3. Split it into a list of words.\n\nsentence = \"Python is fun\"\nprint(sentence.upper())\nprint(sentence.replace(\"fun\", \"awesome\"))\nprint(sentence.split())\n\nPYTHON IS FUN\nPython is awesome\n['Python', 'is', 'fun']\n\n\n\n\nEscape Characters\n\nprint(\"Line 1\\nLine 2\")\nprint(\"Tab\\tSpace\")\nprint(\"She said \\\"Hello\\\"\")\n\n\n\nf-Strings (Formatted Strings)\n\nname = \"Alice\"\nage = 25\nprint(f\"My name is {name} and I am {age} years old.\")\n\nExercise: Create two variables (city and temperature) and print a sentence using f-strings.\n\ncity = \"Tokyo\"\ntemperature = 26\nprint(f\"The temperature in {city} is {temperature}°C today.\")\n\nThe temperature in Tokyo is 26°C today.\n\n\n\n\nStrings are Immutable\n\nword = \"Python\"\n# word[0] = \"J\"  # This would cause an error\nword = \"J\" + word[1:]\nprint(word)\n\n\n\nSummary\n\nStrings store sequences of characters.\nThey are immutable.\nYou can use indexing, slicing, concatenation, and repetition.\nString methods allow transformations and queries.\nf-strings provide an easy way to format text.",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Strings in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/02- Intro-to-python-operations.html",
-    "href": "02_python/session 1/02- Intro-to-python-operations.html",
-    "title": "Operations in Python",
-    "section": "",
-    "text": "This section introduces arithmetic operations, string manipulations, and type conversions in Python.",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Operations in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/02- Intro-to-python-operations.html#arithmetic-operations",
-    "href": "02_python/session 1/02- Intro-to-python-operations.html#arithmetic-operations",
-    "title": "Operations in Python",
-    "section": "Arithmetic Operations",
-    "text": "Arithmetic Operations\n\n\n\nOperation\nSymbol\nExample\nResult\n\n\n\n\nAddition\n+\n5 + 3\n8\n\n\nSubtraction\n-\n5 - 2\n3\n\n\nMultiplication\n*\n4 * 2\n8\n\n\nDivision\n/\n10 / 3\n3.333\n\n\nFloor Division\n//\n10 // 3\n3\n\n\nModulus\n%\n10 % 3\n1\n\n\nExponentiation\n**\n2 ** 3\n8\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraction:\", a - b)\nprint(\"Multiplication:\", a * b)\nprint(\"Division:\", a / b)\nprint(\"Floor Division:\", a // b)\nprint(\"Modulus:\", a % b)\nprint(\"Exponentiation:\", a ** b)\n\nAddition: 13\nSubtraction: 7\nMultiplication: 30\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 1\nExponentiation: 1000\n\n\n\nExercise: BMI Calculator\nGiven a weight in kilograms and a height in meters, calculate Body Mass Index (BMI):\nFormula: BMI = weight / (height ** 2)\n\nweight = 70\nheight = 1.75\nbmi = weight / (height ** 2)\nprint(f\"Your BMI is: {bmi}\")\n\nYour BMI is: 22.857142857142858",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Operations in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/02- Intro-to-python-operations.html#string-operations",
-    "href": "02_python/session 1/02- Intro-to-python-operations.html#string-operations",
-    "title": "Operations in Python",
-    "section": "String Operations",
-    "text": "String Operations\nUse + to concatenate strings, and * to repeat them.\n\nfirst_name = \"Alice\"\nlast_name = \"Smith\"\n\nfull_name = first_name + \" \" + last_name\nprint(full_name)\n\nprint(\"Hi! \" * 3)\n\nAlice Smith\nHi! Hi! Hi!",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Operations in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/02- Intro-to-python-operations.html#type-conversion",
-    "href": "02_python/session 1/02- Intro-to-python-operations.html#type-conversion",
-    "title": "Operations in Python",
-    "section": "Type Conversion",
-    "text": "Type Conversion\nConvert between types using int(), float(), and str().\n\nage = 25\nheight = 1.75\n\nprint(\"I am \" + str(age) + \" years old.\")\nprint(f\"My height is {height} meters.\")\n\nI am 25 years old.\nMy height is 1.75 meters.",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Operations in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/02- Intro-to-python-operations.html#summary",
-    "href": "02_python/session 1/02- Intro-to-python-operations.html#summary",
-    "title": "Operations in Python",
-    "section": "Summary",
-    "text": "Summary\n\nArithmetic operations: +, -, *, /, //, %, **\nString operations: concatenation and repetition\nType conversion: int(), float(), str()\nUse f-strings for clean and readable output",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Operations in Python"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/05-Intro-to-Python-lists.html",
-    "href": "02_python/session 1/05-Intro-to-Python-lists.html",
-    "title": "Lists",
-    "section": "",
-    "text": "A list is an ordered, mutable collection that can store multiple items. Lists are one of the most useful and flexible data types in Python.",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Lists"
-    ]
-  },
-  {
-    "objectID": "02_python/session 1/05-Intro-to-Python-lists.html#working-with-nested-lists-matrices",
-    "href": "02_python/session 1/05-Intro-to-Python-lists.html#working-with-nested-lists-matrices",
-    "title": "Lists",
-    "section": "Working with Nested Lists (Matrices)",
-    "text": "Working with Nested Lists (Matrices)\nThis notebook demonstrates how to access elements in a nested list (list of lists), like a matrix or table.\n\nExample: A 3x2 Matrix\n\nmatrix = [\n    [1, 2],    # row 0\n    [3, 4],    # row 1\n    [5, 6]     # row 2\n]\n\nprint(matrix)\n\n[[1, 2], [3, 4], [5, 6]]\n\n\n\n\nAccessing Specific Elements\n\nprint(matrix[0][0])  # 1 (row 0, column 0)\nprint(matrix[0][1])  # 2 (row 0, column 1)\nprint(matrix[2][0])  # 5 (row 2, column 0)\n\n1\n2\n5\n\n\n\n\nLooping Through a Matrix\n\nfor row in matrix:\n    for item in row:\n        print(item, end=' ')\n    print()  # new line after each row",
-    "crumbs": [
-      "Python",
-      "session 1",
-      "Lists"
     ]
   },
   {
@@ -431,123 +370,195 @@
     ]
   },
   {
-    "objectID": "02_python/session 1/03-Intro-to-Python-numbers.html",
-    "href": "02_python/session 1/03-Intro-to-Python-numbers.html",
-    "title": "Number Types in Python",
+    "objectID": "02_python/python-intro/02-Intro-to-Python-operations.html",
+    "href": "02_python/python-intro/02-Intro-to-Python-operations.html",
+    "title": "Operations in Python",
     "section": "",
-    "text": "This notebook introduces Python’s built-in number-related types: integers, floats, and complex numbers, along with type conversion, type checking, and small exercises.\n\nIntegers (int)\nIntegers are whole numbers (positive, negative, or zero) without decimal points.\nExamples:\n\na = 10\nb = -5\nc = 0\nprint(a, b, c)\n\n10 -5 0\n\n\nExercise: Create two integer variables and print their sum.\n\nx = 7\ny = 12\nprint(\"Sum:\", x + y)\n\nSum: 19\n\n\n\n\nFloating Point Numbers (float)\nFloats are numbers with decimal points or in scientific notation.\nExamples:\n\npi = 3.14159\ntax_rate = 0.07\ndistance = -2.5\navogadro = 6.022e23\nprint(pi, tax_rate, distance, avogadro)\n\n3.14159 0.07 -2.5 6.022e+23\n\n\nExercise: Create a float variable for temperature and print it in a sentence using an f-string.\n\ntemperature = 23.5\nprint(f\"The current temperature is {temperature}°C.\")\n\nThe current temperature is 23.5°C.\n\n\n\n\nComplex Numbers (complex)\nComplex numbers have a real and imaginary part, written as a + bj.\nExamples:\n\nz1 = 2 + 3j\nz2 = 1 - 4j\nprint(\"z1:\", z1)\nprint(\"z2:\", z2)\nprint(\"Sum:\", z1 + z2)\n\nz1: (2+3j)\nz2: (1-4j)\nSum: (3-1j)\n\n\n\n\nWhy Use j for Complex Numbers in Python?\nIn mathematics, the imaginary unit is often written as i. However, in engineering, i is commonly used to represent electric current. To avoid confusion, Python uses j to represent the imaginary unit (√-1).\nExample: - 1j means the imaginary number 0 + 1×j. - 2 + 3j means a complex number with real part 2 and imaginary part 3.\n\n# Complex number example with j\nz = 2 + 3j\nprint(z)        # prints 2 + 3j\n\n# Accessing real and imaginary parts\nprint(\"Real part:\", z.real)\nprint(\"Imaginary part:\", z.imag)\n\n(2+3j)\nReal part: 2.0\nImaginary part: 3.0\n\n\nExercise: Create two complex numbers and multiply them.\n\nz1 = 2 + 3j\nz2 = 1 - 4j\nresult = z1 * z2\nprint(\"Multiplication result:\", result)\n\nMultiplication result: (14-5j)\n\n\n\n\nType Conversions\nConvert between number types using int(), float(), and complex().\n\nprint(int(3.7))\nprint(float(5))\nprint(complex(2, 3))\n\n3\n5.0\n(2+3j)\n\n\nExercise: Convert an integer to a float and a float to an integer, then print the results.\n\nmy_int = 10\nmy_float = 5.99\n\nconverted_to_float = float(my_int)\nconverted_to_int = int(my_float)\n\nprint(\"Integer to float:\", converted_to_float)\nprint(\"Float to integer:\", converted_to_int)\n\nInteger to float: 10.0\nFloat to integer: 5\n\n\n\n\nChecking Types\n\nprint(type(10))\nprint(type(3.14))\nprint(type(2+3j))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'complex'&gt;\n\n\nExercise: Use type() to check the type of a number you define.\n\nvalue = 42.0\nprint(type(value))\n\n&lt;class 'float'&gt;\n\n\n\n\nCommon Pitfalls\n\nprint(0.1 + 0.2 == 0.3)  # Floating-point precision issue\nprint(5 / 2)             # Division returns float\nprint(5 // 2)            # Floor division returns int\n\nFalse\n2.5\n2",
+    "text": "This section introduces arithmetic operations, string manipulations, and type conversions in Python.",
     "crumbs": [
       "Python",
-      "session 1",
-      "Number Types in Python"
+      "Introduction to Python",
+      "Operations in Python"
     ]
   },
   {
-    "objectID": "02_python/session 1/06-Intro-to-Python-dictionaries.html",
-    "href": "02_python/session 1/06-Intro-to-Python-dictionaries.html",
-    "title": "Using Dictionaries to Represent Single and Multiple Items",
-    "section": "",
-    "text": "In Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\n\nExamples\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\nExercise - Add a new student to the students list. - Print each student’s name and age. - Try changing a student’s major.\n\nnew_student = {\"name\": \"Kate\", \"age\": 21, \"major\": \"Computer Science\"}\nstudents.append(new_student)\n\nfor student in students:\n    print(f\"{student['name']} is {student['age']} years old.\")\n\nfor student in students:\n    if student[\"name\"] == \"Bob\":\n        student[\"major\"] = \"Political Science\"\n\nprint(students)\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nKate is 21 years old.\n[{'name': 'Alice', 'age': 21, 'major': 'CS'}, {'name': 'Bob', 'age': 22, 'major': 'Political Science'}, {'name': 'Cara', 'age': 20, 'major': 'Biology'}, {'name': 'Kate', 'age': 21, 'major': 'Computer Science'}]",
+    "objectID": "02_python/python-intro/02-Intro-to-Python-operations.html#arithmetic-operations",
+    "href": "02_python/python-intro/02-Intro-to-Python-operations.html#arithmetic-operations",
+    "title": "Operations in Python",
+    "section": "Arithmetic Operations",
+    "text": "Arithmetic Operations\n\n\n\nOperation\nSymbol\nExample\nResult\n\n\n\n\nAddition\n+\n5 + 3\n8\n\n\nSubtraction\n-\n5 - 2\n3\n\n\nMultiplication\n*\n4 * 2\n8\n\n\nDivision\n/\n10 / 3\n3.333\n\n\nFloor Division\n//\n10 // 3\n3\n\n\nModulus\n%\n10 % 3\n1\n\n\nExponentiation\n**\n2 ** 3\n8\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraction:\", a - b)\nprint(\"Multiplication:\", a * b)\nprint(\"Division:\", a / b)\nprint(\"Floor Division:\", a // b)\nprint(\"Modulus:\", a % b)\nprint(\"Exponentiation:\", a ** b)\n\nAddition: 13\nSubtraction: 7\nMultiplication: 30\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 1\nExponentiation: 1000\n\n\n\nExercise: BMI Calculator\nGiven a weight in kilograms and a height in meters, calculate Body Mass Index (BMI):\nFormula: BMI = weight / (height ** 2)\n\nweight = 70\nheight = 1.75\nbmi = weight / (height ** 2)\nprint(f\"Your BMI is: {bmi}\")\n\nYour BMI is: 22.857142857142858",
     "crumbs": [
       "Python",
-      "session 1",
-      "Using Dictionaries to Represent Single and Multiple Items"
+      "Introduction to Python",
+      "Operations in Python"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/02-Intro-to-Python-operations.html#string-operations",
+    "href": "02_python/python-intro/02-Intro-to-Python-operations.html#string-operations",
+    "title": "Operations in Python",
+    "section": "String Operations",
+    "text": "String Operations\nUse + to concatenate strings, and * to repeat them.\n\nfirst_name = \"Alice\"\nlast_name = \"Smith\"\n\nfull_name = first_name + \" \" + last_name\nprint(full_name)\n\nprint(\"Hi! \" * 3)\n\nAlice Smith\nHi! Hi! Hi!",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Operations in Python"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/02-Intro-to-Python-operations.html#type-conversion",
+    "href": "02_python/python-intro/02-Intro-to-Python-operations.html#type-conversion",
+    "title": "Operations in Python",
+    "section": "Type Conversion",
+    "text": "Type Conversion\nConvert between types using int(), float(), and str().\n\nage = 25\nheight = 1.75\n\nprint(\"I am \" + str(age) + \" years old.\")\nprint(f\"My height is {height} meters.\")\n\nI am 25 years old.\nMy height is 1.75 meters.",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Operations in Python"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/02-Intro-to-Python-operations.html#summary",
+    "href": "02_python/python-intro/02-Intro-to-Python-operations.html#summary",
+    "title": "Operations in Python",
+    "section": "Summary",
+    "text": "Summary\n\nArithmetic operations: +, -, *, /, //, %, **\nString operations: concatenation and repetition\nType conversion: int(), float(), str()\nUse f-strings for clean and readable output",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Operations in Python"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/05-Intro-to-Python-lists.html",
+    "href": "02_python/python-intro/05-Intro-to-Python-lists.html",
+    "title": "Lists",
+    "section": "",
+    "text": "A list is an ordered, mutable collection that can store multiple items. Lists are one of the most useful and flexible data types in Python.",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/05-Intro-to-Python-lists.html#working-with-nested-lists-matrices",
+    "href": "02_python/python-intro/05-Intro-to-Python-lists.html#working-with-nested-lists-matrices",
+    "title": "Lists",
+    "section": "Working with Nested Lists (Matrices)",
+    "text": "Working with Nested Lists (Matrices)\nThis notebook demonstrates how to access elements in a nested list (list of lists), like a matrix or table.\n\nExample: A 3x2 Matrix\n\nmatrix = [\n    [1, 2],    # row 0\n    [3, 4],    # row 1\n    [5, 6]     # row 2\n]\n\nprint(matrix)\n\n[[1, 2], [3, 4], [5, 6]]\n\n\n\n\nAccessing Specific Elements\n\nprint(matrix[0][0])  # 1 (row 0, column 0)\nprint(matrix[0][1])  # 2 (row 0, column 1)\nprint(matrix[2][0])  # 5 (row 2, column 0)\n\n1\n2\n5\n\n\n\n\nLooping Through a Matrix\n\nfor row in matrix:\n    for item in row:\n        print(item, end=' ')\n    print()  # new line after each row",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Lists"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html",
+    "title": "What is Python?",
     "section": "",
     "text": "Python is a high-level, general-purpose programming language known for its readability and simplicity. It was created by Guido van Rossum and first released in 1991.\n\n\n\nHigh-level: You don’t need to manage memory or worry about hardware-level operations.\nInterpreted: Python runs line-by-line, which makes it easier to test and debug.\nDynamically typed: You don’t need to declare variable types—they’re inferred at runtime.\nMulti-paradigm: You can write code using procedural, object-oriented, or functional programming styles.\n\n\nPython was named after the British comedy show “Monty Python’s Flying Circus,” not the snake!\n\n\n\n\nPython is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\n\n\n**Java:**\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}\n\n\n# 2. Why is Python So Popular?\n\nPython has rapidly become one of the most widely used programming languages in the world.\nHere are some of the key reasons why developers love using Python:\n\n## Key Reasons for Python’s Popularity\n\n- **Readable and clean syntax** – Python code looks like English.\n- **Beginner-friendly** – great for learning programming fundamentals.\n- **Large ecosystem of libraries** – e.g., NumPy, Pandas, Flask, TensorFlow.\n- **Cross-platform compatibility** – runs on Windows, macOS, Linux.\n- **Used in many domains** – data science, AI, web dev, automation, finance, etc.\n- **Strong community support** – extensive documentation and tutorials online.\n\n\n## Python vs Other Languages (Comparison Table)\n\n| Feature           | Python       | Java        | C++         |\n|------------------|--------------|-------------|-------------|\n| Syntax simplicity| ✅ Easy      | ❌ Verbose  | ❌ Complex  |\n| Speed            | ❌ Slower    | ✅ Fast     | ✅ Very Fast|\n| Learning curve   | ✅ Gentle    | ⚠️ Moderate| ⚠️ Steep   |\n| Use cases        | 🌐 Broad     | 💼 Enterprise| 🕹️ Systems  |\n\n## Developer Productivity Over Execution Speed\nPython prioritizes **developer time** over **machine execution speed**.\nThis makes it ideal for rapid prototyping, teaching, and solving real-world problems efficiently.\n\n# 3. Variables and Types in Python\n\nIn Python, variables are used to store data, and types describe the kind of data a variable holds.\nPython is dynamically typed, so you don't need to declare a variable's type explicitly.\n\n\n## What is a Variable?\n\nA **variable** is like a container for storing a value.\nYou create one using the `=` operator.\n\n::: {#ce34250a .cell execution_count=7}\n``` {.python .cell-code}\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\nprint(name)\nprint(age)\nprint(height)\nprint(is_student)\n\nAlice\n25\n1.68\nTrue\n\n:::\n\n\n\n\nPython automatically assigns a type based on the value. You can use the type() function to check a variable’s type.\n\nprint(type(name))      # &lt;class 'str'&gt;\nprint(type(age))       # &lt;class 'int'&gt;\nprint(type(height))    # &lt;class 'float'&gt;\nprint(type(is_student))# &lt;class 'bool'&gt;\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'bool'&gt;\n\n\n\n\n\n\n\nUsed for whole numbers (positive or negative), without decimals.\na = 42  # age, count, ID number\n\n\n\nUsed for decimal or fractional values.\npi = 3.14159  # measurements, scores, percentages\n\n\n\nText enclosed in quotes. Can include letters, numbers, or symbols.\nname = \"Alice\"\n\n\n\nUsed for logic-based values: True or False.\nis_raining = False\n\n\n\n\n\n\nAn ordered collection of items. Lists can contain values of different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n\n\nStores key-value pairs, like a mini-database or object.\nstudent = {\"name\": \"Alice\", \"grade\": 90}\n\n\n\n\nVariables in Python can be reassigned to values of different types.\n\nx = 10         # x is an int\nprint(type(x))\n\nx = \"ten\"      # now x is a str\nprint(type(x))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n\n\n\n\n\n\nVariables store data\nPython figures out the type for you\nUse type() to inspect variables\nYou can reassign variables to new types\nLists can contain mixed types, which is powerful but should be used carefully\n\n\n\nA list is an ordered, mutable collection of items.\nIt can hold values of the same type or mix different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n::: {#1885b326 .cell execution_count=20}\n``` {.python .cell-code}\nperson = [\"Alice\", 30, 5.6, True]\nprint(person[0])  # \"Alice\"\nprint(person[1])  # 30\n\nAlice\n30\n\n:::\nYou can also modify lists by appending, removing, or updating elements:\n\nperson.append(\"New York\")\nperson[1] = 31\nprint(person)\n\n['Alice', 31, 5.6, True, 'New York']\n\n\n\n\n\nIn Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\n\n\n\n\nAdd a new student to the students list.\nPrint each student’s name and age.\nTry changing a student’s major.\n\n\n# Original list of students\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Add a new student\nnew_student = {\"name\": \"David\", \"age\": 23, \"major\": \"Engineering\"}\nstudents.append(new_student)\n\n# Print each student's name and age\nfor student in students:\n    print(student[\"name\"], \"is\", student[\"age\"], \"years old.\")\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nDavid is 23 years old.",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#key-facts-about-python",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#key-facts-about-python",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#key-facts-about-python",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#key-facts-about-python",
+    "title": "What is Python?",
     "section": "",
     "text": "High-level: You don’t need to manage memory or worry about hardware-level operations.\nInterpreted: Python runs line-by-line, which makes it easier to test and debug.\nDynamically typed: You don’t need to declare variable types—they’re inferred at runtime.\nMulti-paradigm: You can write code using procedural, object-oriented, or functional programming styles.\n\n\nPython was named after the British comedy show “Monty Python’s Flying Circus,” not the snake!",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#why-should-you-care",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#why-should-you-care",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#why-should-you-care",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#why-should-you-care",
+    "title": "What is Python?",
     "section": "",
     "text": "Python is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\n\n\n**Java:**\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}\n\n\n# 2. Why is Python So Popular?\n\nPython has rapidly become one of the most widely used programming languages in the world.\nHere are some of the key reasons why developers love using Python:\n\n## Key Reasons for Python’s Popularity\n\n- **Readable and clean syntax** – Python code looks like English.\n- **Beginner-friendly** – great for learning programming fundamentals.\n- **Large ecosystem of libraries** – e.g., NumPy, Pandas, Flask, TensorFlow.\n- **Cross-platform compatibility** – runs on Windows, macOS, Linux.\n- **Used in many domains** – data science, AI, web dev, automation, finance, etc.\n- **Strong community support** – extensive documentation and tutorials online.\n\n\n## Python vs Other Languages (Comparison Table)\n\n| Feature           | Python       | Java        | C++         |\n|------------------|--------------|-------------|-------------|\n| Syntax simplicity| ✅ Easy      | ❌ Verbose  | ❌ Complex  |\n| Speed            | ❌ Slower    | ✅ Fast     | ✅ Very Fast|\n| Learning curve   | ✅ Gentle    | ⚠️ Moderate| ⚠️ Steep   |\n| Use cases        | 🌐 Broad     | 💼 Enterprise| 🕹️ Systems  |\n\n## Developer Productivity Over Execution Speed\nPython prioritizes **developer time** over **machine execution speed**.\nThis makes it ideal for rapid prototyping, teaching, and solving real-world problems efficiently.\n\n# 3. Variables and Types in Python\n\nIn Python, variables are used to store data, and types describe the kind of data a variable holds.\nPython is dynamically typed, so you don't need to declare a variable's type explicitly.\n\n\n## What is a Variable?\n\nA **variable** is like a container for storing a value.\nYou create one using the `=` operator.\n\n::: {#ce34250a .cell execution_count=7}\n``` {.python .cell-code}\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\nprint(name)\nprint(age)\nprint(height)\nprint(is_student)\n\nAlice\n25\n1.68\nTrue\n\n:::",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#what-are-data-types",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#what-are-data-types",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#what-are-data-types",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#what-are-data-types",
+    "title": "What is Python?",
     "section": "",
     "text": "Python automatically assigns a type based on the value. You can use the type() function to check a variable’s type.\n\nprint(type(name))      # &lt;class 'str'&gt;\nprint(type(age))       # &lt;class 'int'&gt;\nprint(type(height))    # &lt;class 'float'&gt;\nprint(type(is_student))# &lt;class 'bool'&gt;\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'bool'&gt;",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#basic-types",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#basic-types",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#basic-types",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#basic-types",
+    "title": "What is Python?",
     "section": "",
     "text": "Used for whole numbers (positive or negative), without decimals.\na = 42  # age, count, ID number\n\n\n\nUsed for decimal or fractional values.\npi = 3.14159  # measurements, scores, percentages\n\n\n\nText enclosed in quotes. Can include letters, numbers, or symbols.\nname = \"Alice\"\n\n\n\nUsed for logic-based values: True or False.\nis_raining = False",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#container-types",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#container-types",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#container-types",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#container-types",
+    "title": "What is Python?",
     "section": "",
     "text": "An ordered collection of items. Lists can contain values of different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n\n\nStores key-value pairs, like a mini-database or object.\nstudent = {\"name\": \"Alice\", \"grade\": 90}",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#dynamic-typing",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#dynamic-typing",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#dynamic-typing",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#dynamic-typing",
+    "title": "What is Python?",
     "section": "",
     "text": "Variables in Python can be reassigned to values of different types.\n\nx = 10         # x is an int\nprint(type(x))\n\nx = \"ten\"      # now x is a str\nprint(type(x))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
     ]
   },
   {
-    "objectID": "02_python/session 1/01-Intro-to-Python-basic.html#summary",
-    "href": "02_python/session 1/01-Intro-to-Python-basic.html#summary",
-    "title": "1. What is Python?",
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#summary",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#summary",
+    "title": "What is Python?",
     "section": "",
     "text": "Variables store data\nPython figures out the type for you\nUse type() to inspect variables\nYou can reassign variables to new types\nLists can contain mixed types, which is powerful but should be used carefully\n\n\n\nA list is an ordered, mutable collection of items.\nIt can hold values of the same type or mix different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n::: {#1885b326 .cell execution_count=20}\n``` {.python .cell-code}\nperson = [\"Alice\", 30, 5.6, True]\nprint(person[0])  # \"Alice\"\nprint(person[1])  # 30\n\nAlice\n30\n\n:::\nYou can also modify lists by appending, removing, or updating elements:\n\nperson.append(\"New York\")\nperson[1] = 31\nprint(person)\n\n['Alice', 31, 5.6, True, 'New York']\n\n\n\n\n\nIn Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\n\n\n\n\nAdd a new student to the students list.\nPrint each student’s name and age.\nTry changing a student’s major.\n\n\n# Original list of students\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Add a new student\nnew_student = {\"name\": \"David\", \"age\": 23, \"major\": \"Engineering\"}\nstudents.append(new_student)\n\n# Print each student's name and age\nfor student in students:\n    print(student[\"name\"], \"is\", student[\"age\"], \"years old.\")\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nDavid is 23 years old.",
     "crumbs": [
       "Python",
-      "session 1",
-      "1. What is Python?"
+      "Introduction to Python",
+      "What is Python?"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/04-Intro-to-Python-strings.html",
+    "href": "02_python/python-intro/04-Intro-to-Python-strings.html",
+    "title": "Strings in Python",
+    "section": "",
+    "text": "A string is a sequence of characters. In Python, strings are immutable and can be created with single, double, or triple quotes.\n\nCreating Strings\n\n# Single quotes\nname = 'Alice'\nprint(name)\n\n# Double quotes\ngreeting = \"Hello\"\nprint(greeting)\n\n# Triple quotes for multi-line strings\nmessage = '''This is\na multi-line\nstring.'''\nprint(message)\n\nAlice\nHello\nThis is\na multi-line\nstring.\n\n\nExercise: Create a string with your name and another string with your favorite hobby, then print them together.\n\nname = \"Alice\"\nhobby = \"painting\"\nprint(name + \" enjoys \" + hobby)\n\nAlice enjoys painting\n\n\n\n\nString Length\n\ntext = \"Hello\"\nprint(len(text))\n\n\n\nAccessing Characters (Indexing & Slicing)\n\nword = \"Python\"\nprint(word[0])    # First character\nprint(word[-1])   # Last character\nprint(word[0:3])  # Slice from index 0 to 2\n\nExercise: Print the first three letters of your name using slicing.\n\nname = \"Alice\"\nprint(name[:3])\n\nAli\n\n\n\n\nString Operations\n\nfirst = \"Hello\"\nsecond = \"World\"\nprint(first + \" \" + second)  # Concatenation\nlaugh = \"ha\"\nprint(laugh * 3)              # Repetition\n\nExercise: Concatenate your first and last name with a space between them.\n\nfirst_name = \"Alice\"\nlast_name = \"Smith\"\nfull_name = first_name + \" \" + last_name\nprint(full_name)\n\nAlice Smith\n\n\n\n\nString Methods\n\ns = \"  Hello World  \"\nprint(s.lower())\nprint(s.upper())\nprint(s.title())\nprint(s.strip())\nprint(s.replace(\"World\", \"Python\"))\nprint(s.split())\nprint(\"-\".join([\"a\", \"b\", \"c\"]))\n\nExercise: Take a sentence and: 1. Convert it to uppercase. 2. Replace one word with another. 3. Split it into a list of words.\n\nsentence = \"Python is fun\"\nprint(sentence.upper())\nprint(sentence.replace(\"fun\", \"awesome\"))\nprint(sentence.split())\n\nPYTHON IS FUN\nPython is awesome\n['Python', 'is', 'fun']\n\n\n\n\nEscape Characters\n\nprint(\"Line 1\\nLine 2\")\nprint(\"Tab\\tSpace\")\nprint(\"She said \\\"Hello\\\"\")\n\n\n\nf-Strings (Formatted Strings)\n\nname = \"Alice\"\nage = 25\nprint(f\"My name is {name} and I am {age} years old.\")\n\nExercise: Create two variables (city and temperature) and print a sentence using f-strings.\n\ncity = \"Tokyo\"\ntemperature = 26\nprint(f\"The temperature in {city} is {temperature}°C today.\")\n\nThe temperature in Tokyo is 26°C today.\n\n\n\n\nStrings are Immutable\n\nword = \"Python\"\n# word[0] = \"J\"  # This would cause an error\nword = \"J\" + word[1:]\nprint(word)\n\n\n\nSummary\n\nStrings store sequences of characters.\nThey are immutable.\nYou can use indexing, slicing, concatenation, and repetition.\nString methods allow transformations and queries.\nf-strings provide an easy way to format text.",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "Strings in Python"
     ]
   }
 ]
