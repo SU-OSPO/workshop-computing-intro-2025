@@ -1,6 +1,7 @@
 ---
-title: 'Python (Hinds 111): flow, loops, and classes'
+title: 'Flow, Loops, and Classes'
 jupyter: python3
+order: 2
 ---
 
 
