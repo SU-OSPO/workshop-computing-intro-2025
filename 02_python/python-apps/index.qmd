@@ -1,0 +1,11 @@
+---
+title: "Advanced Applications"
+order: 3
+listing:
+  type: table
+  sort: false
+  fields: [title, description, reading-time]
+  sort-ui: false
+  filter-ui: false
+---
+

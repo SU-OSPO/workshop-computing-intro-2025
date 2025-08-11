@@ -1,5 +1,0 @@
----
-title: "Miscellaneous Applications"
-order: 4
----
-
