@@ -458,7 +458,7 @@
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html",
     "title": "What is Python?",
     "section": "",
-    "text": "Python is a high-level, general-purpose programming language known for its readability and simplicity. It was created by Guido van Rossum and first released in 1991.\n\n\n\nHigh-level: You don’t need to manage memory or worry about hardware-level operations.\nInterpreted: Python runs line-by-line, which makes it easier to test and debug.\nDynamically typed: You don’t need to declare variable types—they’re inferred at runtime.\nMulti-paradigm: You can write code using procedural, object-oriented, or functional programming styles.\n\n\nPython was named after the British comedy show “Monty Python’s Flying Circus,” not the snake!\n\n\n\n\nPython is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\n\n\n**Java:**\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}\n\n\n# 2. Why is Python So Popular?\n\nPython has rapidly become one of the most widely used programming languages in the world.\nHere are some of the key reasons why developers love using Python:\n\n## Key Reasons for Python’s Popularity\n\n- **Readable and clean syntax** – Python code looks like English.\n- **Beginner-friendly** – great for learning programming fundamentals.\n- **Large ecosystem of libraries** – e.g., NumPy, Pandas, Flask, TensorFlow.\n- **Cross-platform compatibility** – runs on Windows, macOS, Linux.\n- **Used in many domains** – data science, AI, web dev, automation, finance, etc.\n- **Strong community support** – extensive documentation and tutorials online.\n\n\n## Python vs Other Languages (Comparison Table)\n\n| Feature           | Python       | Java        | C++         |\n|------------------|--------------|-------------|-------------|\n| Syntax simplicity| ✅ Easy      | ❌ Verbose  | ❌ Complex  |\n| Speed            | ❌ Slower    | ✅ Fast     | ✅ Very Fast|\n| Learning curve   | ✅ Gentle    | ⚠️ Moderate| ⚠️ Steep   |\n| Use cases        | 🌐 Broad     | 💼 Enterprise| 🕹️ Systems  |\n\n## Developer Productivity Over Execution Speed\nPython prioritizes **developer time** over **machine execution speed**.\nThis makes it ideal for rapid prototyping, teaching, and solving real-world problems efficiently.\n\n# 3. Variables and Types in Python\n\nIn Python, variables are used to store data, and types describe the kind of data a variable holds.\nPython is dynamically typed, so you don't need to declare a variable's type explicitly.\n\n\n## What is a Variable?\n\nA **variable** is like a container for storing a value.\nYou create one using the `=` operator.\n\n::: {#ce34250a .cell execution_count=7}\n``` {.python .cell-code}\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\nprint(name)\nprint(age)\nprint(height)\nprint(is_student)\n\nAlice\n25\n1.68\nTrue\n\n:::\n\n\n\n\nPython automatically assigns a type based on the value. You can use the type() function to check a variable’s type.\n\nprint(type(name))      # &lt;class 'str'&gt;\nprint(type(age))       # &lt;class 'int'&gt;\nprint(type(height))    # &lt;class 'float'&gt;\nprint(type(is_student))# &lt;class 'bool'&gt;\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'bool'&gt;\n\n\n\n\n\n\n\nUsed for whole numbers (positive or negative), without decimals.\na = 42  # age, count, ID number\n\n\n\nUsed for decimal or fractional values.\npi = 3.14159  # measurements, scores, percentages\n\n\n\nText enclosed in quotes. Can include letters, numbers, or symbols.\nname = \"Alice\"\n\n\n\nUsed for logic-based values: True or False.\nis_raining = False\n\n\n\n\n\n\nAn ordered collection of items. Lists can contain values of different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n\n\nStores key-value pairs, like a mini-database or object.\nstudent = {\"name\": \"Alice\", \"grade\": 90}\n\n\n\n\nVariables in Python can be reassigned to values of different types.\n\nx = 10         # x is an int\nprint(type(x))\n\nx = \"ten\"      # now x is a str\nprint(type(x))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n\n\n\n\n\n\nVariables store data\nPython figures out the type for you\nUse type() to inspect variables\nYou can reassign variables to new types\nLists can contain mixed types, which is powerful but should be used carefully\n\n\n\nA list is an ordered, mutable collection of items.\nIt can hold values of the same type or mix different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n::: {#1885b326 .cell execution_count=20}\n``` {.python .cell-code}\nperson = [\"Alice\", 30, 5.6, True]\nprint(person[0])  # \"Alice\"\nprint(person[1])  # 30\n\nAlice\n30\n\n:::\nYou can also modify lists by appending, removing, or updating elements:\n\nperson.append(\"New York\")\nperson[1] = 31\nprint(person)\n\n['Alice', 31, 5.6, True, 'New York']\n\n\n\n\n\nIn Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\n\n\n\n\nAdd a new student to the students list.\nPrint each student’s name and age.\nTry changing a student’s major.\n\n\n# Original list of students\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Add a new student\nnew_student = {\"name\": \"David\", \"age\": 23, \"major\": \"Engineering\"}\nstudents.append(new_student)\n\n# Print each student's name and age\nfor student in students:\n    print(student[\"name\"], \"is\", student[\"age\"], \"years old.\")\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nDavid is 23 years old.",
+    "text": "Python is a high-level, general-purpose programming language known for its readability and simplicity. It was created by Guido van Rossum and first released in 1991.\n\n\n\nHigh-level: You don’t need to manage memory or worry about hardware-level operations.\nInterpreted: Python runs line-by-line, which makes it easier to test and debug.\nDynamically typed: You don’t need to declare variable types—they’re inferred at runtime.\nMulti-paradigm: You can write code using procedural, object-oriented, or functional programming styles.\n\n\nPython was named after the British comedy show “Monty Python’s Flying Circus,” not the snake!\n\n\n\n\nPython is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\nJava:\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -482,7 +482,55 @@
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#why-should-you-care",
     "title": "What is Python?",
     "section": "",
-    "text": "Python is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\n\n\n**Java:**\n```java\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}\n\n\n# 2. Why is Python So Popular?\n\nPython has rapidly become one of the most widely used programming languages in the world.\nHere are some of the key reasons why developers love using Python:\n\n## Key Reasons for Python’s Popularity\n\n- **Readable and clean syntax** – Python code looks like English.\n- **Beginner-friendly** – great for learning programming fundamentals.\n- **Large ecosystem of libraries** – e.g., NumPy, Pandas, Flask, TensorFlow.\n- **Cross-platform compatibility** – runs on Windows, macOS, Linux.\n- **Used in many domains** – data science, AI, web dev, automation, finance, etc.\n- **Strong community support** – extensive documentation and tutorials online.\n\n\n## Python vs Other Languages (Comparison Table)\n\n| Feature           | Python       | Java        | C++         |\n|------------------|--------------|-------------|-------------|\n| Syntax simplicity| ✅ Easy      | ❌ Verbose  | ❌ Complex  |\n| Speed            | ❌ Slower    | ✅ Fast     | ✅ Very Fast|\n| Learning curve   | ✅ Gentle    | ⚠️ Moderate| ⚠️ Steep   |\n| Use cases        | 🌐 Broad     | 💼 Enterprise| 🕹️ Systems  |\n\n## Developer Productivity Over Execution Speed\nPython prioritizes **developer time** over **machine execution speed**.\nThis makes it ideal for rapid prototyping, teaching, and solving real-world problems efficiently.\n\n# 3. Variables and Types in Python\n\nIn Python, variables are used to store data, and types describe the kind of data a variable holds.\nPython is dynamically typed, so you don't need to declare a variable's type explicitly.\n\n\n## What is a Variable?\n\nA **variable** is like a container for storing a value.\nYou create one using the `=` operator.\n\n::: {#ce34250a .cell execution_count=7}\n``` {.python .cell-code}\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\nprint(name)\nprint(age)\nprint(height)\nprint(is_student)\n\nAlice\n25\n1.68\nTrue\n\n:::",
+    "text": "Python is designed to be: - Simple to read and write: The syntax is clean and English-like. - Beginner-friendly: Python has a gentle learning curve. - Powerful and versatile: It’s used by professionals in many fields.\nHere’s what Python code looks like compared to another language:\n\n\nPython:\nprint(\"Hello, world!\")\nJava:\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, world!\");\n    }\n}",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "What is Python?"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#key-reasons-for-pythons-popularity",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#key-reasons-for-pythons-popularity",
+    "title": "What is Python?",
+    "section": "Key Reasons for Python’s Popularity",
+    "text": "Key Reasons for Python’s Popularity\n\nReadable and clean syntax – Python code looks like English.\nBeginner-friendly – great for learning programming fundamentals.\nLarge ecosystem of libraries – e.g., NumPy, Pandas, Flask, TensorFlow.\nCross-platform compatibility – runs on Windows, macOS, Linux.\nUsed in many domains – data science, AI, web dev, automation, finance, etc.\nStrong community support – extensive documentation and tutorials online.",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "What is Python?"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#python-vs-other-languages-comparison-table",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#python-vs-other-languages-comparison-table",
+    "title": "What is Python?",
+    "section": "Python vs Other Languages (Comparison Table)",
+    "text": "Python vs Other Languages (Comparison Table)\n\n\n\nFeature\nPython\nJava\nC++\n\n\n\n\nSyntax simplicity\n✅ Easy\n❌ Verbose\n❌ Complex\n\n\nSpeed\n❌ Slower\n✅ Fast\n✅ Very Fast\n\n\nLearning curve\n✅ Gentle\n⚠️ Moderate\n⚠️ Steep\n\n\nUse cases\n🌐 Broad\n💼 Enterprise\n🕹️ Systems",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "What is Python?"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#developer-productivity-over-execution-speed",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#developer-productivity-over-execution-speed",
+    "title": "What is Python?",
+    "section": "Developer Productivity Over Execution Speed",
+    "text": "Developer Productivity Over Execution Speed\nPython prioritizes developer time over machine execution speed. This makes it ideal for rapid prototyping, teaching, and solving real-world problems efficiently.",
+    "crumbs": [
+      "Python",
+      "Introduction to Python",
+      "What is Python?"
+    ]
+  },
+  {
+    "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#what-is-a-variable",
+    "href": "02_python/python-intro/01-Intro-to-Python-basic.html#what-is-a-variable",
+    "title": "What is Python?",
+    "section": "What is a Variable?",
+    "text": "What is a Variable?\nA variable is like a container for storing a value. You create one using the = operator.\n\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\nprint(name)\nprint(age)\nprint(height)\nprint(is_student)\n\nAlice\n25\n1.68\nTrue",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -493,8 +541,8 @@
     "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#what-are-data-types",
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#what-are-data-types",
     "title": "What is Python?",
-    "section": "",
-    "text": "Python automatically assigns a type based on the value. You can use the type() function to check a variable’s type.\n\nprint(type(name))      # &lt;class 'str'&gt;\nprint(type(age))       # &lt;class 'int'&gt;\nprint(type(height))    # &lt;class 'float'&gt;\nprint(type(is_student))# &lt;class 'bool'&gt;\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'bool'&gt;",
+    "section": "What are Data Types?",
+    "text": "What are Data Types?\nPython automatically assigns a type based on the value. You can use the type() function to check a variable’s type.\n\nprint(type(name))      # &lt;class 'str'&gt;\nprint(type(age))       # &lt;class 'int'&gt;\nprint(type(height))    # &lt;class 'float'&gt;\nprint(type(is_student))# &lt;class 'bool'&gt;\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'bool'&gt;",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -505,8 +553,8 @@
     "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#basic-types",
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#basic-types",
     "title": "What is Python?",
-    "section": "",
-    "text": "Used for whole numbers (positive or negative), without decimals.\na = 42  # age, count, ID number\n\n\n\nUsed for decimal or fractional values.\npi = 3.14159  # measurements, scores, percentages\n\n\n\nText enclosed in quotes. Can include letters, numbers, or symbols.\nname = \"Alice\"\n\n\n\nUsed for logic-based values: True or False.\nis_raining = False",
+    "section": "Basic Types",
+    "text": "Basic Types\n\nint – Integer\nUsed for whole numbers (positive or negative), without decimals.\na = 42  # age, count, ID number\n\n\nfloat – Floating Point Number\nUsed for decimal or fractional values.\npi = 3.14159  # measurements, scores, percentages\n\n\nstr – String\nText enclosed in quotes. Can include letters, numbers, or symbols.\nname = \"Alice\"\n\n\nbool – Boolean\nUsed for logic-based values: True or False.\nis_raining = False",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -517,8 +565,8 @@
     "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#container-types",
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#container-types",
     "title": "What is Python?",
-    "section": "",
-    "text": "An ordered collection of items. Lists can contain values of different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n\n\nStores key-value pairs, like a mini-database or object.\nstudent = {\"name\": \"Alice\", \"grade\": 90}",
+    "section": "Container Types",
+    "text": "Container Types\n\nlist – List\nAn ordered collection of items. Lists can contain values of different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n\ndict – Dictionary\nStores key-value pairs, like a mini-database or object.\nstudent = {\"name\": \"Alice\", \"grade\": 90}",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -529,8 +577,8 @@
     "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#dynamic-typing",
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#dynamic-typing",
     "title": "What is Python?",
-    "section": "",
-    "text": "Variables in Python can be reassigned to values of different types.\n\nx = 10         # x is an int\nprint(type(x))\n\nx = \"ten\"      # now x is a str\nprint(type(x))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;",
+    "section": "Dynamic Typing",
+    "text": "Dynamic Typing\nVariables in Python can be reassigned to values of different types.\n\nx = 10         # x is an int\nprint(type(x))\n\nx = \"ten\"      # now x is a str\nprint(type(x))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;",
     "crumbs": [
       "Python",
       "Introduction to Python",
@@ -541,8 +589,8 @@
     "objectID": "02_python/python-intro/01-Intro-to-Python-basic.html#summary",
     "href": "02_python/python-intro/01-Intro-to-Python-basic.html#summary",
     "title": "What is Python?",
-    "section": "",
-    "text": "Variables store data\nPython figures out the type for you\nUse type() to inspect variables\nYou can reassign variables to new types\nLists can contain mixed types, which is powerful but should be used carefully\n\n\n\nA list is an ordered, mutable collection of items.\nIt can hold values of the same type or mix different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\n::: {#1885b326 .cell execution_count=20}\n``` {.python .cell-code}\nperson = [\"Alice\", 30, 5.6, True]\nprint(person[0])  # \"Alice\"\nprint(person[1])  # 30\n\nAlice\n30\n\n:::\nYou can also modify lists by appending, removing, or updating elements:\n\nperson.append(\"New York\")\nperson[1] = 31\nprint(person)\n\n['Alice', 31, 5.6, True, 'New York']\n\n\n\n\n\nIn Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\n\n\n\n\nAdd a new student to the students list.\nPrint each student’s name and age.\nTry changing a student’s major.\n\n\n# Original list of students\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Add a new student\nnew_student = {\"name\": \"David\", \"age\": 23, \"major\": \"Engineering\"}\nstudents.append(new_student)\n\n# Print each student's name and age\nfor student in students:\n    print(student[\"name\"], \"is\", student[\"age\"], \"years old.\")\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nDavid is 23 years old.",
+    "section": "✅ Summary",
+    "text": "✅ Summary\n\nVariables store data\nPython figures out the type for you\nUse type() to inspect variables\nYou can reassign variables to new types\nLists can contain mixed types, which is powerful but should be used carefully\n\n\nList\nA list is an ordered, mutable collection of items.\nIt can hold values of the same type or mix different types.\n# Same-type list\ncolors = [\"red\", \"green\", \"blue\"]\n\n# Mixed-type list\nperson = [\"Alice\", 30, 5.6, True]\n\nperson = [\"Alice\", 30, 5.6, True]\nprint(person[0])  # \"Alice\"\nprint(person[1])  # 30\n\nAlice\n30\n\n\nYou can also modify lists by appending, removing, or updating elements:\n\nperson.append(\"New York\")\nperson[1] = 31\nprint(person)\n\n['Alice', 31, 5.6, True, 'New York']\n\n\n\n\nUsing Dictionaries to Represent Single and Multiple Items\nIn Python, a dictionary represents one item (e.g., one student). To store multiple such items, we use a list of dictionaries.\nOne Dictionary for One Student\n\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 21,\n    \"major\": \"Computer Science\"\n}\nprint(student[\"name\"])\nprint(student[\"major\"])\n\nAlice\nComputer Science\n\n\nList of Dictionaries for Multiple Students\n\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Accessing second student's major\nprint(students[1][\"major\"])\n\nMath\n\n\nLooping Through a List of Dictionaries\n\nfor student in students:\n    print(student[\"name\"], \"is studying\", student[\"major\"])\n\nAlice is studying CS\nBob is studying Math\nCara is studying Biology\n\n\n\n\nExercise\n\nAdd a new student to the students list.\nPrint each student’s name and age.\nTry changing a student’s major.\n\n\n# Original list of students\nstudents = [\n    {\"name\": \"Alice\", \"age\": 21, \"major\": \"CS\"},\n    {\"name\": \"Bob\", \"age\": 22, \"major\": \"Math\"},\n    {\"name\": \"Cara\", \"age\": 20, \"major\": \"Biology\"}\n]\n\n# Add a new student\nnew_student = {\"name\": \"David\", \"age\": 23, \"major\": \"Engineering\"}\nstudents.append(new_student)\n\n# Print each student's name and age\nfor student in students:\n    print(student[\"name\"], \"is\", student[\"age\"], \"years old.\")\n\nAlice is 21 years old.\nBob is 22 years old.\nCara is 20 years old.\nDavid is 23 years old.",
     "crumbs": [
       "Python",
       "Introduction to Python",
