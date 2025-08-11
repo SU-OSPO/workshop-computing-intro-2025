@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025</title>
+<title>visualization_with_matplotlib – Computing 101 Workshop – Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,14 +58,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../02_python/python-flow-loops-classes.html" rel="next">
-<link href="../../02_python/python-intro/05-Intro-to-Python-lists.html" rel="prev">
+<link href="../../03_github/index.html" rel="next">
+<link href="../../02_python/Python_applications/decisionTree_sklearn.html" rel="prev">
 <link href="../..//images/SU-OSPO.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -104,19 +104,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta property="og:title" content="Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
+<meta property="og:title" content="Computing 101 Workshop – Summer 2025">
+<meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/Python_applications/visualization_with_matplotlib_files/figure-html/cell-6-output-1.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
-<meta property="og:image:height" content="968">
-<meta property="og:image:width" content="968">
-<meta name="twitter:title" content="Using Dictionaries to Represent Single and Multiple Items – Computing 101 Workshop – Summer 2025">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
-<meta name="twitter:image-height" content="968">
-<meta name="twitter:image-width" content="968">
+<meta property="og:image:height" content="455">
+<meta property="og:image:width" content="579">
+<meta name="twitter:title" content="Computing 101 Workshop – Summer 2025">
+<meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/Python_applications/visualization_with_matplotlib_files/figure-html/cell-6-output-1.png">
+<meta name="twitter:image-height" content="455">
+<meta name="twitter:image-width" content="579">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -152,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/index.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html">Using Dictionaries to Represent Single and Multiple Items</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/Python_applications/data_with_pandas.html">Python Applications</a></li><li class="breadcrumb-item"><a href="../../02_python/Python_applications/visualization_with_matplotlib.html">Visualization with Matplotlib</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -211,11 +212,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../02_python/python-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02_python/python-intro/01-Intro-to-Python-basic.html" class="sidebar-item-text sidebar-link">
@@ -248,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using Dictionaries to Represent Single and Multiple Items</span></a>
   </div>
 </li>
@@ -286,13 +287,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Python Applications</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../02_python/Python_applications/data_with_pandas.html" class="sidebar-item-text sidebar-link">
@@ -307,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_python/Python_applications/visualization_with_matplotlib.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/Python_applications/visualization_with_matplotlib.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Visualization with Matplotlib</span></a>
   </div>
 </li>
@@ -379,107 +380,356 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-intro/06-Intro-to-Python-dictionaries.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/Python_applications/data_with_pandas.html">Python Applications</a></li><li class="breadcrumb-item"><a href="../../02_python/Python_applications/visualization_with_matplotlib.html">Visualization with Matplotlib</a></li></ol></nav></header>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../02_python/index.html">Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/index.html">Introduction to Python</a></li><li class="breadcrumb-item"><a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html">Using Dictionaries to Represent Single and Multiple Items</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Using Dictionaries to Represent Single and Multiple Items</h1>
+
+
+
+<div id="cell-0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754824692791,&quot;user_tz&quot;:240,&quot;elapsed&quot;:22824,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="9747182e-cfe2-4e08-a37a-fd00f0820b39" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>uploaded <span class="op">=</span> files.upload()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+     <input type="file" id="files-cc14eb8c-9d42-4a76-a040-f981d6580132" name="files[]" multiple="" disabled="" style="border:none">
+     <output id="result-cc14eb8c-9d42-4a76-a040-f981d6580132">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+      <script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> 
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>In Python, a <strong>dictionary</strong> represents one item (e.g., one student). To store multiple such items, we use a <strong>list of dictionaries</strong>.</p>
-<section id="examples" class="level3">
-<h3 class="anchored" data-anchor-id="examples">Examples</h3>
-<p><strong>One Dictionary for One Student</strong></p>
-<div id="ae2242ed" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>student <span class="op">=</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name"</span>: <span class="st">"Alice"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: <span class="dv">21</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"major"</span>: <span class="st">"Computer Science"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student[<span class="st">"name"</span>])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student[<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Alice
-Computer Science</code></pre>
+<pre><code>Saving diabetes.csv to diabetes.csv</code></pre>
 </div>
 </div>
-<p><strong>List of Dictionaries for Multiple Students</strong></p>
-<div id="c348f247" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">21</span>, <span class="st">"major"</span>: <span class="st">"CS"</span>},</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Bob"</span>, <span class="st">"age"</span>: <span class="dv">22</span>, <span class="st">"major"</span>: <span class="st">"Math"</span>},</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"name"</span>: <span class="st">"Cara"</span>, <span class="st">"age"</span>: <span class="dv">20</span>, <span class="st">"major"</span>: <span class="st">"Biology"</span>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing second student's major</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(students[<span class="dv">1</span>][<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Math</code></pre>
+<div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754824698746,&quot;user_tz&quot;:240,&quot;elapsed&quot;:416,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754824701617,&quot;user_tz&quot;:240,&quot;elapsed&quot;:46,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'diabetes.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754824704280,&quot;user_tz&quot;:240,&quot;elapsed&quot;:8,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Line Chart</li>
+</ol>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754825960495,&quot;user_tz&quot;:240,&quot;elapsed&quot;:413,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="5e43f727-3e71-451d-dda9-4c0f40e631c4" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Parameter: x, y Coordinates for data points</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">24</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Mike <span class="op">=</span> [<span class="dv">95</span>, <span class="dv">120</span>, <span class="dv">141</span>, <span class="dv">159</span>, <span class="dv">174</span>, <span class="dv">185</span>, <span class="dv">187</span>, <span class="dv">187</span>]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>George <span class="op">=</span> [<span class="dv">99</span>, <span class="dv">126</span>, <span class="dv">145</span>, <span class="dv">163</span>, <span class="dv">179</span>, <span class="dv">191</span>, <span class="dv">191</span>, <span class="dv">191</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.plot(age, Mike, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="dv">3</span>, marker<span class="op">=</span><span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">8</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.plot(age, George, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">3</span>, marker<span class="op">=</span><span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">8</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Line Chart"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Height (cm)'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Age (years)'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>plt.legend(labels<span class="op">=</span>(<span class="st">'Mike'</span>, <span class="st">'George'</span>))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<p><strong>Looping Through a List of Dictionaries</strong></p>
-<div id="07600006" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(student[<span class="st">"name"</span>], <span class="st">"is studying"</span>, student[<span class="st">"major"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Alice is studying CS
-Bob is studying Math
-Cara is studying Biology</code></pre>
+</div>
+<ol start="2" type="1">
+<li>Bar Chart</li>
+</ol>
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754825052145,&quot;user_tz&quot;:240,&quot;elapsed&quot;:251,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="1cd7ea3d-fc2f-493e-8b14-f28036c09561" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code creates a simple bar chart to show total bills for different days.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># X-axis represents the days and Y-axis shows total bill amount.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">'Thur'</span>, <span class="st">'Fri'</span>, <span class="st">'Sat'</span>, <span class="st">'Sun'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">170</span>, <span class="dv">120</span>, <span class="dv">250</span>, <span class="dv">190</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.bar(x, y, color<span class="op">=</span><span class="st">'green'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bar Chart"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Day"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Total Bill"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<p><strong>Exercise</strong></p>
-<ul>
-<li>Add a new student to the <code>students</code> list.</li>
-<li>Print each student’s name and age.</li>
-<li>Try changing a student’s major.</li>
-</ul>
-<div id="a0eea3b8" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_student <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Kate"</span>, <span class="st">"age"</span>: <span class="dv">21</span>, <span class="st">"major"</span>: <span class="st">"Computer Science"</span>}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>students.append(new_student)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>student[<span class="st">'name'</span>]<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>student[<span class="st">'age'</span>]<span class="sc">}</span><span class="ss"> years old."</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> student <span class="kw">in</span> students:</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> student[<span class="st">"name"</span>] <span class="op">==</span> <span class="st">"Bob"</span>:</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        student[<span class="st">"major"</span>] <span class="op">=</span> <span class="st">"Political Science"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Alice is 21 years old.
-Bob is 22 years old.
-Cara is 20 years old.
-Kate is 21 years old.
-[{'name': 'Alice', 'age': 21, 'major': 'CS'}, {'name': 'Bob', 'age': 22, 'major': 'Political Science'}, {'name': 'Cara', 'age': 20, 'major': 'Biology'}, {'name': 'Kate', 'age': 21, 'major': 'Computer Science'}]</code></pre>
+</div>
+<ol start="3" type="1">
+<li>Histogram</li>
+</ol>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754825058492,&quot;user_tz&quot;:240,&quot;elapsed&quot;:464,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="6ea5b85d-1eed-420c-a6d0-f39e1af09cde" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pregnancies <span class="op">=</span> df[<span class="st">'Pregnancies'</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.hist(pregnancies, bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>,linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Histogram"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Number of Pregnancy"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Scatter Plot</li>
+</ol>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754827028375,&quot;user_tz&quot;:240,&quot;elapsed&quot;:236,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="089f81b2-f657-4f97-aee3-f804f49a3c86" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BMI <span class="op">=</span> df[<span class="st">'BMI'</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>BloodPressure <span class="op">=</span> df[<span class="st">'BloodPressure'</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(BMI, BloodPressure, s <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatter Plot"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"BMI"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Blood Pressure"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>b, a <span class="op">=</span> np.polyfit(BMI, BloodPressure, <span class="dv">1</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.plot(BMI, b<span class="op">*</span>BMI <span class="op">+</span> a, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Pie Chart</li>
+</ol>
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754825100952,&quot;user_tz&quot;:240,&quot;elapsed&quot;:329,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="7d3688d8-2049-4edd-8c8f-e6e350eae273" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code creates a simple pie chart to visualize distribution of different car brands.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Each slice of pie represents the proportion of cars for each brand in the dataset.</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cars <span class="op">=</span> [<span class="st">'AUDI'</span>, <span class="st">'BMW'</span>, <span class="st">'FORD'</span>,<span class="st">'TESLA'</span>, <span class="st">'JAGUAR'</span>,]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">23</span>, <span class="dv">10</span>, <span class="dv">35</span>, <span class="dv">15</span>, <span class="dv">12</span>]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> ( <span class="st">"orange"</span>, <span class="st">"cyan"</span>, <span class="st">"yellow"</span>,<span class="st">"grey"</span>, <span class="st">"green"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.pie(data, labels<span class="op">=</span>cars, explode<span class="op">=</span>explode, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%d%%</span><span class="st">'</span>, shadow <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.title("Pie Chart")</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Box Plot</li>
+</ol>
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754825275808,&quot;user_tz&quot;:240,&quot;elapsed&quot;:179,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;}}}" data-outputid="d3405131-dd70-4208-a68c-186d56a0fdbc" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Pregnancies <span class="op">=</span> df[<span class="st">'Pregnancies'</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Glucose <span class="op">=</span> df[<span class="st">'Glucose'</span>]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>BloodPressure <span class="op">=</span> df[<span class="st">'BloodPressure'</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>SkinThickness <span class="op">=</span> df[<span class="st">'SkinThickness'</span>]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>Age <span class="op">=</span> df[<span class="st">'Age'</span>]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> Pregnancies</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>plt.boxplot(data)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Groups"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Values"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Box Plot"</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualization_with_matplotlib_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -883,13 +1133,13 @@ Kate is 21 years old.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../02_python/python-intro/05-Intro-to-Python-lists.html" class="pagination-link" aria-label="Lists">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lists</span>
+      <a href="../../02_python/Python_applications/decisionTree_sklearn.html" class="pagination-link" aria-label="DecisionTree Sklearn">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">DecisionTree Sklearn</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../02_python/python-flow-loops-classes.html" class="pagination-link" aria-label="Flow, Loops, and Classes">
-        <span class="nav-page-text">Flow, Loops, and Classes</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../03_github/index.html" class="pagination-link" aria-label="<code>git</code> and GitHub">
+        <span class="nav-page-text"><code>git</code> and GitHub</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -901,7 +1151,7 @@ Kate is 21 years old.
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-intro/06-Intro-to-Python-dictionaries.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/Python_applications/visualization_with_matplotlib.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
