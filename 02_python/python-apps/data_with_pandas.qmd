@@ -1,0 +1,367 @@
+---
+title: "Handling Data with Pandas"
+jupyter: python3
+execute:
+  error: true
+order: 1
+---
+
+```{python}
+# Import libraries
+import pandas as pd
+import numpy as np
+```
+
+1. Create a pandas DataFrame
+
+```{python}
+kids = [['Mike', 'boy', 7, 128], ['George', 'boy', 4, 112], ['Lily', 'girl', 8, 132], ['Yu', 'girl', 10, 143], ['Dan', 'boy', 9, 138]]
+
+colNames = ['name', 'gender', 'age', 'height']
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754653890523, user_tz: 240, elapsed: 20, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df = pd.DataFrame(data = kids, columns = colNames)
+df
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 210}
+#| executionInfo: {status: ok, timestamp: 1754653902698, user_tz: 240, elapsed: 7, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Check the column data types
+df.dtypes
+```
+
+2. Import data from csv file
+
+```{python}
+df = pd.read_csv('diabetes.csv')
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754663054240, user_tz: 240, elapsed: 54, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754660730399, user_tz: 240, elapsed: 40, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Select top N number of records (default = 5)
+df.head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754660733042, user_tz: 240, elapsed: 22, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Select bottom N number of records (default = 5)
+df.tail()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 366}
+#| executionInfo: {status: ok, timestamp: 1754660735393, user_tz: 240, elapsed: 9, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Check the column data types
+df.dtypes
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754660737950, user_tz: 240, elapsed: 12, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Get the number of rows and columns in your dataframe
+df.shape
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754660740544, user_tz: 240, elapsed: 24, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# The info method gives the column datatypes + number of non-null values
+df.info()
+```
+
+3. Subset the DataFrame
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754660782657, user_tz: 240, elapsed: 51, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Select one column using double brackets
+df[['Pregnancies']].head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 204}
+#| executionInfo: {status: ok, timestamp: 1754660787093, user_tz: 240, elapsed: 252, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+type(df[['Pregnancies']].head())
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754660791284, user_tz: 240, elapsed: 28, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Select multiple columns using double brackets
+df[['Pregnancies', 'Glucose']].head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 204}
+#| executionInfo: {status: ok, timestamp: 1754654558219, user_tz: 240, elapsed: 221, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+type(df[['Pregnancies', 'Glucose']].head())
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 241}
+#| executionInfo: {status: ok, timestamp: 1754655009275, user_tz: 240, elapsed: 45, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Select one column using single brackets
+# This produces a pandas series which is a one-dimentional array that can be labeled
+df['Pregnancies'].head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 204}
+#| executionInfo: {status: ok, timestamp: 1754655014899, user_tz: 240, elapsed: 180, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+type(df['Pregnancies'].head())
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 547}
+#| executionInfo: {status: error, timestamp: 1754654924580, user_tz: 240, elapsed: 55, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Keep in mind that you can't select multiple columns using single brackets
+df['Pregnancies', 'Glucose']
+```
+
+With a pandas series, we can select rows using slicing like this: [start_index:end_index].
+The end_index is not inclusive. This behavior is very similar to Python lists.
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 458}
+#| executionInfo: {status: ok, timestamp: 1754655888447, user_tz: 240, elapsed: 14, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Age']
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 398}
+#| executionInfo: {status: ok, timestamp: 1754655917783, user_tz: 240, elapsed: 10, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Age'][0:10]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 241}
+#| executionInfo: {status: ok, timestamp: 1754656153042, user_tz: 240, elapsed: 8, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df.Age.head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 204}
+#| executionInfo: {status: ok, timestamp: 1754656169837, user_tz: 240, elapsed: 353, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+type(df.Age.head())
+```
+
+The pandas attribute .loc allow you to select columns, index, and slice your data
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+#| executionInfo: {status: ok, timestamp: 1754657945352, user_tz: 240, elapsed: 12, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# pandas dataframe
+df.loc[:, ['Age']].head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 241}
+#| executionInfo: {status: ok, timestamp: 1754657967921, user_tz: 240, elapsed: 9, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# pandas series
+df.loc[:, 'Age'].head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 649}
+#| executionInfo: {status: ok, timestamp: 1754658428021, user_tz: 240, elapsed: 12, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Pregnancies'].value_counts()
+```
+
+4. Filter the DataFrame
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 458}
+#| executionInfo: {status: ok, timestamp: 1754663064988, user_tz: 240, elapsed: 9, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Notice that the filter produces a pandas series of True and False values
+filter_pregnancies = df['Pregnancies'] >= 3
+filter_pregnancies
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 241}
+#| executionInfo: {status: ok, timestamp: 1754661404831, user_tz: 240, elapsed: 58, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+filter_pregnancies.head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754661412448, user_tz: 240, elapsed: 52, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df[filter_pregnancies]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754661418540, user_tz: 240, elapsed: 25, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df.loc[filter_pregnancies, :]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 649}
+#| executionInfo: {status: ok, timestamp: 1754661439128, user_tz: 240, elapsed: 81, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Notice that it looks like nothing changes
+# This is because we didn't update the dataframe after applying the filter
+df['Pregnancies'].value_counts()
+```
+
+```{python}
+# Update the dataframe to contain observations with pregnancies <= 3
+df = df.loc[filter_pregnancies, :]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 554}
+#| executionInfo: {status: ok, timestamp: 1754661451794, user_tz: 240, elapsed: 13, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Pregnancies'].value_counts()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 1000}
+#| executionInfo: {status: ok, timestamp: 1754662395881, user_tz: 240, elapsed: 46, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Age'].value_counts()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 458}
+#| executionInfo: {status: ok, timestamp: 1754662506892, user_tz: 240, elapsed: 11, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# Notice that the filter produces a pandas series of True and False values
+df['Age'] <= 38
+```
+
+```{python}
+filter_age = df['Age'] <= 38
+```
+
+```{python}
+df = df.loc[filter_age, :]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 680}
+#| executionInfo: {status: ok, timestamp: 1754662842299, user_tz: 240, elapsed: 20, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df['Age'].value_counts()
+```
+
+Combining filters
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754663151218, user_tz: 240, elapsed: 70, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df.loc[filter_pregnancies & filter_age, :]
+```
+
+5. Manage columns
+
+```{python}
+# Rename column names
+df3 = df.rename(columns={
+    'BloodPressure': 'BP',
+    'SkinThickness': 'ST',
+    'DiabetesPedigreeFunction': 'DPF'
+})
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754665503559, user_tz: 240, elapsed: 43, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3
+```
+
+```{python}
+# This approach allows you to drop multiple columns at a time
+df3 = df3.drop(columns=['Insulin', 'BMI'])
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754665870349, user_tz: 240, elapsed: 33, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3
+```
+
+```{python}
+# Approach 2
+del df3['Pregnancies']
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754665974472, user_tz: 240, elapsed: 35, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3
+```
+
+6. Calculate statistics
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754666157210, user_tz: 240, elapsed: 13, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3.shape
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754666230948, user_tz: 240, elapsed: 45, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3['Glucose'].sum()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754666279764, user_tz: 240, elapsed: 25, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3['DPF'].sum()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 272}
+#| executionInfo: {status: ok, timestamp: 1754666305086, user_tz: 240, elapsed: 408, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3.sum()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 35}
+#| executionInfo: {status: ok, timestamp: 1754666346765, user_tz: 240, elapsed: 14, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+'Mike' + 'George'
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754666403099, user_tz: 240, elapsed: 14, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3.info()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754667320415, user_tz: 240, elapsed: 24, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3.values
+```
+
+```{python}
+df3 = df3.loc[filter_age & filter_pregnancies, :]
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 424}
+#| executionInfo: {status: ok, timestamp: 1754667606918, user_tz: 240, elapsed: 25, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3
+```
+
+```{python}
+# Export DataFrame to csv file
+df3.to_csv(path_or_buf = 'diabetes2.csv', index = False)
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754668068393, user_tz: 240, elapsed: 37, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df3.shape
+```
+

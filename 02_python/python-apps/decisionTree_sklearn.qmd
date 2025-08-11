@@ -1,0 +1,65 @@
+---
+title: "Decision Trees with Scikit-learn"
+jupyter: python3
+order: 3
+---
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754859339425, user_tz: 240, elapsed: 9, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754859829708, user_tz: 240, elapsed: 16, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df = pd.read_csv('diabetes.csv')
+```
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754859827862, user_tz: 240, elapsed: 24, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+#| colab: {base_uri: https://localhost:8080/, height: 206}
+df.head()
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754860901843, user_tz: 240, elapsed: 22, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
+from sklearn.model_selection import train_test_split # Import train_test_split function
+from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
+
+features = ['Glucose', 'BloodPressure', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+
+x = df[features]
+y = df['Outcome']
+
+# Split dataset into training set and test set
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1) # 70% training and 30% test
+
+# Create Decision Tree classifer object
+clf = DecisionTreeClassifier(max_depth=3)
+
+# Train Decision Tree Classifer
+clf = clf.fit(x_train,y_train)
+
+#Predict the response for test dataset
+y_pred = clf.predict(x_test)
+
+# Model Accuracy, how often is the classifier correct?
+Accuracy = metrics.accuracy_score(y_test, y_pred)
+print("Accuracy:", Accuracy)
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/}
+#| executionInfo: {status: ok, timestamp: 1754861249316, user_tz: 240, elapsed: 11, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+print(y_pred)
+```
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 701}
+#| executionInfo: {status: ok, timestamp: 1754861078823, user_tz: 240, elapsed: 564, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+tree.plot_tree(clf, feature_names=features)
+```
+

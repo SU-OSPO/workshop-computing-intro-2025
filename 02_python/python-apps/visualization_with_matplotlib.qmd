@@ -1,0 +1,130 @@
+---
+title: "Data Visualization with Matplotlib"
+jupyter: python3
+order: 2
+---
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754824698746, user_tz: 240, elapsed: 416, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754824701617, user_tz: 240, elapsed: 46, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+df = pd.read_csv('diabetes.csv')
+```
+
+```{python}
+#| executionInfo: {status: ok, timestamp: 1754824704280, user_tz: 240, elapsed: 8, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+import matplotlib.pyplot as plt
+```
+
+1. Line Chart
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 472}
+#| executionInfo: {status: ok, timestamp: 1754825960495, user_tz: 240, elapsed: 413, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+#Parameter: x, y Coordinates for data points
+age = [3, 6, 9, 12, 15, 18, 21, 24]
+Mike = [95, 120, 141, 159, 174, 185, 187, 187]
+George = [99, 126, 145, 163, 179, 191, 191, 191]
+
+plt.plot(age, Mike, color='blue', linewidth=3, marker='o', markersize=8, linestyle='--')
+
+plt.plot(age, George, color='red', linewidth=3, marker='o', markersize=8, linestyle='--')
+
+plt.title("Line Chart")
+plt.ylabel('Height (cm)')
+plt.xlabel('Age (years)')
+plt.legend(labels=('Mike', 'George'))
+plt.show()
+```
+
+2. Bar Chart
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 472}
+#| executionInfo: {status: ok, timestamp: 1754825052145, user_tz: 240, elapsed: 251, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# This code creates a simple bar chart to show total bills for different days.
+# X-axis represents the days and Y-axis shows total bill amount.
+x = ['Thur', 'Fri', 'Sat', 'Sun']
+y = [170, 120, 250, 190]
+
+plt.bar(x, y, color='green', edgecolor='black', linewidth=2)
+plt.title("Bar Chart")
+plt.xlabel("Day")
+plt.ylabel("Total Bill")
+plt.show()
+```
+
+3. Histogram
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 472}
+#| executionInfo: {status: ok, timestamp: 1754825058492, user_tz: 240, elapsed: 464, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+pregnancies = df['Pregnancies']
+
+plt.hist(pregnancies, bins=10, color='steelblue', edgecolor='black',linestyle='--')
+plt.title("Histogram")
+plt.xlabel("Number of Pregnancy")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+4. Scatter Plot
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 472}
+#| executionInfo: {status: ok, timestamp: 1754827028375, user_tz: 240, elapsed: 236, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+BMI = df['BMI']
+BloodPressure = df['BloodPressure']
+
+plt.scatter(BMI, BloodPressure, s = 15)
+plt.title("Scatter Plot")
+plt.xlabel("BMI")
+plt.ylabel("Blood Pressure")
+
+b, a = np.polyfit(BMI, BloodPressure, 1)
+
+plt.plot(BMI, b*BMI + a, color='red', linewidth=2)
+plt.show()
+```
+
+5. Pie Chart
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 456}
+#| executionInfo: {status: ok, timestamp: 1754825100952, user_tz: 240, elapsed: 329, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+# This code creates a simple pie chart to visualize distribution of different car brands.
+# Each slice of pie represents the proportion of cars for each brand in the dataset.
+cars = ['AUDI', 'BMW', 'FORD','TESLA', 'JAGUAR',]
+data = [23, 10, 35, 15, 12]
+explode = [0.1, 0.5, 0, 0, 0]
+colors = ( "orange", "cyan", "yellow","grey", "green")
+
+plt.pie(data, labels=cars, explode=explode, colors=colors, autopct='%d%%', shadow = True)
+#plt.title("Pie Chart")
+plt.show()
+```
+
+6. Box Plot
+
+```{python}
+#| colab: {base_uri: https://localhost:8080/, height: 472}
+#| executionInfo: {status: ok, timestamp: 1754825275808, user_tz: 240, elapsed: 179, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
+Pregnancies = df['Pregnancies']
+Glucose = df['Glucose']
+BloodPressure = df['BloodPressure']
+SkinThickness = df['SkinThickness']
+Age = df['Age']
+
+data = Pregnancies
+
+plt.boxplot(data)
+plt.xlabel("Groups")
+plt.ylabel("Values")
+plt.title("Box Plot")
+plt.show()
+```
+

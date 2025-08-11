@@ -8,4 +8,4 @@ This Python tutorial is broken down into three parts:
 
 - [**Python Basics**](python-intro/index.qmd) – Covers the basics of Python, including data types, functions, and basic operations.
 - [**Flow, Loops, and Classes**](python-flow-loops-classes.qmd) – Introduces control flow, loops, and classes in Python, including how to write functions and use loops effectively.
-- [**Miscellaneous Applications**](python-apps.qmd) – Covers miscellaneous applications of Python, including data manipulation and analysis with pandas, data visualization with matplotlib, and machine learning.
+- [**Miscellaneous Applications**](python-apps/index.qmd) – Covers miscellaneous applications of Python, including data manipulation and analysis with pandas, data visualization with matplotlib, and machine learning.

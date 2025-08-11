@@ -3,7 +3,7 @@ title: "Introduction to Python"
 order: 1
 listing:
   type: table
-  sort: false
+  sort: "filename"
   fields: [title, description, reading-time]
   sort-ui: false
   filter-ui: false
