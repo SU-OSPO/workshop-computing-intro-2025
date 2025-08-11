@@ -665,6 +665,7 @@ try:
 except SomeException:
     # Code that runs if that specific exception happens
     pass
+```
 
 ### Full Example
 Let's see how it works in practice:
