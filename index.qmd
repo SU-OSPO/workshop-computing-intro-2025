@@ -21,12 +21,12 @@ This 3-day workshop will cover some of the common tools used in open source deve
 | Date                | Time                | Location  | Topic                                                                                    | Presenter       |
 |:-------------------:|:-------------------:|:---------:|:----------------------------------------------------------------------------------------:|:---------------:|
 | Wednesday, August 13| 9:00 AM - 10:00 AM  | Hinds 111 | Optional: [Software Setup Help](#installation)                                           |                 |
-| Wednesday, August 13| 10:00 AM - 12:00 PM | Hinds 111 | [Intro to Python](02_python/python-intro.qmd)                                            | TBA             |
+| Wednesday, August 13| 10:00 AM - 12:00 PM | Hinds 111 | [Intro to Python](02_python/python-intro/index.qmd)                                            | TBA             |
 | Wednesday, August 13| 10:00 AM - 12:00 PM | Hinds 117 | [Intro to R: variables and functions](01_r/r-intro.qmd)                                  | Sarah Lucas     |
 | Wednesday, August 13| 2:00 PM - 4:00 PM   | Hinds 111 | [`git` and GitHub](03_github/index.qmd)                                                  | Collin Capano   |
-| Thursday, August 14 | 10:00 AM - 12:00 PM | Hinds 111 | [Advanced Python: flow, loops, and classes](02_python/python-flow.qmd)                   | TBA             |
+| Thursday, August 14 | 10:00 AM - 12:00 PM | Hinds 111 | [Advanced Python: flow, loops, and classes](02_python/python-flow-loops-classes.qmd)                   | TBA             |
 | Thursday, August 14 | 10:00 AM - 12:00 PM | Hinds 117 | [Advanced R: data cleaning with the tidyverse](01_r/r-tidydata.qmd)                      | Jessie Trudeau  |
-| Thursday, August 14 | 2:00 PM - 4:00 PM   | Hinds 111 | [Advanced Python: miscellaneous applications](02_python/python-apps.qmd)                 | TBA             |
+| Thursday, August 14 | 2:00 PM - 4:00 PM   | Hinds 111 | [Advanced Python: miscellaneous applications](02_python/python-apps/index.qmd)                 | TBA             |
 | Thursday, August 14 | 2:00 PM - 4:00 PM   | Hinds 117 | [Advanced R: data vizualization with ggplot2](01_r/r-plotting.qmd)                       | Will Gearty     |
 | Friday, August 15   | 10:00 AM - 12:00 PM | Hinds 111 | Bash and Conda                                                                           | Collin Capano   |
 | Friday, August 15   | 2:00 PM - 4:00 PM   | Hinds 111 | Bash and Conda (cont.)                                                                   | Collin Capano   |
