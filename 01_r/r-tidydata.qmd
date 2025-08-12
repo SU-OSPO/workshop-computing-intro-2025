@@ -681,17 +681,16 @@ save(penguins_ratio_data, file = "penguins_ratio_data.csv")
 save(penguins_ratio_data, species_table, file = "penguins_cleaned.rda")
 
 ## To make a table for export
-knitr::kable(species_table, format = "markdown", caption = "N Penguins by Species") %>%
-  save_kable("species_table.pdf")
-
+knitr::kable(species_table, format = "html", caption = "N Penguins by Species") %>%
+  kableExtra::kable_styling("striped") |>
+  kableExtra::save_kable("species_table.html")
 ```
 
-Your table will look like this: 
+Your table should look like this: 
 ```{r}
 ## To make a table for export
-knitr::kable(species_table, format = "markdown", 
-             caption = "N Penguins by Species")
-
+knitr::kable(species_table, format = "markdown", caption = "N Penguins by Species") |>
+  kableExtra::kable_styling("striped")
 ```
 
 
