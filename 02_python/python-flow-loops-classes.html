@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../02_python/python-apps/index.html" rel="next">
-<link href="../02_python/python-intro/Intro-scratch.html" rel="prev">
+<link href="../02_python/python-intro/06-Intro-to-Python-dictionaries.html" rel="prev">
 <link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -252,12 +252,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Using Dictionaries to Represent Single and Multiple Items</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/Intro-scratch.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro Scratch</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -293,20 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Decision Trees with Scikit-learn</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_python/python-apps/Applications-scratch.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Applications Scratch</span></a>
-  </div>
-</li>
       </ul>
   </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02_python/flow-loops-classes-scratch.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Flow Loops Classes Scratch</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -430,13 +412,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Scratch notebook for the this session: <a href="https://colab.research.google.com/github/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/flow-loops-classes-scratch.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open Python Apps Tutorial"></a></p>
+<p>Scratch notebook for this session: <a href="https://colab.research.google.com/github/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/_flow-loops-classes-scratch.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open Python Apps Tutorial"></a></p>
 <section id="flow-control" class="level2">
 <h2 class="anchored" data-anchor-id="flow-control">1. Flow Control</h2>
 <section id="sequential-execution" class="level3">
 <h3 class="anchored" data-anchor-id="sequential-execution">1.1 Sequential Execution</h3>
 <p>In Python, code is executed one line at a time, from top to bottom, unless you use something that changes the flow (like a function call or a loop).</p>
-<div id="ec5b1ec1" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T20:38:15.635860Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:38:15.630741Z&quot;}" data-execution_count="1">
+<div id="6c052a65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:38:15.635860Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:38:15.630741Z&quot;}}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 1"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 2"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -460,7 +442,7 @@ Step 3</code></pre>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code runs if other_condition is True</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code runs if none of the above are True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="04d84e3d" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:07:04.413473Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:07:04.407968Z&quot;}" data-execution_count="2">
+<div id="6c3b23ae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:07:04.413473Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:07:04.407968Z&quot;}}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">24</span></span>
@@ -479,7 +461,7 @@ Step 3</code></pre>
 <section id="multiple-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-conditions">1.2.2 Multiple Conditions:</h3>
 <p>You can also combine conditions using <code>and</code>, <code>or</code>, and <code>not</code>.</p>
-<div id="dccd14d8" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T20:44:25.416537Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:44:25.413266Z&quot;}" data-execution_count="3">
+<div id="841f8f4e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:44:25.416537Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:44:25.413266Z&quot;}}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>temperature_f <span class="op">=</span> <span class="dv">75</span>  <span class="co"># Fahrenheit</span></span>
@@ -496,7 +478,7 @@ Step 3</code></pre>
 <h3 class="anchored" data-anchor-id="conditional-ternary-expressions">1.3 Conditional (Ternary) Expressions</h3>
 <p>A conditional (ternary) expression lets you assign a value based on a condition in a single line.</p>
 <p><strong>Syntax:</strong> <code>x = a if condition else b</code></p>
-<div id="913ab7d7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T20:45:20.647771Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:45:20.644147Z&quot;}" data-execution_count="4">
+<div id="c81a6f7f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:45:20.647771Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:45:20.644147Z&quot;}}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
@@ -513,12 +495,12 @@ Step 3</code></pre>
 <section id="pass" class="level4">
 <h4 class="anchored" data-anchor-id="pass"><code>pass</code></h4>
 <p><code>pass</code> does nothing. It’s used as a placeholder when code is required but you have nothing to write yet.</p>
-<div id="8d2d22b1" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T20:46:27.911777Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:46:27.908680Z&quot;}" data-execution_count="5">
+<div id="7419e9d9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T20:46:27.911777Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T20:46:27.908680Z&quot;}}" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">True</span>:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span>  <span class="co"># Placeholder for future code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Suppose you’re building a menu system for a fast-food restaurant app, and you haven’t yet decided what to do if the customer selects a menu item that’s “coming soon.” You want your code to run without errors, but you’re not ready to implement that part yet.</p>
-<div id="41774fac" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:09:40.672657Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:09:40.669092Z&quot;}" data-execution_count="6">
+<div id="4376cbee" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:09:40.672657Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:09:40.669092Z&quot;}}" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>menu_item <span class="op">=</span> <span class="st">"Pumpkin Spice Latte"</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> menu_item <span class="op">==</span> <span class="st">"Pumpkin Spice Latte"</span>:</span>
@@ -531,7 +513,7 @@ Step 3</code></pre>
 <section id="break" class="level4">
 <h4 class="anchored" data-anchor-id="break"><code>break</code></h4>
 <p><code>break</code> exits the loop immediately.</p>
-<div id="8d90c9d1" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:08:34.210052Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:08:34.207698Z&quot;}" data-execution_count="7">
+<div id="34dc3e3a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:08:34.210052Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:08:34.207698Z&quot;}}" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">2</span>:</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
@@ -542,7 +524,7 @@ Step 3</code></pre>
 </div>
 </div>
 <p>Imagine you’re searching for a specific item (like your keys) in a list of rooms. As soon as you find the keys, you want to stop searching.</p>
-<div id="d7956fff" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:10:09.489247Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:09.485199Z&quot;}" data-execution_count="8">
+<div id="dacc7d77" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:10:09.489247Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:09.485199Z&quot;}}" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rooms <span class="op">=</span> [<span class="st">"kitchen"</span>, <span class="st">"living room"</span>, <span class="st">"bedroom"</span>, <span class="st">"garage"</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> room <span class="kw">in</span> rooms:</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Searching in the </span><span class="sc">{</span>room<span class="sc">}</span><span class="ss">..."</span>)</span>
@@ -560,7 +542,7 @@ Found the keys!</code></pre>
 <section id="continue" class="level4">
 <h4 class="anchored" data-anchor-id="continue"><code>continue</code></h4>
 <p><code>continue</code> skips the rest of the current loop iteration and moves to the next one.</p>
-<div id="37cbd6ea" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:10:38.221301Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:38.218261Z&quot;}" data-execution_count="9">
+<div id="492f85da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:10:38.221301Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:10:38.218261Z&quot;}}" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">2</span>:</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
@@ -573,7 +555,7 @@ Found the keys!</code></pre>
 </div>
 </div>
 <p>Suppose you’re reading through a list of email subject lines. You want to print all of them except spam emails, which contain the word “SPAM.” You skip printing any email that’s spam.</p>
-<div id="417e0647" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:11:22.905417Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:11:22.901765Z&quot;}" data-execution_count="10">
+<div id="59c91152" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:11:22.905417Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:11:22.901765Z&quot;}}" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>emails <span class="op">=</span> [<span class="st">"Meeting at 10am"</span>, <span class="st">"SPAM: Win a free iPhone"</span>, <span class="st">"Lunch plans?"</span>, <span class="st">"SPAM: Hot deals"</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> subject <span class="kw">in</span> emails:</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"SPAM"</span> <span class="kw">in</span> subject:</span>
@@ -592,7 +574,7 @@ Important email: Lunch plans?</code></pre>
 <section id="for-loops" class="level3">
 <h3 class="anchored" data-anchor-id="for-loops">2.1 <code>for</code> Loops</h3>
 <p>A <code>for</code> loop is used to repeat actions a certain number of times or to iterate over a sequence (like a list).</p>
-<div id="792a12ef" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:12:40.887230Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:12:40.884900Z&quot;}" data-execution_count="11">
+<div id="9d994cc2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:12:40.887230Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:12:40.884900Z&quot;}}" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print numbers from 0 to 4</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -605,7 +587,7 @@ Important email: Lunch plans?</code></pre>
 </div>
 </div>
 <p>You can loop over the elements of a list like this:</p>
-<div id="b98ceb47" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:38:54.655732Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:38:54.652901Z&quot;}" data-execution_count="12">
+<div id="dc9d8d76" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:38:54.655732Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:38:54.652901Z&quot;}}" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'monkey'</span>]</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -616,7 +598,7 @@ monkey</code></pre>
 </div>
 </div>
 <p>If you want access to the index of each element within the body of a loop, use the built-in <code>enumerate()</code> function:</p>
-<div id="47f43dac" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:39:10.688244Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:39:10.685339Z&quot;}" data-execution_count="13">
+<div id="3ba4f797" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:39:10.688244Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:39:10.685339Z&quot;}}" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'monkey'</span>]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, animal <span class="kw">in</span> <span class="bu">enumerate</span>(animals):</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'#</span><span class="sc">{}</span><span class="st">: </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(index <span class="op">+</span> <span class="dv">1</span>, animal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -630,7 +612,7 @@ monkey</code></pre>
 <section id="while-loops" class="level3">
 <h3 class="anchored" data-anchor-id="while-loops">2.2 <code>while</code> Loops</h3>
 <p>A <code>while</code> loop repeats actions as long as a condition is true.</p>
-<div id="1bf25bde" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:13:01.407363Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:01.404509Z&quot;}" data-execution_count="14">
+<div id="8fdf5c36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:13:01.407363Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:01.404509Z&quot;}}" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">3</span>:</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
@@ -645,7 +627,7 @@ monkey</code></pre>
 <section id="nested-loops" class="level3">
 <h3 class="anchored" data-anchor-id="nested-loops">2.3 Nested Loops</h3>
 <p>A nested loop is a loop inside another loop.</p>
-<div id="b21a56fb" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:13:17.056449Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:17.053423Z&quot;}" data-execution_count="15">
+<div id="e0a9c2ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:13:17.056449Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:13:17.053423Z&quot;}}" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"i=</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, j=</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -660,7 +642,7 @@ i=1, j=1</code></pre>
 <section id="loops-with-else" class="level3">
 <h3 class="anchored" data-anchor-id="loops-with-else">2.4 Loops with <code>else</code></h3>
 <p>The <code>else</code> part after a loop runs only if the loop was not stopped by a break.</p>
-<div id="dab6dc95" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:14:49.509727Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:14:49.506988Z&quot;}" data-execution_count="16">
+<div id="922fcf60" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:14:49.509727Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:14:49.506988Z&quot;}}" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
@@ -678,7 +660,7 @@ Loop finished without break.</code></pre>
 <section id="enumerate" class="level4">
 <h4 class="anchored" data-anchor-id="enumerate"><code>enumerate</code></h4>
 <p><code>enumerate</code> gives you both the index and the value when looping over a list.</p>
-<div id="32632293" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:15:11.940014Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:15:11.936756Z&quot;}" data-execution_count="17">
+<div id="667e25b7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:15:11.940014Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:15:11.936756Z&quot;}}" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, name <span class="kw">in</span> <span class="bu">enumerate</span>(names):</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(index, name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -692,7 +674,7 @@ Loop finished without break.</code></pre>
 <section id="zip" class="level4">
 <h4 class="anchored" data-anchor-id="zip"><code>zip</code></h4>
 <p><code>zip</code> lets you loop over two (or more) lists at the same time.</p>
-<div id="02950253" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:17:23.711921Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:17:23.708177Z&quot;}" data-execution_count="18">
+<div id="6ce1bb3f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:17:23.711921Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:17:23.708177Z&quot;}}" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"red"</span>, <span class="st">"yellow"</span>, <span class="st">"red"</span>]</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, color <span class="kw">in</span> <span class="bu">zip</span>(fruits, colors):</span>
@@ -708,41 +690,41 @@ cherry red</code></pre>
 <section id="list-comprehensions" class="level3">
 <h3 class="anchored" data-anchor-id="list-comprehensions">2.6 List Comprehensions</h3>
 <p>A list comprehension is a short way to create a new list by looping over something.</p>
-<div id="529c50ec" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:33:21.787169Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:21.777625Z&quot;}" data-execution_count="19">
+<div id="a6128c1f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:33:21.787169Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:21.777625Z&quot;}}" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
 </div>
 </div>
-<div id="ab401e13" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:33:35.127786Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:35.123893Z&quot;}" data-execution_count="20">
+<div id="0b23b12b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:33:35.127786Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:33:35.123893Z&quot;}}" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
 </div>
 </div>
 <p>We can even add some conditions.</p>
-<div id="621c58fa" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:34:18.492949Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:18.488531Z&quot;}" data-execution_count="21">
+<div id="c7770301" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:18.492949Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:18.488531Z&quot;}}" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>[6, 7, 8, 9]</code></pre>
 </div>
 </div>
 <p>Multiples of 2.</p>
-<div id="31f0afe7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:34:33.343838Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:33.339615Z&quot;}" data-execution_count="22">
+<div id="0b23aee1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:33.343838Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:33.339615Z&quot;}}" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>[0, 2, 4, 6, 8]</code></pre>
 </div>
 </div>
 <p>Powers of 2.</p>
-<div id="c8c74d51" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:34:49.574044Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:49.570928Z&quot;}" data-execution_count="23">
+<div id="c27af1d8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:34:49.574044Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:34:49.570928Z&quot;}}" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
 </div>
 </div>
 <p>You can nest comprehensions.</p>
-<div id="2e9b142f" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:35:04.573267Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:04.568589Z&quot;}" data-execution_count="24">
+<div id="8b004962" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:35:04.573267Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:04.568589Z&quot;}}" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>[[[i, j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)] <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>[[[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
@@ -753,7 +735,7 @@ cherry red</code></pre>
 </div>
 </div>
 <p>You can concatenate multiple comprehensions.</p>
-<div id="2752470b" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:35:17.273795Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:17.270750Z&quot;}" data-execution_count="25">
+<div id="56286d7c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:35:17.273795Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:35:17.270750Z&quot;}}" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>[[i, j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>) <span class="cf">if</span> i <span class="op">&lt;</span> j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>[[0, 1],
@@ -786,7 +768,7 @@ cherry red</code></pre>
 <section id="simple-example" class="level4">
 <h4 class="anchored" data-anchor-id="simple-example">Simple Example</h4>
 <p>Here is a simple class that models a basic point in two-dimensional space:</p>
-<div id="e10f81b2" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-31T00:17:01.963663Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:17:01.960432Z&quot;}" data-execution_count="26">
+<div id="718cbce3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-31T00:17:01.963663Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:17:01.960432Z&quot;}}" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A class to represent a point in 2D space."""</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
@@ -813,7 +795,7 @@ cherry red</code></pre>
 <h3 class="anchored" data-anchor-id="defining-a-class">3.2 Defining a Class</h3>
 <p>In Python, a class is defined using the <code>class</code> keyword, followed by the class name and a colon. The body of the class contains statements that define its attributes and methods.</p>
 <p>Here is the simplest possible class definition:</p>
-<div id="56c48d15" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:20:41.208106Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:20:41.205591Z&quot;}" data-execution_count="27">
+<div id="20403ff1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:20:41.208106Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:20:41.205591Z&quot;}}" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span>  <span class="co"># 'pass' is a placeholder indicating an empty block</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -835,7 +817,7 @@ cherry red</code></pre>
 <li>The first parameter of <code>__init__</code> is always <code>self</code>, which refers to the instance being created.</li>
 <li>Additional parameters allow you to pass in initial values for the object’s attributes.</li>
 </ul>
-<div id="39cdd6ff" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:21:51.826450Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:21:51.823809Z&quot;}" data-execution_count="28">
+<div id="b43fc62c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:21:51.826450Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:21:51.823809Z&quot;}}" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Each dog has a name</span></span>
@@ -846,7 +828,7 @@ cherry red</code></pre>
 <section id="creating-objects" class="level3">
 <h3 class="anchored" data-anchor-id="creating-objects">3.4 Creating Objects</h3>
 <p>To create (or <strong>instantiate</strong>) an object from a class, call the class as if it were a function, passing any required arguments to the constructor (<code>__init__</code> method).</p>
-<div id="1cea19c0" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:22:13.975326Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:13.972102Z&quot;}" data-execution_count="29">
+<div id="e82101ca" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:22:13.975326Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:13.972102Z&quot;}}" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog(<span class="st">"Buddy"</span>, <span class="dv">3</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dog.name)  <span class="co"># Output: Buddy</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dog.age)   <span class="co"># Output: 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -869,7 +851,7 @@ cherry red</code></pre>
 <li>Every instance method has <code>self</code> as its first parameter. <code>self</code> refers to the instance through which the method is called, allowing access to the object’s attributes.</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div id="68fac43c" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:22:39.747187Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:39.744005Z&quot;}" data-execution_count="30">
+<div id="ebdabef1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:22:39.747187Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:22:39.744005Z&quot;}}" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -894,7 +876,7 @@ cherry red</code></pre>
 <section id="class-attributes-vs.-instance-attributes" class="level3">
 <h3 class="anchored" data-anchor-id="class-attributes-vs.-instance-attributes">3.6 Class Attributes vs.&nbsp;Instance Attributes</h3>
 <p>Class attributes are shared by all objects of the class. Instance attributes belong only to one specific object.</p>
-<div id="42a262d0" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:23:05.891598Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:05.888082Z&quot;}" data-execution_count="31">
+<div id="fe122de9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:23:05.891598Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:05.888082Z&quot;}}" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    species <span class="op">=</span> <span class="st">"Canine"</span>  <span class="co"># Class attribute</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -928,7 +910,7 @@ Bella</code></pre>
 <p><strong>Inheritance</strong> is a fundamental feature of object-oriented programming. It allows you to define a new class (called a <strong>subclass</strong> or <strong>derived class</strong>) based on an existing class (called a <strong>superclass</strong> or <strong>base class</strong>). The subclass inherits all the attributes and methods of the superclass, and can also introduce its own or override existing ones.</p>
 <p>This enables code reuse and logical hierarchy between classes.</p>
 <p><strong>Example:</strong></p>
-<div id="1cd8a80b" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:23:41.310320Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:41.307213Z&quot;}" data-execution_count="32">
+<div id="9f46620c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:23:41.310320Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:23:41.307213Z&quot;}}" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"This animal makes a sound."</span>)</span>
@@ -958,7 +940,7 @@ Woof!</code></pre>
 <h3 class="anchored" data-anchor-id="method-overriding">3.8 Method Overriding</h3>
 <p><strong>Method overriding</strong> allows a subclass to provide a specific implementation of a method that is already defined in its superclass. This enables a subclass to change or extend the behavior of inherited methods.</p>
 <p><strong>Example:</strong></p>
-<div id="bbbc4766" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:24:05.042638Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:05.039314Z&quot;}" data-execution_count="33">
+<div id="0a58eb58" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:24:05.042638Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:05.039314Z&quot;}}" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Animal sound"</span>)</span>
@@ -990,7 +972,7 @@ Woof!</code></pre>
 <li><code>__str__</code> — defines what should be returned when the object is printed with <code>print()</code></li>
 </ul>
 <p><strong>Example:</strong></p>
-<div id="aecc0769" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:24:40.147409Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:40.144009Z&quot;}" data-execution_count="34">
+<div id="04ffffb1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:24:40.147409Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:24:40.144009Z&quot;}}" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -1017,7 +999,7 @@ Woof!</code></pre>
 <li><p>Class methods affect the class itself, not just one object.</p></li>
 <li><p>Static methods are like normal functions, but live inside the class.</p></li>
 </ul>
-<div id="d6a9bba0" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:25:07.995373Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:25:07.991928Z&quot;}" data-execution_count="35">
+<div id="c6e411d7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:25:07.995373Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:25:07.991928Z&quot;}}" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    dogs_count <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Class attribute</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1059,7 +1041,7 @@ Woof!</code></pre>
 <section id="simple-ai-assistant-class" class="level3">
 <h3 class="anchored" data-anchor-id="simple-ai-assistant-class">3.11 Simple AI Assistant Class</h3>
 <p>This example builds a basic AI Assistant class. The assistant can answer questions, remember a history of questions, and keep track of how many questions it has been asked.</p>
-<div id="7a92187a" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T21:26:31.762902Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:26:31.757553Z&quot;}" data-execution_count="36">
+<div id="16cfb44d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T21:26:31.762902Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T21:26:31.757553Z&quot;}}" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AIAssistant:</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    total_questions <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Class attribute to count total questions asked to all assistants</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1139,7 +1121,7 @@ Total questions asked to all assistants: 3</code></pre>
 <section id="full-example" class="level3">
 <h3 class="anchored" data-anchor-id="full-example">Full Example</h3>
 <p>Let’s see how it works in practice:</p>
-<div id="9a606a68" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-31T00:12:12.548173Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:12:12.545420Z&quot;}" data-execution_count="37">
+<div id="3bbd0f3b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-31T00:12:12.548173Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:12:12.545420Z&quot;}}" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Try to do something risky</span></span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">1</span>  <span class="co"># Change this to 1 / 0 to see an exception</span></span>
@@ -1178,7 +1160,7 @@ This is always executed (cleanup, closing files, etc.).</code></pre>
 <section id="practice-exercise" class="level3">
 <h3 class="anchored" data-anchor-id="practice-exercise">Practice Exercise</h3>
 <p>Try dividing by zero and catch the exception:</p>
-<div id="9b75c115" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-31T00:13:32.087618Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:13:32.085402Z&quot;}" data-execution_count="38">
+<div id="a9f930ef" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-31T00:13:32.087618Z&quot;,&quot;start_time&quot;:&quot;2025-07-31T00:13:32.085402Z&quot;}}" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span></span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
@@ -1198,7 +1180,7 @@ This is always executed (cleanup, closing files, etc.).</code></pre>
 <li><strong>Lists, tuples, dictionaries, and strings</strong> are all <em>iterable</em>, meaning you can loop through them using a <code>for</code> loop.</li>
 </ul>
 <p>The <strong><code>yield</code></strong> statement allows you to create your own iterator, called a generator. Generators are a memory-efficient way to produce values one at a time, only when you need them.</p>
-<div id="146a220c" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:53:13.105705Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:13.103582Z&quot;}" data-execution_count="39">
+<div id="d83692c1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:13.105705Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:13.103582Z&quot;}}" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> range_custom(n):</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> n:</span>
@@ -1206,37 +1188,37 @@ This is always executed (cleanup, closing files, etc.).</code></pre>
 <span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create the generator.</p>
-<div id="6c355d36" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:53:25.804161Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:25.801857Z&quot;}" data-execution_count="40">
+<div id="0ba95d76" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:25.804161Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:25.801857Z&quot;}}" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>gen <span class="op">=</span> range_custom(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The type of the variable named <code>gen</code> is <code>generator.</code></p>
-<div id="40287d5c" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:53:47.616799Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:47.612186Z&quot;}" data-execution_count="41">
+<div id="ce1a0445" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:53:47.616799Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:53:47.612186Z&quot;}}" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>generator</code></pre>
 </div>
 </div>
 <p>Iterate through the generator values.</p>
-<div id="cd861349" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:54:02.468704Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:02.465220Z&quot;}" data-execution_count="42">
+<div id="dc808b37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:02.468704Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:02.465220Z&quot;}}" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="2a0dedc7" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:54:07.107411Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:07.104401Z&quot;}" data-execution_count="43">
+<div id="9585303d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:07.107411Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:07.104401Z&quot;}}" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="9db87b20" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:54:13.039402Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:13.036290Z&quot;}" data-execution_count="44">
+<div id="a1c223da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:13.039402Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:13.036290Z&quot;}}" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p>The generator raises an exception when it reaches the end. If you keep calling <code>next()</code> after the generator is finished, you will get a <code>StopIteration</code> error.</p>
-<div id="fd530caf" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2025-07-30T23:54:32.380102Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:32.272095Z&quot;}" data-execution_count="45">
+<div id="4422abb5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-07-30T23:54:32.380102Z&quot;,&quot;start_time&quot;:&quot;2025-07-30T23:54:32.272095Z&quot;}}" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the following call will raise an exception</span></span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># next(gen)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1647,8 +1629,8 @@ This is always executed (cleanup, closing files, etc.).</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../02_python/python-intro/Intro-scratch.html" class="pagination-link" aria-label="Intro Scratch">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Intro Scratch</span>
+      <a href="../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="pagination-link" aria-label="Using Dictionaries to Represent Single and Multiple Items">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Using Dictionaries to Represent Single and Multiple Items</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
