@@ -1945,9 +1945,6 @@ Solution
 </div>
 <p>Your table should look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="do">## To make a table for export</span></span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(species_table, <span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">caption =</span> <span class="st">"N Penguins by Species"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="st">"striped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
 <caption>N Penguins by Species</caption>
@@ -1974,7 +1971,7 @@ Solution
 </table>
 </div>
 </div>
-<p>Now we’ll once again use the git tools within RStudio to commit these files and push them to our GitHub repository. Click on the “Git” tab in the top-right. Clicking this tab will show you all of the files that have been modified since we last committed. In this case, you should see your code file, your cleaned data for future use, and your table to export for a report. Click the boxes next to these three files to queue them for committing. Then click the <kbd>Commit</kbd> button. Write a succinct commit message in the window, then click the <kbd>Commit</kbd> button, then the <kbd>Push</kbd> button. And that’s that!</p>
+<p>Now let’s use GitHub Desktop to commit these files and push them to our GitHub repository. You should see all of the files that have been modified since we cloned our repository. From the first <a href="../01_r/r-intro.html">introductory session</a>, there should a file created by RStudio for your project, your ongoing “penguins.R” script, and your new “penguins_data.csv” data file. From this session, you should also see your new cleaned data files (one “.csv” and one “.rda”) and your exported HTML table. Make sure the checkboxes are checked for these six files, write a succinct commit summary, then click the <kbd>Commit</kbd> button, then the <kbd>Push</kbd> button.</p>
 
 
 </section>
