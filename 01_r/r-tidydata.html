@@ -104,6 +104,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <meta property="og:title" content="R for Data Cleaning – Computing 101 Workshop – Summer 2025">
@@ -1937,21 +1939,22 @@ Solution
 <span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(penguins_ratio_data, species_table, <span class="at">file =</span> <span class="st">"penguins_cleaned.rda"</span>)</span>
 <span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a><span class="do">## To make a table for export</span></span>
-<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(species_table, <span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">caption =</span> <span class="st">"N Penguins by Species"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">save_kable</span>(<span class="st">"species_table.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(species_table, <span class="at">format =</span> <span class="st">"html"</span>, <span class="at">caption =</span> <span class="st">"N Penguins by Species"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="st">"striped"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb105-10"><a href="#cb105-10" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">save_kable</span>(<span class="st">"species_table.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Your table will look like this:</p>
+<p>Your table should look like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="do">## To make a table for export</span></span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(species_table, <span class="at">format =</span> <span class="st">"markdown"</span>, </span>
-<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">"N Penguins by Species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(species_table, <span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">caption =</span> <span class="st">"N Penguins by Species"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="st">"striped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
 <caption>N Penguins by Species</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">species</th>
-<th style="text-align: right;">n</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n</th>
 </tr>
 </thead>
 <tbody>
