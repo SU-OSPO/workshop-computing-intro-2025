@@ -4,6 +4,8 @@ jupyter: python3
 order: 2
 ---
 
+In this module we will learn how to visualize data using Matplotlib, a powerful plotting library in Python. We will cover various types of plots including line charts, bar charts, histograms, scatter plots, pie charts, and box plots.
+
 ```{python}
 #| executionInfo: {status: ok, timestamp: 1754824698746, user_tz: 240, elapsed: 416, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
 import pandas as pd
@@ -20,7 +22,7 @@ df = pd.read_csv('diabetes.csv')
 import matplotlib.pyplot as plt
 ```
 
-1. Line Chart
+## Line Chart
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 472}
@@ -41,7 +43,7 @@ plt.legend(labels=('Mike', 'George'))
 plt.show()
 ```
 
-2. Bar Chart
+## Bar Chart
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 472}
@@ -58,7 +60,7 @@ plt.ylabel("Total Bill")
 plt.show()
 ```
 
-3. Histogram
+## Histogram
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 472}
@@ -72,7 +74,7 @@ plt.ylabel("Frequency")
 plt.show()
 ```
 
-4. Scatter Plot
+## Scatter Plot
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 472}
@@ -91,7 +93,7 @@ plt.plot(BMI, b*BMI + a, color='red', linewidth=2)
 plt.show()
 ```
 
-5. Pie Chart
+## Pie Chart
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 456}
@@ -108,7 +110,7 @@ plt.pie(data, labels=cars, explode=explode, colors=colors, autopct='%d%%', shado
 plt.show()
 ```
 
-6. Box Plot
+## Box Plot
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 472}

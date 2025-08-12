@@ -4,6 +4,8 @@ jupyter: python3
 order: 3
 ---
 
+In this module we will learn how to use the Decision Tree Classifier from the Scikit-learn library to classify diabetes data. We will use a dataset that contains various health measurements and whether or not the individual has diabetes.
+
 ```{python}
 #| executionInfo: {status: ok, timestamp: 1754859339425, user_tz: 240, elapsed: 9, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
 import pandas as pd
@@ -20,6 +22,8 @@ df = pd.read_csv('diabetes.csv')
 #| colab: {base_uri: https://localhost:8080/, height: 206}
 df.head()
 ```
+
+## Build a Decision Tree Classifier
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/}
@@ -56,6 +60,8 @@ print("Accuracy:", Accuracy)
 #| executionInfo: {status: ok, timestamp: 1754861249316, user_tz: 240, elapsed: 11, user: {displayName: Xuebin Yang, userId: '18047631927912204745'}}
 print(y_pred)
 ```
+
+## Visualizing the Decision Tree
 
 ```{python}
 #| colab: {base_uri: https://localhost:8080/, height: 701}
