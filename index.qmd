@@ -36,5 +36,6 @@ This 3-day workshop will cover some of the common tools used in open source deve
 **Attendees should install the following software before the workshop:**
 
 - [GitHub Desktop](https://desktop.github.com/download/) (and make a GitHub account if you don't have one already)
-- [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install) (if attending Python sessions)
 - [R](https://cloud.r-project.org/) and [RStudio](https://posit.co/download/rstudio-desktop/) (if attending R sessions)
+- [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install) (if attending the Bash and Conda sessions)
+- [Git for Windows](https://gitforwindows.org/) (if running Windows and attending the Bash and Conda sessions)
