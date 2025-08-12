@@ -287,42 +287,106 @@ You want to start working on titles for your stories, but you want to do it inde
 
     ![](figures/git_graphs.002.png){height=300}
 
+#### Merging
+
 1.  Satisfied that your title is perfect, you no longer feel the need to keep the title development on a separate branch. It's ready to be *merged* on to the `main` branch. To do that, first switch to the main branch by clicking Current Branch -> main.
 
-    Now click the Current Branch drop-down menu again, and this time click the "Choose a branch to merge into *main*" button:
+1. Before merging `title-dev` on to `main`, we're going to create a second copy of `main` that we'll call `main-bkup`. We'll do that here so we can demonstrate squash and merge below. But when you first start using Git, it's good practice to create a backup of `main` before doing merges, as mistakes can happen that can be difficult to untangle. This way, you have the original state of `main` preserved in the backup branch that you can always go back to.
 
-==========
+    To create the copy of `main`:
 
-    This will open up your text editor (which we set to `nano` in the intro). Don't change the commit message, just save and exit to return to your terminal.
+        a.  Click Current Branch. Make sure you're on `main` (the checkmark is next to `main`), then click "New Branch":
 
-    Now type `git log`. You should see 6 commits: the initial two commits on main, the first commit on title-dev, the add paragraph commit on main, and the update title commit you made on title-dev, followed by an additional "Merge" commit. This final "merge" commit is to indicate that some of the commits in the history came from another branch (and what the name of the branch was).
+            ![](figures/ghd-main_bkup_create.png)
 
-    If you type:
-    
-    ```bash
-    ls
-    ```
-    
-    you'll see that both `story.txt` and `title.txt` are in your directory (on the main branch), and if you look in them, you'll see the most up-to-date versions of both. In graph form, your main branch now looks like:
+        b.  This will open the "Create a Branch" window. Type `main-bkup` in the Name field, then click "Create Branch". You will now be on the `main-bkup` branch.
+
+        c.  Now go back to the `main` branch by clicking "Current Branch -> main".
+
+1.  Now click the Current Branch drop-down menu again, and this time click the "Choose a branch to merge into *main*" button:
+
+    ![](figures/ghd-merge_branch_select.png)
+
+1.  Select the `title-dev` branch. The button at the bottom will turn to blue and say "Create a merge commit". Click that to merge the branch:
+
+    ![](figures/ghd-merge_screen.png)
+
+1.  Congratulations! You've made your first merge on to main. To see what happened, click on the History tab to see what the history on the main branch looks like now:
+
+    ![](figures/ghd-merge_history.png)
+
+    The commits you made on `title-dev` are now in `main`, along with a final "Merge" commit at the end. This final "merge" commit is to indicate that some of the commits in the history came from another branch (and what the name of the branch was). 
+
+    If you look at Explorer/Finder, you'll see that `title.txt` is now in your directory when you're on `main`. If you switch between `main` and `title-dev`, `title.txt` remains in both. Note that the history on `title-dev` is unaffected by the merge: merging only changes the branch you merged *into*, not the branch you merged *from*.
+
+    In graphical form, you `main` branch now looks like this:
 
     ![](figures/git_graphs.003.png){height=300}
 
+
+#### Squash and merge: the cleaner history
+
+When we were preparing to merge `title-dev`, you may have noticed there was a drop-down button next to the "Create a merge commit" button:
+
+![](figures/ghd-merge_select_highlight.png)
+
+
+If you had clicked that, you are presented with three options -- merge, squash and merge, and rebase:
+
+![](figures/ghd-squash_merge_select.png)
+
+Let's see would have happened if we selected **squash and merge** instead by doing a squash and merge on to `main-bkup`.
+
+1.  Switch to the `main-bkup` branch by clicking "Current branch -> main-bkup".
+
+1.  Click "Current branch" again, and select "Choose a branch to merge into main-bkup". Select "title-dev", then click the drop down arrow next to the "Create a merge commit button":
+
+1.  Select "Squash and merge". This will change the blue button to read "Squash and merge". Click that to do the squash and merge:
+
+    ![](figures/squash_merge_main_bkup.png)
+
+1.  Click the History tab to see what the history on `main-bkup` looks like:
+
+    ![](figures/ghd-squash_merge_history.png)
+
+    The two commits that were done on `title-dev`, as well as the final merge commit, have all been "squashed" into a single large commit, which is placed at the end of the history on `main-bkup`. In graphical form, the history on `main-bkup` now looks like this:
+
+
+    The contents of `main-bkup` are exactly the same as `main`, just the history is different. (You can verify this by switching between `main` and `main-bkup`.)
+
+**When do you use squash and merge vs merge?** It's up to you, as each has its pros and cons:
+
+**Merge**
+    * Pros:
+        * Preserves entire development history.
+        * If multiple authors contributed to a development branch, their contributions are attributed in the history. This makes it easier to tell who did what using `git blame`.
+    * Cons:
+        * Makes for a complicated history.
+        * Development branches can consist of many small commits. You probably don't want every little "fix typo" commit in your history on `main`.
+
+**Squash and merge**
+    * Pros:
+        * Makes for a much cleaner history: all new developments are contained in a single commit.
+        * GitHub Desktop will formulate the merge commit message to include all the commit messages from the development branch for reference.
+    * Cons:
+        * It will look as though one person wrote all the changes in the commit since all the commits on the development branch are condensed into a single commit. If multiple people contributed to the branch, their attribution is lost, making it difficult to know who did what using `git blame`. Their attribution can be worked out from looking at the commit message and referring to the development branch (if it's not deleted), but this can be tedious.
+
+Personally, most times I use Squash and Merge to keep the history on `main` clean and straight forward (this is particularly nice on GitHub when using pull requests, as it will refer to the PR in the commit message; we will see this in exercise 3). But when working with someone else on a branch I will sometimes use Merge instead.
+
+
 ::: {.callout-note}
-There is another way to merge branches called *rebasing*. Rebasing changes the history of the development branch to make it look like all the commits came after the last commit on main. This makes for a cleaner history when merging, but can be more challenging to do correctly. See the Appendix (below) for more information.
+## What about rebasing?
+There is another way to merge branches called *rebasing*. Rebasing changes the history of the development branch to make it look like all the commits came after the last commit on main. This is mostly useful for keeping a development branch up to date with `main`. For more on rebasing, see this article by the Atlassian corporation: [Merging vs. rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).
 :::
 
-9. Now that you've merged your `title-dev` branch, you can delete it to save space. To do that, run:
+#### Deleting branches
 
-    ```bash
-    git branch -d title-dev
-    ```
+Now that you've merged your `title-dev` branch, you can delete it to save space. To do that, click Current Branch, then **right click** `title-dev`. This will yield a drop-down menu. Select "Delete branch":
 
-::: {.callout-note}
-If you had not merged everything on `title-dev` into `main`, you would have gotten an error preventing you from deleting the branch. The fact that you could delete it gives you confidence that everything on the development branch has been merged.
-:::
+    ![](figures/ghd-delete_branch.png)
 
 
-
+You will be prompted with a warning. Click the "Delete" button. The `title-dev` branch will be gone! You can also delete `main-bkup` now if you like.
 
 
 ### Challenge Questions: Editing the same file on different branches
