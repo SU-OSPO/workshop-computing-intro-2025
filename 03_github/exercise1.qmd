@@ -351,6 +351,7 @@ Let's see would have happened if we selected **squash and merge** instead by doi
 
     The two commits that were done on `title-dev`, as well as the final merge commit, have all been "squashed" into a single large commit, which is placed at the end of the history on `main-bkup`. In graphical form, the history on `main-bkup` now looks like this:
 
+    ![](figures/git_graphs.004.png){height=300}
 
     The contents of `main-bkup` are exactly the same as `main`, just the history is different. (You can verify this by switching between `main` and `main-bkup`.)
 
