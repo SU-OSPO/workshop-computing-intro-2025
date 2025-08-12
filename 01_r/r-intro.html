@@ -562,10 +562,16 @@ Data objects
 <p>Let’s start by looking at the code RStudio ran for us by copying and pasting the second line from the console into our <code>penguins.R</code> file that is open in the <strong>Editor</strong> window.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>chinstrap_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chinstrap_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error: 'lessons/r-lessons/data/chinstrap_data.csv' does not exist in current working directory ('/home/runner/work/workshop-computing-intro-2025/workshop-computing-intro-2025/01_r').</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 68 Columns: 17
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): studyName, Species, Region, Island, Stage, Individual ID, Clutch C...
+dbl  (7): Sample Number, Culmen Length (mm), Culmen Depth (mm), Flipper Leng...
+date (1): Date Egg
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 <p>You should now have a line of text in your code file that started with <code>chinstrap</code> and ends with a <code>)</code> symbol.</p>
@@ -577,8 +583,25 @@ Data objects
 <p>If we highlight just <code>chinstrap_data</code> within our code file and press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> on our keyboard, what do we see?</p>
 <p>We should see a data table outputted, similar to what we saw in the Viewer tab.</p>
 <div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'chinstrap_data' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 68 × 17
+   studyName `Sample Number` Species         Region Island Stage `Individual ID`
+   &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
+ 1 PAL0708                 1 Chinstrap peng… Anvers Dream  Adul… N61A1          
+ 2 PAL0708                 2 Chinstrap peng… Anvers Dream  Adul… N61A2          
+ 3 PAL0708                 3 Chinstrap peng… Anvers Dream  Adul… N62A1          
+ 4 PAL0708                 4 Chinstrap peng… Anvers Dream  Adul… N62A2          
+ 5 PAL0708                 5 Chinstrap peng… Anvers Dream  Adul… N64A1          
+ 6 PAL0708                 6 Chinstrap peng… Anvers Dream  Adul… N64A2          
+ 7 PAL0708                 7 Chinstrap peng… Anvers Dream  Adul… N66A1          
+ 8 PAL0708                 8 Chinstrap peng… Anvers Dream  Adul… N66A2          
+ 9 PAL0708                 9 Chinstrap peng… Anvers Dream  Adul… N67A1          
+10 PAL0708                10 Chinstrap peng… Anvers Dream  Adul… N67A2          
+# ℹ 58 more rows
+# ℹ 10 more variables: `Clutch Completion` &lt;chr&gt;, `Date Egg` &lt;date&gt;,
+#   `Culmen Length (mm)` &lt;dbl&gt;, `Culmen Depth (mm)` &lt;dbl&gt;,
+#   `Flipper Length (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;,
+#   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
 </div>
 </div>
 <p>In R terms, <code>chinstrap_data</code> is a named <strong>object</strong> that references or stores something. In this case, <code>chinstrap_data</code> stores a specific table of data.</p>
@@ -719,7 +742,7 @@ Behind the curtain of functions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.Date</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-18"</code></pre>
+<pre><code>[1] "2025-08-12"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -861,50 +884,66 @@ Comments
 <p>First let’s read in the “adelie_data.csv” file. While you may be tempted to use the RStudio GUI again, let’s take a stab at writing the code ourselves. We’ll use the same code as before, but with the filename changed:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>adelie_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">'data/adelie_data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error: 'lessons/r-lessons/data/adelie_data.csv' does not exist in current working directory ('/home/runner/work/workshop-computing-intro-2025/workshop-computing-intro-2025/01_r').</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 152 Columns: 17
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): studyName, Species, Region, Island, Stage, Individual ID, Clutch C...
+dbl  (7): Sample Number, Culmen Length (mm), Culmen Depth (mm), Flipper Leng...
+date (1): Date Egg
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 <p>You should see that this new object is now listed in our environment. Also remember that we must always use the relative path to the file. While our script is located in our “code” directory, our working directory is actually the main directory of our project (as is the default for all projects). The relative path to the data file therefore must start with “data/”.</p>
 <p>Now we can combine our two data objects together. The <code>bind_rows()</code> function binds two data frames together rowwise, resulting in a single data.frame. Since we may want the separate data objects later, we save this as a new object.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>penguin_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(adelie_data, chinstrap_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'adelie_data' not found</code></pre>
-</div>
 </div>
 <p>We can use the <code>table()</code> function to count how many of each penguin species are now in our combined data.frame. Here we use the <code>$</code> symbol to extract a single column of the data.frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguin_data<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'penguin_data' not found</code></pre>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguin_data<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      Adelie Penguin (Pygoscelis adeliae) 
+                                      152 
+Chinstrap penguin (Pygoscelis antarctica) 
+                                       68 </code></pre>
 </div>
 </div>
 <p>Now go ahead and read in the last data file and combine it with the existing combined data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gentoo_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">'data/gentoo_data.csv'</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>penguin_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(penguin_data, gentoo_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gentoo_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">'data/gentoo_data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 124 Columns: 17
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): studyName, Species, Region, Island, Stage, Individual ID, Clutch C...
+dbl  (7): Sample Number, Culmen Length (mm), Culmen Depth (mm), Flipper Leng...
+date (1): Date Egg
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error: 'lessons/r-lessons/data/gentoo_data.csv' does not exist in current working directory ('/home/runner/work/workshop-computing-intro-2025/workshop-computing-intro-2025/01_r').</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'penguin_data' not found</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>penguin_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(penguin_data, gentoo_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Your resulting data.frame should give the following counts:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguin_data<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'penguin_data' not found</code></pre>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(penguin_data<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      Adelie Penguin (Pygoscelis adeliae) 
+                                      152 
+Chinstrap penguin (Pygoscelis antarctica) 
+                                       68 
+        Gentoo penguin (Pygoscelis papua) 
+                                      124 </code></pre>
 </div>
 </div>
 <p>Everything looks good, so we can save our combined data object to a new csv file. To keep our repository clean and organized, we’ll make sure to save it in our “data” directory.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(penguin_data, <span class="st">"data/penguin_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(penguin_data, <span class="st">"data/penguin_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="committing-and-pushing-changes-to-github" class="level1">
