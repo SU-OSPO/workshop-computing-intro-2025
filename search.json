@@ -174,7 +174,7 @@
     "href": "index.html#installation",
     "title": "Computing 101 Workshop – Summer 2025",
     "section": "Installation",
-    "text": "Installation\nAttendees should install the following software before the workshop:\n\nGitHub Desktop (and make a GitHub account if you don’t have one already)\nMiniconda (if attending Python sessions)\nR and RStudio (if attending R sessions)"
+    "text": "Installation\nAttendees should install the following software before the workshop:\n\nGitHub Desktop (and make a GitHub account if you don’t have one already)\nR and RStudio (if attending R sessions)\nMiniconda (if attending the Bash and Conda sessions)\nGit for Windows (if running Windows and attending the Bash and Conda sessions)"
   },
   {
     "objectID": "01_r/r-intro.html",
