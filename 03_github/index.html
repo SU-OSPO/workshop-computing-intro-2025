@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -344,8 +309,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a>
   <ul class="collapse">
-  <li><a href="#github-ssh-keys" id="toc-github-ssh-keys" class="nav-link" data-scroll-target="#github-ssh-keys">GitHub ssh keys</a></li>
-  <li><a href="#git-configuration" id="toc-git-configuration" class="nav-link" data-scroll-target="#git-configuration">Git configuration</a></li>
+  <li><a href="#install-github-desktop" id="toc-install-github-desktop" class="nav-link" data-scroll-target="#install-github-desktop">1. Install GitHub Desktop</a></li>
+  <li><a href="#setup-github-desktop" id="toc-setup-github-desktop" class="nav-link" data-scroll-target="#setup-github-desktop">2. Setup GitHub Desktop</a></li>
   </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
@@ -397,34 +362,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>The following should be done <em>before</em> doing the exercises below.</p>
-<section id="github-ssh-keys" class="level3">
-<h3 class="anchored" data-anchor-id="github-ssh-keys">GitHub ssh keys</h3>
-<p>In exercises 2 and 3 you will be using GitHub to “push” and “pull” commits between your local computer and GitHub’s servers. This requires authentication to be setup. For these purposes we suggest using ssh keys. To set that up, follow the instructions here:</p>
+<section id="install-github-desktop" class="level3">
+<h3 class="anchored" data-anchor-id="install-github-desktop">1. Install GitHub Desktop</h3>
+<p>For this tutorial we will be using GitHub Desktop. To install:</p>
+<ol type="1">
+<li>Go to https://github.com/apps/desktop.</li>
+<li>Click the “Download now” button.</li>
+<li>What you do next depends on your operating system:</li>
+</ol>
 <ul>
-<li><a href="../03_github/ssh_setup.html">Setup ssh key for GitHub</a></li>
+<li>If you’re on a Mac:
+<ol type="a">
+<li>Click “Download for Apple silicon” or “Download for Intel chip” depending on your processor. If you’re not sure what processor you have, click the apple button in your Menu bar then “About This Mac”. Look at the “Chip” entry in the window that pops up. If it says, “Apple M…” you have Apple silicon. If it says, “Intel …” you have an Intel chip.</li>
+<li>Clicking one of the download buttons will download a .zip file that starts with “GitHubDesktop”. Once it’s finished downloading, open it. The file will unzip and open a Finder window.</li>
+<li>Move the GitHub Desktop icon into your Applications folder in Finder.</li>
+<li>Open GitHub Desktop as you would any other application (e.g., by going to Launchpad and clicking on the GitHub Desktop icon).</li>
+<li>The first time you open GitHub Desktop you will be prompted with a warning, “‘GitHub Desktop’ is an app downloaded from the internet. Are you sure you want to open it?” Click “Open”.</li>
+</ol></li>
+<li>If you’re on a Windows machine:
+<ol type="a">
+<li>Click “Download for Windows (64 bit)”. This will download a file called “GitHubDesktopSetup-x64.exe”.</li>
+<li>Once the file downloads, it will automatically install and open GitHub Desktop.</li>
+</ol></li>
 </ul>
 </section>
-<section id="git-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="git-configuration">Git configuration</h3>
-<p>Before doing the exercises in this session, you’ll need to tell <code>git</code> what your name and email are, so that it creates commits with the appropriate author information. To do that, open a terminal and run the following (it doesn’t matter which directory you run these from), but replacing <code>YOUR NAME</code> with your name and <code>YOUR_EMAIL_ADDRESS</code> with your email address:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"YOUR NAME"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"YOUR_EMAIL_ADDRESS"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For entering longer commit messages (you’ll learn what this means in Exercise 1) we’ll need to tell <code>git</code> what text editor to use. By default <code>git</code> will use <code>vim</code>, which can be tricky to understand for new users. For the purposes of this tutorial, we’ll use the more user-friendly <a href="https://en.wikipedia.org/wiki/GNU_nano">nano</a>. To do that, run the following in your terminal:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor nano</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you wish to reset to the default editor after the tutorial is over, run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset-all</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<section id="setup-github-desktop" class="level3">
+<h3 class="anchored" data-anchor-id="setup-github-desktop">2. Setup GitHub Desktop</h3>
+<p>The first time you open GitHub Desktop you will need to sign into GitHub.</p>
+<ol type="1">
+<li>Click “Sign in to GitHub.com”. If you do not have an account yet, click “Create your free account”.</li>
+<li>Follow the on-screen instructions to sign in.</li>
+<li>After you sign in, GitHub Desktop will ask you to “Configure Git”. We recommend you select the option “Use my GitHub account name and email address”. Click “Finish”.</li>
+</ol>
+<p>You will next be prompted with a “Let’s get started!” screen that will ask you to add a repository to GitHub Desktop. <strong>Stop here</strong> and go to <a href="../03_github/exercise1.html">Exercise1</a>.</p>
 </section>
 </section>
 <section id="exercises" class="level2">
