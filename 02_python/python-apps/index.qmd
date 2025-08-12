@@ -9,4 +9,4 @@ listing:
   filter-ui: false
 ---
 
-Scratch notebook for the miscellaneous applications: [![Open Python Apps Tutorial](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/Applications-scratch.ipynb)
+Scratch notebook for the miscellaneous applications: [![Open Python Apps Tutorial](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/_Applications-scratch.ipynb)

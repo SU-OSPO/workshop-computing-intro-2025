@@ -10,4 +10,4 @@ This Python tutorial is broken down into three parts:
 - [**Flow, Loops, and Classes**](python-flow-loops-classes.qmd) – Introduces control flow, loops, and classes in Python, including how to write functions and use loops effectively.
 - [**Miscellaneous Applications**](python-apps/index.qmd) – Covers miscellaneous applications of Python, including data manipulation and analysis with pandas, data visualization with matplotlib, and machine learning.
 
-At the beginning of each part there is a link to a scratch notebook that you can open in Google Collab to follow along in your browser.
+At the beginning of each part there is a link to a scratch notebook that you can open in Google Colab to follow along in your browser.
