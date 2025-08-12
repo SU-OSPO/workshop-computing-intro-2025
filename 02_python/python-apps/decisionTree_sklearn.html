@@ -110,11 +110,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Decision Trees with Scikit-learn – Computing 101 Workshop – Summer 2025">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-apps/decisionTree_sklearn_files/figure-html/cell-7-output-2.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
 <meta property="og:image:height" content="777">
 <meta property="og:image:width" content="1080">
 <meta name="twitter:title" content="Decision Trees with Scikit-learn – Computing 101 Workshop – Summer 2025">
+<meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/02_python/python-apps/decisionTree_sklearn_files/figure-html/cell-7-output-2.png">
 <meta name="twitter:image-height" content="777">
 <meta name="twitter:image-width" content="1080">
@@ -338,8 +340,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#build-a-decision-tree-classifier" id="toc-build-a-decision-tree-classifier" class="nav-link active" data-scroll-target="#build-a-decision-tree-classifier">Build a Decision Tree Classifier</a></li>
+  <li><a href="#visualizing-the-decision-tree" id="toc-visualizing-the-decision-tree" class="nav-link" data-scroll-target="#visualizing-the-decision-tree">Visualizing the Decision Tree</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/decisionTree_sklearn.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -363,14 +372,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="93e9b9ec" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:9,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859339425,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="1">
+<p>In this module we will learn how to use the Decision Tree Classifier from the Scikit-learn library to classify diabetes data. We will use a dataset that contains various health measurements and whether or not the individual has diabetes.</p>
+<div id="5dfd3cc7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:9,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859339425,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d36c164a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:16,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859829708,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="2">
+<div id="c4ae7af5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:16,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859829708,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'diabetes.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="dd01b29f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:24,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859827862,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="3">
+<div id="aa83a291" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:24,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754859827862,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -458,7 +468,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="d95da747" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:22,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754860901843,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="4">
+<section id="build-a-decision-tree-classifier" class="level2">
+<h2 class="anchored" data-anchor-id="build-a-decision-tree-classifier">Build a Decision Tree Classifier</h2>
+<div id="1b1b67db" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:22,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754860901843,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> tree</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier <span class="co"># Import Decision Tree Classifier</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split <span class="co"># Import train_test_split function</span></span>
@@ -488,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Accuracy: 0.7575757575757576</code></pre>
 </div>
 </div>
-<div id="44054965" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:11,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754861249316,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="5">
+<div id="275d9eaf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:11,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754861249316,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 1 0
@@ -500,7 +512,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  0 1 0 0 0 0 0 1 0]</code></pre>
 </div>
 </div>
-<div id="7b6950a0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:564,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754861078823,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="6">
+</section>
+<section id="visualizing-the-decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-decision-tree">Visualizing the Decision Tree</h2>
+<div id="1c5fe23a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:564,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1754861078823,&quot;user&quot;:{&quot;displayName&quot;:&quot;Xuebin Yang&quot;,&quot;userId&quot;:&quot;18047631927912204745&quot;},&quot;user_tz&quot;:240}}" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tree.plot_tree(clf, feature_names<span class="op">=</span>features)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>[Text(0.5, 0.875, 'Glucose &lt;= 129.5\ngini = 0.449\nsamples = 537\nvalue = [354, 183]'),
@@ -531,6 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -952,7 +968,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/decisionTree_sklearn.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/decisionTree_sklearn.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
