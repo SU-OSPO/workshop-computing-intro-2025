@@ -207,11 +207,8 @@ There are many different ways to store data in R. Most objects have a table-like
 
 Let's start by looking at the code RStudio ran for us by copying and pasting the second line from the console into our `penguins.R` file that is open in the **Editor** window.
 
-```{r consoleReadEcho, eval = FALSE}
+```{r consoleReadEcho}
 chinstrap_data <- read_csv("data/chinstrap_data.csv")
-```
-```{r consoleReadEval, echo = FALSE, message = FALSE}
-chinstrap_data <- read_csv("lessons/r-lessons/data/chinstrap_data.csv")
 ```
 
 You should now have a line of text in your code file that started with `chinstrap` and ends with a `)` symbol.
@@ -420,11 +417,8 @@ The last step before we can move on to [plotting](r-plotting.qmd) is reading in 
 
 First let's read in the "adelie_data.csv" file. While you may be tempted to use the RStudio GUI again, let's take a stab at writing the code ourselves. We'll use the same code as before, but with the filename changed:
 
-```{r ReadData2Echo, eval = FALSE}
+```{r ReadData2Echo}
 adelie_data <- read_csv(file = 'data/adelie_data.csv')
-```
-```{r ReadData2Eval, echo = FALSE}
-adelie_data <- read_csv(file = 'lessons/r-lessons/data/adelie_data.csv')
 ```
 
 You should see that this new object is now listed in our environment. Also remember that we must always use the relative path to the file. While our script is located in our "code" directory, our working directory is actually the main directory of our project (as is the default for all projects). The relative path to the data file therefore must start with "data/".
@@ -443,12 +437,8 @@ table(penguin_data$Species)
 
 Now go ahead and read in the last data file and combine it with the existing combined data.
 
-```{r ReadData3Echo, eval = FALSE}
+```{r ReadData3Echo}
 gentoo_data <- read_csv(file = 'data/gentoo_data.csv')
-penguin_data <- bind_rows(penguin_data, gentoo_data)
-```
-```{r ReadData3Eval, echo = FALSE}
-gentoo_data <- read_csv(file = 'lessons/r-lessons/data/gentoo_data.csv')
 penguin_data <- bind_rows(penguin_data, gentoo_data)
 ```
 
