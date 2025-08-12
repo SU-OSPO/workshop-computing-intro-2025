@@ -45,8 +45,6 @@ The first time you open GitHub Desktop you will need to sign into GitHub.
 
 You will next be prompted with a "Let's get started!" screen that will ask you to add a repository to GitHub Desktop. **Stop here** and go to  [Exercise1](exercise1.qmd).
 
-:::
-
 ## Exercises
 
 -   [Exercise1](exercise1.qmd): Practice with `git` on a local repository

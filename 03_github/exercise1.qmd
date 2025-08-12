@@ -140,12 +140,19 @@ We can tell Git to ignore certain files. Here, we'll tell it to ignore the `.DS_
 ::: {.callout-note}
 ## Windows users
 Windows users will not have a `.DS_Store` file or any other hidden file created by the OS as on Mac. To follow along in this part, create an empty file in your repository called `.DS_Store` and save it:
-    a. Switch back to Notepad.
-    b. Create a new file by typing <kbd>Ctrl</kbd>+<kbd>N</kbd>. This will open a new Untitled file that is empty.
-    c. Click File -> Save.
-    d. In the "Save as type" field click the drop-down menu and select "All files".
-    e. In the File name field type `.DS_Store.`. **Note the trailing period!** That is, enter `.DS_Store.` not `.DS_Store` -- if you don't include the period at the end of the file name, Windows will automatically add `.txt` to the end.
-    f. Click "Save"
+
+a.  Switch back to Notepad.
+
+b.  Create a new file by typing <kbd>Ctrl</kbd>+<kbd>N</kbd>. This will open a new Untitled file that is empty.
+
+c.  Click File -> Save.
+
+d.  In the "Save as type" field click the drop-down menu and select "All files".
+
+e.  In the File name field type `.DS_Store.`. **Note the trailing period!** That is, enter `.DS_Store.` not `.DS_Store` -- if you don't include the period at the end of the file name, Windows will automatically add `.txt` to the end.
+
+f.  Click "Save"
+
 :::
 
 To tell Git to ignore a file:
@@ -295,13 +302,13 @@ You want to start working on titles for your stories, but you want to do it inde
 
     To create the copy of `main`:
 
-        a.  Click Current Branch. Make sure you're on `main` (the checkmark is next to `main`), then click "New Branch":
+    a.  Click Current Branch. Make sure you're on `main` (the checkmark is next to `main`), then click "New Branch":
 
-            ![](figures/ghd-main_bkup_create.png)
+        ![](figures/ghd-main_bkup_create.png)
 
-        b.  This will open the "Create a Branch" window. Type `main-bkup` in the Name field, then click "Create Branch". You will now be on the `main-bkup` branch.
+    b.  This will open the "Create a Branch" window. Type `main-bkup` in the Name field, then click "Create Branch". You will now be on the `main-bkup` branch.
 
-        c.  Now go back to the `main` branch by clicking "Current Branch -> main".
+    c.  Now go back to the `main` branch by clicking "Current Branch -> main".
 
 1.  Now click the Current Branch drop-down menu again, and this time click the "Choose a branch to merge into *main*" button:
 
@@ -341,9 +348,7 @@ Let's see would have happened if we selected **squash and merge** instead by doi
 
 1.  Click "Current branch" again, and select "Choose a branch to merge into main-bkup". Select "title-dev", then click the drop down arrow next to the "Create a merge commit button":
 
-1.  Select "Squash and merge". This will change the blue button to read "Squash and merge". Click that to do the squash and merge:
-
-    ![](figures/squash_merge_main_bkup.png)
+1.  Select "Squash and merge". This will change the blue button to read "Squash and merge". Click that to do the squash and merge.
 
 1.  Click the History tab to see what the history on `main-bkup` looks like:
 
@@ -351,28 +356,34 @@ Let's see would have happened if we selected **squash and merge** instead by doi
 
     The two commits that were done on `title-dev`, as well as the final merge commit, have all been "squashed" into a single large commit, which is placed at the end of the history on `main-bkup`. In graphical form, the history on `main-bkup` now looks like this:
 
-    ![](figures/git_graphs.004.png){height=300}
+    ![](figures/git_graphs.004.png){width=800}
 
     The contents of `main-bkup` are exactly the same as `main`, just the history is different. (You can verify this by switching between `main` and `main-bkup`.)
 
-**When do you use squash and merge vs merge?** It's up to you, as each has its pros and cons:
+##### When do you use squash and merge vs merge?
+
+It's up to you, as each has its pros and cons:
 
 **Merge**
-    * Pros:
-        * Preserves entire development history.
-        * If multiple authors contributed to a development branch, their contributions are attributed in the history. This makes it easier to tell who did what using `git blame`.
-    * Cons:
-        * Makes for a complicated history.
-        * Development branches can consist of many small commits. You probably don't want every little "fix typo" commit in your history on `main`.
+
+*   Pros:
+    *   Preserves entire development history.
+    *   If multiple authors contributed to a development branch, their contributions are attributed in the history. This makes it easier to tell who did what using `git blame`.
+    
+*   Cons:
+    * Makes for a complicated history.
+    * Development branches can consist of many small commits. You probably don't want every little "fix typo" commit in your history on `main`.
 
 **Squash and merge**
-    * Pros:
-        * Makes for a much cleaner history: all new developments are contained in a single commit.
-        * GitHub Desktop will formulate the merge commit message to include all the commit messages from the development branch for reference.
-    * Cons:
-        * It will look as though one person wrote all the changes in the commit since all the commits on the development branch are condensed into a single commit. If multiple people contributed to the branch, their attribution is lost, making it difficult to know who did what using `git blame`. Their attribution can be worked out from looking at the commit message and referring to the development branch (if it's not deleted), but this can be tedious.
+    
+*   Pros:
+    * Makes for a much cleaner history: all new developments are contained in a single commit.
+    * GitHub Desktop will formulate the merge commit message to include all the commit messages from the development branch for reference.
+    
+*   Cons:
+    * It will look as though one person wrote all the changes in the commit since all the commits on the development branch are condensed into a single commit. If multiple people contributed to the branch, their attribution is lost, making it difficult to know who did what using `git blame`. Their attribution can be worked out from looking at the commit message and referring to the development branch (if it's not deleted), but this can be tedious.
 
-Personally, most times I use Squash and Merge to keep the history on `main` clean and straight forward (this is particularly nice on GitHub when using pull requests, as it will refer to the PR in the commit message; we will see this in exercise 3). But when working with someone else on a branch I will sometimes use Merge instead.
+Personally, I use Squash and Merge most of the time to keep the history on `main` clean and straight forward (this is particularly nice on GitHub when using pull requests, as it will refer to the PR in the commit message; we will see this in exercise 3). But when working with someone else on a branch I will sometimes use Merge instead.
 
 
 ::: {.callout-note}
@@ -384,7 +395,7 @@ There is another way to merge branches called *rebasing*. Rebasing changes the h
 
 Now that you've merged your `title-dev` branch, you can delete it to save space. To do that, click Current Branch, then **right click** `title-dev`. This will yield a drop-down menu. Select "Delete branch":
 
-    ![](figures/ghd-delete_branch.png)
+![](figures/ghd-delete_branch.png)
 
 
 You will be prompted with a warning. Click the "Delete" button. The `title-dev` branch will be gone! You can also delete `main-bkup` now if you like.
@@ -399,65 +410,52 @@ In the above example we only made changes to different files on our two branches
 
 Create a file called `list.txt` that initially contains the following three lines:
 
-```bash
+```txt
 alpha
 bravo
 charlie
 ```
 
-Now use the `git` commands you learned above to do the following:
+Now use the what you learned above to do the following:
 
 1. Add and commit `list.txt` to `main`.
 
 2. Create a branch called `dev1`.
 
-3. On `dev1` change the first line of `list.txt` to `delta` then commit the change.
+3. On `dev1` change the first line of `list.txt` to `delta` (i.e., replace `alpha`) then commit the change. Make the commit summary mesage be "add delta to list" when you do.
 
-4. Go back to `main` and change the third line to `foxtrot`, then commit it.
+4. Go back to `main` and change the third line to `foxtrot` (i.e., replace `charlie`), then commit it.
 
 
 ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
 ##### Solution
 
-1. Run:
+1.  Once you create `list.txt` (use your text editor to do this), you should see it appear in the Changes tab in GitHub Desktop. Make sure you're on `main` (the Current Branch should say `main`; if not, click Current Branch -> main). Then:
+
+    a.  Click the check mark next to `list.txt`.
+    b.  Optionally add a summary, or just use the default "Create list.txt".
+    c.  Click the "Commit 1 file to main".
     
-    ```bash
-    git add list.txt
-    git commit -m "add list.txt"
-    ```
+2.  Do the following:
 
-2. Run:
-    
-    ```bash
-    git checkout -b dev1
-    ```
+    a.  Click Current Branch -> New Branch.
+    b.  Type `dev1` in the Name field.
+    c.  Click Create Branch.
 
-3. Use `nano` (or your favorite text editor) to edit `list.txt` and change the first line to `delta`. Then run:
+3.  Use your text editor to open `list.txt` and change the first line to `delta`. As soon as you save the file, you should the new line appear in the Changes tab on GitHub Desktop. Click the check mark next to `list.txt`, then type "add delta to list" in the summary field (this will replace the default "Update list.txt"), then click "Commit 1 file to dev1".
 
-    ```bash
-    git add list.txt
-    git commit -m "change the first item of list"
-    ```
+4. Do the following:
 
-4. First run:
-
-    ```bash
-    git checkout main
-    ```
-
-    Then use `nano` (or your favorite text editor) to edit `list.txt` and  change the third line to `foxtrot`. To commit, run:
-
-    ```bash
-    git add list.txt
-    git commit -m "change the last item of list"
-    ```
-
+    a.  If list.txt is open in your text editor, close it. Then click "Current branch" -> main to switch back to main.
+    b.  Open list.txt with your text editor and change third line to `foxtrot`, then save and exit.
+    c. list.txt should appear in the Changes tab. Click the check mark next to it.
+    d. Add "add foxtrot to list", then click "Commit 1 file to main".
 
 :::
 
 When you are done, `list.txt` should look like the following on `main`:
 
-```bash
+```txt
 alpha
 bravo
 foxtrot
@@ -465,13 +463,11 @@ foxtrot
 
 while on `dev1` it should look like:
 
-```bash
+```txt
 delta
 bravo
 charlie
 ```
-
-You can check the differences by running `git diff main dev1.`
 
 ::::
 
@@ -513,12 +509,12 @@ foxtrot
 ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
 ##### Solution
 
-The answer is **C**. Since different lines have been modified, `git` is able to merge the changes together without issue. To do it yourself, run:
+The answer is **C**. Since different lines have been modified, `git` is able to merge the changes together without issue. To do it yourself:
 
-```bash
-git checkout main
-git merge dev1
-```
+a.  Click Current Branch -> main to switch to main.
+b.  Click Current Branch -> "Choose a branch to merge into main"
+c.  Select dev1 then click "Create a merge commit".
+
 :::
 ::::
 
@@ -579,26 +575,25 @@ The answer is **D**, an error is raised. Since the same line has been modified i
 :::
 ::::
 
-### Part 4: Resolving merge conflicts
+### IV. Resolving merge conflicts
 
 As illustrated in the Challenge Questions, if the same lines in the same file are modified on two different branches, `git` will not know how to merge the changes. This is called a **merge conflict**. In this case, `git` will ask you to reconcile the differences. To illustrate, let's try merging `dev2` into `main` after making the changes to `list.txt` discussed in Question 3 above:
 
 1. If you have not done so, try to merge `dev2` into `main` after making the changes to the second line of `list.txt` discussed in Question 3:
 
-    ```bash
-    git checkout main
-    git merge dev2
-    ```
+    a.  Switch to `main`: Click Current Branch -> main.
+    b.  Click Current Branch -> Choose a branch to merge into "main".
+    c.  Select dev2, then  click "Create a merge commit" (note that a message pops up above the button that says there be 1 conflicted file).
 
-    You should get the following:
+1.  When you try to do the merge, you will get the Resolve conflicts box:
 
-    ```txt
-    Auto-merging list.txt
-    CONFLICT (content): Merge conflict in list.txt
-    Automatic merge failed; fix conflicts and then commit the result.
-    ```
+    ![](figures/ghd-resolve_conflicts.png)
 
-2. To resolve the merge conflict, we must edit `list.txt` ourselves. Use `nano` (or your favorite text editor) to open `list.txt`. You should see the following:
+    This tells you what files are conflicted (in this case `list.txt`).
+
+    To fix this, we need to manually resolve the conflict. There are several options to deal with this. If you have VS Code or some other code editor installed, you will see an option to open the file in that program. Here, though, we'll use our simple text editor to resolve the issue.
+
+1.  Open list.txt with your text editor. You should see the following:
 
     ```txt
     delta
@@ -614,7 +609,7 @@ As illustrated in the Challenge Questions, if the same lines in the same file ar
 
     After the `=======` the line(s) as it/they appear(s) on the branch being merged are shown. These are followed by `>>>>>>> BRANCH_NAME` (here, `BRANCH_NAME` is `dev2`).
 
-3. We are free to edit the file anyway we like to resolve the conflict. You should remove the `<<<<`, `====`, and `>>>>` lines that `git` has added, along with the edit you want to make to resolve the conflict.
+1.  We are free to edit the file anyway we like to resolve the conflict. You should remove the `<<<<`, `====`, and `>>>>` lines that `git` has added, along with the edit you want to make to resolve the conflict.
 
     In this case, let's keep the edit as it appears on `dev2`, and remove the edit on `main`. Delete the appropriate lines so that the file looks like:
 
@@ -626,55 +621,16 @@ As illustrated in the Challenge Questions, if the same lines in the same file ar
 
     Then save and exit the file.
 
-4. Now that we are happy with the way `list.txt` appears, add the file:
+1.  As soon as you save the changes to `list.txt`, the merge conflict window in GitHub Desktop will change to show that all conflicts have been resolved:
 
-    ```bash
-    git add list.txt
-    ```
+    ![](figures/ghd-resolved_conflicts.png)
 
-    Now `commit` *without the* `-m`:
+    Click "Continue Merge".
 
-    ```bash
-    git commit
-    ```
-
-    This will open up your text editor. The commit message will already be set to `Merge branch 'dev2'`. While you are free to modify this, it's usually best to leave it as-is, as it indicates the merge. Save and exit the file.
-
-5. The merge conflict is resolved! If you type `git log` you will see the history with all the commits in it, as if you had a merged without any issue.
+1. The merge conflict is resolved! If you click on the History tab you will see the history with all the commits in it, as if you had a merged without any issue.
 
 Merge conflicts happen, but can be fixed fairly easy. If there were multiple areas in a file that caused a conflict, the conflicting areas would all be surrounded by the same `<<<<<<< `/`=======`/`>>>>>>>` lines that we saw above. You'll want to search through the file for those to make sure you got all the conflicts. If multiple files had conflicts, `git` will make you resolve all of them before allowing the merge to complete.
 
 ### Summary
 
 That's the basics of how to use `git`. In the following parts we'll see how to use this with GitHub and how to collaborate with partners using `git` and GitHub.
-
-### Appendix: Rebasing
-
-Before merging `title-dev` into master in step 8 above, we could have first done a *rebase*. If you rebase a development branch against its parent branch (in this case `main`) it will incorporate all the commits that were made on the parent after the development branch was originally created. To do so, the development branch's history is rearranged so that the additional commits from the parent are placed before all commits that were made on the development branch.
-
-For example, if we had run `git rebase main` while on the `title-dev` branch in Part 3, step 8 above, `title-dev`'s history would have been rearranged from:
-
-![](figures/git_graphs.002.png){height=300}
-
-to:
-
-![](figures/git_graphs.004.png){height=300}
-
-The **advantage** to rebasing is that when we merge a rebased development branch back into main no "Merge" commit is created, and the history on main is much simpler. So, in our story example, if we had done the following in step 8:
-
-```bash
-git checkout title-dev
-git rebase main
-git checkout main
-git merge title-dev
-```
-
-Then main's history would have looked like:
-
-![](figures/git_graphs.005.png){height=250}
-
-rather than the more complicated graph above.
-
-The **disadvantage** to rebasing is it can be more challenging to handle merge conflicts. When rebasing, conflicts need to be handled at the point they are created in the development branch, rather once at the end when the merge occurs. If resolving a conflict affects a later commit on the development branch, it can cause a cascading series of conflicts that can be a challenge to untangle. The other challenge with rebasing is it can cause issues when collaborating with others on a development branch. Since rebasing changes the history of the branch, it can make it a challenge for your colleagues to keep their clones in sync with yours. For these reasons, rebasing is best for more advanced users.
-
-For more on rebasing, see this article by the Atlassian corporation: [Merging vs. rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).
