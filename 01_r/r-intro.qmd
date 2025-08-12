@@ -454,13 +454,5 @@ Everything looks good, so we can save our combined data object to a new csv file
 write_csv(penguin_data, "data/penguin_data.csv")
 ```
 
-# Committing and pushing changes to GitHub
-
-Now we'll use the Git interface in RStudio to commit our new files to our forked GitHub repoitory. Click on the "Git" tab in the top right panel. Clicking this tab will show you all of the files that have been modified since we last committed. In this case, you should see a file created by RStudio for your project, your new "penguins.R" script, and your new "penguins_data.csv" data file.
-
-<img src="fig/git_panel.png" width="600"/>
-
-Click the boxes next to these three files to queue them for committing. Then click the <kbd>Commit</kbd> button. A new window should open where you can enter a commit message. Remember that commit messages should be both informative and concise. Once you are satisfied with your commit message, click the <kbd>Commit</kbd> button, and then <kbd>Push</kbd>. And that's that!
-
-<img src="fig/commit_panel.png" width="600"/>
+And that's it for this module!
 
