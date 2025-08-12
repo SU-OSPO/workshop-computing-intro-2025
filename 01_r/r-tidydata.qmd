@@ -96,6 +96,11 @@ We can select specific columns in our dataset with the `select()` function. All 
 select(penguins_raw, Species, Island, `Individual ID`)
 ```
 
+::: {.callout-note}
+## Spaces in column names
+Note that here we had to use the "`" symbol around the final column name because the column name includes a space. If there are no spaces in your column names, you would just write out their names with no quotes or apostrophes. We'll discuss more about proper column names [later in the session](#renaming-columns).
+:::
+
 This is a good moment to talk about "pipes." Notice how the code below produces the same output as the one above, but with a slightly different syntax. Pipes (`|>` or `%>%`) "kick" the object on the left of the pipe to the first argument of the function on the right. One can read pipes as "then," so the code below can be read as "take `penguins_raw`, then select the columns `Species`, `Island` and `Individual ID`." Pipes are very powerful and can be used to *link multiple operations*, as we will see in a moment.
 
 ```{r}
