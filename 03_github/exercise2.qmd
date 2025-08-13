@@ -1,5 +1,5 @@
 ---
-title: "Exercise 2: Interacting with remote repositories on GitHub"
+title: "2. Interacting with remote repositories on GitHub"
 index: 3
 ---
 
@@ -34,7 +34,7 @@ There are two ways to add a repository to GitHub: (1) publish a repository to Gi
 
     Congratulations! You've published a repository to GitHub. We'll see what we can do with GitHub below.
 
-### 2. Create / clone a repository on GitHub
+### 2. Create a repository on GitHub
 
 More often then not, you will copy already existing repositories on GitHub to your local computer. This is called **cloning**. To illustrate that, let's create a new repository directly on GitHub, then clone that to our local computer.
 
@@ -137,10 +137,7 @@ Let's create a branch to do some development work. We could do this on our local
 
 1.  Now look at your web browser. As soon pushed the changes a message popped up that said "`dev1 ` had recent pushes" with a green `Compare and pull request` button popping up.
 
-    On GitHub Desktop you'll also see see a button pop up on GitHub Desktop that says "Preview Pull Request." If you click that, another window will pop up:
-
-
-    This shows all the differences between `dev1` and `main`. There will also be a button that says "Create Pull Request".
+    On GitHub Desktop you'll also see see a button pop up on GitHub Desktop that says "Preview Pull Request." If you click that, another window will pop up. This shows all the differences between `dev1` and `main`. There will also be a button that says "Create Pull Request".
 
 1.  Clicking "Create Pull Request" in GitHub Desktop or clicking the green "Compare & pull request" button on github.com will open the "pull request" page on github.com in your web browser. Open the pull request by clicking either button.
 
@@ -152,9 +149,15 @@ Let's create a branch to do some development work. We could do this on our local
 
     Let's use Squash & Merge to merge the pull request. Click the drop down arrow next to "Merge pull request", then select "Squash and merge". The green button will change to read "Squash and merge". Click it, then "Confirm squash and merge". This will merge your changes on `dev1` on to `main`. You now have the option to delete `dev1`. Feel free to click the delete dev1 branch button.
 
-1.  Now that your `main` branch on GitHub has the merged changes, your `main` branch on your local copy is out of sync. To update it, click the "Fetch origin" in the upper right of GitHub Desktop.
+1.  Now that your `main` branch on GitHub has the merged changes, your `main` branch on your local copy is out of sync. To update it, switch to your `main` branch on GitHub Desktop (click "Current Branch" -> `main`).  Now click the "Fetch origin" in the upper right of GitHub Desktop.
 
-1.  You can verify that you have the changes on your local repository by switching to the `main` branch on GitHub Desktop, then selecting the "History" tab. You'll see that the Squash & Merge commit is there. GitHub has also added the pull request number `(#1)` in the commit message. Notice that this is actually a hyperlink:
+1.  After you fetch, a message will pop up that says "Pull 1 commit from the origin remote":
+
+    ![](figures/ghd-pull.png)
+
+    Even though you clicked "Fetch origin" the changes on your remote repository have not actually been merged into your local repository yet! You can verify this by looking at the History tab: your pull request commit is not there. This is becausing fetching only lets your local repository know what the *status* of your remote repository is; it doesn't actually change your local repository. In order to get the changes into your local repository you need to **pull** the changes. Do that by clicking the "Pull origin" button.
+
+1.  Once you pull the changes, your local repository's main branch will be up to date with your remote. You can verify this selecting the "History" tab. You'll see that the Squash & Merge commit is now listed in your history. GitHub has also added the pull request number `(#1)` in the commit message. Notice that this is actually a hyperlink:
 
     ![](figures/ghd-pr_link.png)
 
@@ -162,7 +165,7 @@ Let's create a branch to do some development work. We could do this on our local
 
 
 ::: {.callout-note}
-Note that even though you deleted the `dev1` branch on github.com, `dev1` still exists in your local repository, even though you fetched the changes to your local repository. **Git will not delete a local branch even if it's deleted remotely.** There's good reason for that: if a collaborator accidentally deleted a branch on the remote repository that you were working on locally, you'd be in for an unpleasant surprise the next time you fetched.
+Even though you deleted the `dev1` branch on github.com, `dev1` still exists in your local repository, even though you fetched the changes to your local repository. **Git will not delete a local branch even if it's deleted remotely.** There's good reason for that: if a collaborator accidentally deleted a branch on the remote repository that you were working on locally, you'd be in for an unpleasant surprise the next time you fetched.
 
 You'll need to explicitly delete your local copy of `dev1` using GitHub Desktop. To do that, click "Current Branch", then right click `dev1`, then "Delete".
 :::
