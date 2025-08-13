@@ -72,7 +72,7 @@ One of the helpful features in RStudio is the ability to create a project. Proje
 
 First, we'll need to create a GitHub repository. For the rest of the workshop, we'll be using data collected about adult male and female Adélie (<i>P. adeliae</i>), chinstrap (<i>P. antarcticus</i>), and gentoo (<i>P. papua</i>) penguins on three islands (Biscoe, Dream, and Torgersen) within the Palmer Archipelago. For more information about the collection and handling of these data, see [Gorman et al. 2014](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081) and [Horst et al. 2022](https://journal.r-project.org/articles/RJ-2022-020/).
 
-I've hosted these data within a [fresh repository](https://github.com/SyracuseUniversity/penguins_repo) on GitHub. Like you did in the [git and Github session](../03_github/index.qmd), go ahead and fork this repository so that you have your own personal copy of it.
+I've hosted these data within a [fresh repository](https://github.com/SU-OSPO/penguins_repo) on GitHub. <kbd>Fork</kbd> this repository so that you have your own personal copy of it.
 
 <img src="fig/penguins_repo.png" width="600"/>
 
@@ -95,7 +95,7 @@ Now paste your repository SSH link in the first box, then name your new repo dir
 <img src="fig/project_from_git_repo.png" width="600"/>
 
 ::: {.callout-note}
-In addition to using the git URL of the repository (e.g., https://github.com/willgearty/penguins_repo.git), you can also use the SSH link for more secure access and use of a repository. To learn more about securly creating and accessing github repositories see this [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+In addition to using the git URL of the repository (e.g., https://github.com/willgearty/penguins_repo.git), you can also use the SSH link for more secure access and use of a repository. To learn more about securely creating and accessing github repositories see this [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 :::
 
 Then click the <kbd>Create Project</kbd> button.
