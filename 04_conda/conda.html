@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>git and GitHub – Computing 101 Workshop – Summer 2025</title>
+<title>conda and mamba – Computing 101 Workshop – Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../03_github/exercise1.html" rel="next">
-<link href="../02_python/python-apps/decisionTree_sklearn.html" rel="prev">
+<link href="../04_conda/index.html" rel="prev">
 <link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -71,14 +105,14 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="git and GitHub – Computing 101 Workshop – Summer 2025">
-<meta property="og:description" content="Introduction to git and GitHub">
+<meta property="og:title" content="conda and mamba – Computing 101 Workshop – Summer 2025">
+<meta property="og:description" content="Using conda and mamba to create environments and install packages.">
 <meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
 <meta property="og:image:height" content="968">
 <meta property="og:image:width" content="968">
-<meta name="twitter:title" content="git and GitHub – Computing 101 Workshop – Summer 2025">
-<meta name="twitter:description" content="Introduction to git and GitHub">
+<meta name="twitter:title" content="conda and mamba – Computing 101 Workshop – Summer 2025">
+<meta name="twitter:description" content="Using conda and mamba to create environments and install packages.">
 <meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta name="twitter:image-height" content="968">
 <meta name="twitter:image-width" content="968">
@@ -117,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03_github/index.html"><code>git</code> and GitHub</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_conda/index.html">Bash and Conda</a></li><li class="breadcrumb-item"><a href="../04_conda/conda.html"><code>conda</code> and <code>mamba</code></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -258,13 +292,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../03_github/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../03_github/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>git</code> and GitHub</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03_github/exercise1.html" class="sidebar-item-text sidebar-link">
@@ -324,14 +358,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../04_conda/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash and Conda</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04_conda/conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../04_conda/conda.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><code>conda</code> and <code>mamba</code></span></a>
   </div>
 </li>
@@ -342,28 +376,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a>
-  <ul class="collapse">
-  <li><a href="#install-github-desktop" id="toc-install-github-desktop" class="nav-link" data-scroll-target="#install-github-desktop">1. Install GitHub Desktop</a></li>
-  <li><a href="#setup-github-desktop" id="toc-setup-github-desktop" class="nav-link" data-scroll-target="#setup-github-desktop">2. Setup GitHub Desktop</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/03_github/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_conda/index.html">Bash and Conda</a></li><li class="breadcrumb-item"><a href="../04_conda/conda.html"><code>conda</code> and <code>mamba</code></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><code>git</code> and GitHub</h1>
-<p class="subtitle lead">Introduction to <code>git</code> and GitHub</p>
+<h1 class="title"><code>conda</code> and <code>mamba</code></h1>
+<p class="subtitle lead">Using <code>conda</code> and <code>mamba</code> to create environments and install packages.</p>
 </div>
 
 
@@ -380,78 +402,178 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<table class="caption-top table">
-<colgroup>
-<col style="width: 84%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Objectives</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><ul>
-<li>Learn how to use git with GitHub Desktop.</li>
-<li>Learn how to do version control with <code>git</code>.</li>
-<li>Understand the differences between <code>git</code> and GitHub.</li>
-<li>Use GitHub to collaborate with others on a project.</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>The following should be done <em>before</em> doing the exercises below.</p>
-<section id="install-github-desktop" class="level3">
-<h3 class="anchored" data-anchor-id="install-github-desktop">1. Install GitHub Desktop</h3>
-<p>For this tutorial we will be using GitHub Desktop. To install:</p>
+<p><em>Note: This task requires that you have conda installed already. Follow the instructions <a href="../index.html">here</a> to do that if you have not done so already.</em></p>
 <ol type="1">
-<li>Go to https://github.com/apps/desktop.</li>
-<li>Click the “Download now” button.</li>
-<li>What you do next depends on your operating system:</li>
+<li>Create a conda environment called <code>conda-test</code>.</li>
 </ol>
-<ul>
-<li>If you’re on a Mac:
-<ol type="a">
-<li>Click “Download for Apple silicon” or “Download for Intel chip” depending on your processor. If you’re not sure what processor you have, click the apple button in your Menu bar then “About This Mac”. Look at the “Chip” entry in the window that pops up. If it says, “Apple M…” you have Apple silicon. If it says, “Intel …” you have an Intel chip.</li>
-<li>Clicking one of the download buttons will download a .zip file that starts with “GitHubDesktop”. Once it’s finished downloading, open it. The file will unzip and open a Finder window.</li>
-<li>Move the GitHub Desktop icon into your Applications folder in Finder.</li>
-<li>Open GitHub Desktop as you would any other application (e.g., by going to Launchpad and clicking on the GitHub Desktop icon).</li>
-<li>The first time you open GitHub Desktop you will be prompted with a warning, “‘GitHub Desktop’ is an app downloaded from the internet. Are you sure you want to open it?” Click “Open”.</li>
-</ol></li>
-<li>If you’re on a Windows machine:
-<ol type="a">
-<li>Click “Download for Windows (64 bit)”. This will download a file called “GitHubDesktopSetup-x64.exe”.</li>
-<li>Once the file downloads, it will automatically install and open GitHub Desktop.</li>
-</ol></li>
-</ul>
-</section>
-<section id="setup-github-desktop" class="level3">
-<h3 class="anchored" data-anchor-id="setup-github-desktop">2. Setup GitHub Desktop</h3>
-<p>The first time you open GitHub Desktop you will need to sign into GitHub.</p>
-<ol type="1">
-<li>Click “Sign in to GitHub.com”. If you do not have an account yet, click “Create your free account”.</li>
-<li>Follow the on-screen instructions to sign in.</li>
-<li>After you sign in, GitHub Desktop will ask you to “Configure Git”. We recommend you select the option “Use my GitHub account name and email address”. Click “Finish”.</li>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> conda-test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Activate your <code>conda-test</code> environment and install <code>numpy</code> into it.</li>
 </ol>
-<p>You will next be prompted with a “Let’s get started!” screen that will ask you to add a repository to GitHub Desktop. <strong>Stop here</strong> and go to <a href="../03_github/exercise1.html">Part 1</a>.</p>
-</section>
-</section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<ul>
-<li><a href="../03_github/exercise1.html">Part 1</a>: Practice with GitHub Desktop on a local repository</li>
-<li><a href="../03_github/exercise2.html">Part 2</a>: Interacting with remote repositories on GitHub</li>
-<li><a href="../03_github/exercise3.html">Part 3</a>: Collaborating in GitHub using the Fork and Pull Model</li>
-</ul>
-</section>
-<section id="appendix" class="level2">
-<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
-<p>The above exercises all use GitHub Desktop. In the <a href="../03_github/appendix-cli/index.html">appendix</a>, the exercises are repeated using the command-line interface for <code>git</code>.</p>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate conda-test</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Print your <code>$PATH</code>; you should see that the first couple of paths point to a conda directory with the name of your environment (<code>conda-test</code>) in it.</li>
+</ol>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>See what version of Python and numpy you installed by running the included <code>check_versions.py</code> script:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./check_versions.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will print out the current time followed by the versions of Python and numpy you are using.</p>
+<ol start="5" type="1">
+<li>Suppose that you need to use an older version of Python and numpy for a project. Create another conda environment called <code>conda-test2</code> and install Python version 3.9 and numpy 1.24.1 into it.</li>
+</ol>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> conda-test2 python=3.9 numpy=1.24.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Activate <code>conda-test2</code> and run check versions to verify that you have the desired versions.</li>
+</ol>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate conda-test2</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./check_versions.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Miniforge comes with a faster re-implementation of <code>conda</code> called <code>mamba</code>. Generally, you can use <code>mamba</code> in the same way you use <code>conda</code> – it takes the same arguments – just replace <code>conda</code> with <code>mamba</code>. Redo steps 1-6 using <code>mamba</code> (call the environments <code>mamba-test</code> and <code>mamba-test2</code>). Is it faster?</li>
+</ol>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> mamba-test</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate mamba-test</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install numpy</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./check_versions.py</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> mamba-test2 python=3.9 numpy=1.24.1</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate mamba-test2</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">./check_versions.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Different repositories or “<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html">channels</a>” exist within the conda ecosystem from which you can download and install packages. The default channel for Miniforge is the <a href="https://conda-forge.org/">conda-forge</a> channel. Generally, conda-forge has many of the packages you will need. However, there are some specialized packages that you need to go to other channels to download. For example, the <a href="https://bioconda.github.io/">Bioconda</a> contains many packages that are used in biomedical research. Let’s illustrate that by trying to install the <a href="https://github.com/virus-evolution/gofasta">gofast</a> package. Lets start by searching for the package. Run:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> search gofasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(<em>Note: here and below I’ll use <code>mamba</code>, but you can use <code>conda</code> instead.</em>) You should get <code>No match found for: gofasta</code> followed by suggestions of what else to do. The package couldn’t be found because your installation of mamba/conda searches <code>conda-forge</code> by default, but <code>gofasta</code> is not in conda-forge.</p>
+<ol start="9" type="1">
+<li>Let’s search the <code>bioconda</code> channel instead. Run:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> search <span class="at">-c</span> bioconda gofasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see that <code>gofasta</code> is available, along with the version.</p>
+<ol start="10" type="1">
+<li>Create an environment called <code>biotest</code> and install <code>gofasta</code> in it using the <code>bioconda</code> channel. (You can specify the channel for <code>mamba create</code> and/or <code>mamba install</code> using the <code>-c</code> flag, just as we did the in search command above.)</li>
+</ol>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> biotest <span class="at">-c</span> bioconda gofasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="11" type="1">
+<li>Activate the <code>bioconda</code> channel and test that <code>gofasta</code> is installed by running:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate biotest</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gofasta</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should get a help message giving information about <code>gofasta</code>.</p>
+<ol start="12" type="1">
+<li>Lets uninstall some of the environments we created to save space. You can see all the environments you have installed by running:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> info <span class="at">--envs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s uninstall the conda-test environment. First, if you are not in the base environment, go to it by running <code>mamba deactivate</code>. This will take you to your last active environment. Keep deactivating until you see <code>(base)</code> on the left of the prompt. Alternatively, just type <code>mamba activate</code> (with no environment name) to go directly to the <code>base</code> environment. Now let’s remove the <code>conda-test</code> environment by running:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> remove <span class="at">--all</span> <span class="at">-n</span> conda-test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now run <code>mamba info --envs</code> again to check that the environment is installed. Repeat for any other environments you’d like to remove.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -855,14 +977,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../02_python/python-apps/decisionTree_sklearn.html" class="pagination-link" aria-label="Decision Trees with Scikit-learn">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decision Trees with Scikit-learn</span>
+      <a href="../04_conda/index.html" class="pagination-link" aria-label="Bash and Conda">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bash and Conda</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../03_github/exercise1.html" class="pagination-link" aria-label="1. Practice with GitHub Desktop on a local repository">
-        <span class="nav-page-text">1. Practice with GitHub Desktop on a local repository</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -873,7 +992,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/03_github/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/04_conda/conda.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
