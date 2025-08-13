@@ -484,13 +484,11 @@ The tidyverse vs Base R
 <p><img src="fig/penguins_repo.png" width="600"></p>
 <p>Once you’ve forked the repository, click on the green “Code” button, then click on “HTTPS”. Then copy the link of the repo:</p>
 <p><img src="fig/https_clone.png" width="600"></p>
+<p>Now, open GitHub Desktop, and select File &gt; Clone Repository. Select URL, then paste the link you copied from GitHub. Choose a local path where you want to save the repository (GitHub will suggest a path for you), then click <kbd>Clone</kbd>. When prompted, indicate that you want to use this repo for your own purposes.</p>
 <p>Now, return to your RStudio window. At the top of your screen you’ll see the “File” menu. Select that menu and then the menu for “New Project…”. (You could also use the second button on the second menu row or even the <kbd>Project: (None)</kbd> button in the top right)</p>
 <p><img src="fig/new_project_menu.png" width="600"></p>
-<p>When the smaller window opens, select “Version Control” and then “Git” in the next window.</p>
-<p><img src="fig/version_control.png" width="600"></p>
-<p><img src="fig/git.png" width="600"></p>
-<p>Now paste your repository SSH link in the first box, then name your new repo directory in the second box (i.e., the name of the folder containing the repo on your computer; “penguins” is probably a good choice), and finally use the <kbd>Browse</kbd> button to select the local directory that you want to create this new directory within (i.e., the parent directory).</p>
-<p><img src="fig/project_from_git_repo.png" width="600"></p>
+<p>When the smaller window opens, select “Existing Directory”.</p>
+<p>Now <kbd>Browse…</kbd> to select the new directory that you created with GitHub Desktop. Then <kbd>Create the Project</kbd></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -504,7 +502,6 @@ Note
 <p>In addition to using the git URL of the repository (e.g., https://github.com/willgearty/penguins_repo.git), you can also use the SSH link for more secure access and use of a repository. To learn more about securely creating and accessing github repositories see this <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">documentation</a>.</p>
 </div>
 </div>
-<p>Then click the <kbd>Create Project</kbd> button.</p>
 <p>Did you notice anything change?</p>
 <p>In the lower right corner of your RStudio session, you should notice that your Files tab is now your project directory. You’ll also see a file called penguins.Rproj in that directory.</p>
 <p>From now on, you should start RStudio by double clicking on that file. This will make sure you are in the correct directory when you run your analysis.</p>
