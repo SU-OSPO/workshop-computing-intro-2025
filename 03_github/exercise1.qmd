@@ -1,6 +1,6 @@
 ---
 title: "1. Practice with GitHub Desktop on a local repository"
-index: 2
+order: 1
 ---
 
 ::: {.callout-note}

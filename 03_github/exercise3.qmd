@@ -1,6 +1,6 @@
 ---
 title: "3. Collaborating in GitHub using the Fork and Pull Model"
-index: 4
+order: 3
 ---
 
 In this exercise you will learn how to collaborate with others using GitHub. You will work with a partner to contribute to the test repository they created on GitHub in [Exercise 2](exercise2.qmd) (and they will do the same with your repository!).

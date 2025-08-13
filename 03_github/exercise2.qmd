@@ -1,6 +1,6 @@
 ---
 title: "2. Interacting with remote repositories on GitHub"
-index: 3
+order: 2
 ---
 
 Exercise 1 illustrated how to create a new git repository on your local computer. In this exercise we'll learn how to use GitHub to manage a repository.
