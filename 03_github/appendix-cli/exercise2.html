@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. Interacting with remote repositories on GitHub – Computing 101 Workshop – Summer 2025</title>
+<title>Exercise 2: Using git pull and push with GitHub – Computing 101 Workshop – Summer 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,25 +58,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../03_github/exercise3.html" rel="next">
-<link href="../03_github/exercise1.html" rel="prev">
-<link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-055de86c65bfd2d69171816c6c21cdc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../03_github/appendix-cli/exercise3.html" rel="next">
+<link href="../../03_github/appendix-cli/exercise1.html" rel="prev">
+<link href="../..//images/SU-OSPO.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-055de86c65bfd2d69171816c6c21cdc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,17 +106,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="2. Interacting with remote repositories on GitHub – Computing 101 Workshop – Summer 2025">
+<meta property="og:title" content="Exercise 2: Using git pull and push with GitHub – Computing 101 Workshop – Summer 2025">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/figures/ghd-publish_repo_highlight.png">
+<meta property="og:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
 <meta property="og:site_name" content="Computing 101 Workshop – Summer 2025">
-<meta property="og:image:height" content="1544">
-<meta property="og:image:width" content="2144">
-<meta name="twitter:title" content="2. Interacting with remote repositories on GitHub – Computing 101 Workshop – Summer 2025">
+<meta property="og:image:height" content="968">
+<meta property="og:image:width" content="968">
+<meta name="twitter:title" content="Exercise 2: Using git pull and push with GitHub – Computing 101 Workshop – Summer 2025">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/03_github/figures/ghd-publish_repo_highlight.png">
-<meta name="twitter:image-height" content="1544">
-<meta name="twitter:image-width" content="2144">
+<meta name="twitter:image" content="https://SU-OSPO.github.io/workshop-computing-intro-2025/images/SU-OSPO_white_border.png">
+<meta name="twitter:image-height" content="968">
+<meta name="twitter:image-width" content="968">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computing 101 Workshop – Summer 2025</span>
     </a>
   </div>
@@ -139,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://opensource.syracuse.edu" target="_blank"> 
-<span class="menu-text"><img src="../images/SU-OSPO_white_border.png" height="23.5" style="padding-bottom:3px"></span></a>
+<span class="menu-text"><img src="../../images/SU-OSPO_white_border.png" height="23.5" style="padding-bottom:3px"></span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03_github/index.html"><code>git</code> and GitHub</a></li><li class="breadcrumb-item"><a href="../03_github/exercise2.html">2. Interacting with remote repositories on GitHub</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../03_github/index.html"><code>git</code> and GitHub</a></li><li class="breadcrumb-item"><a href="../../03_github/appendix-cli/index.html">Appendix: git and GitHub with the Command Line Interface</a></li><li class="breadcrumb-item"><a href="../../03_github/appendix-cli/exercise2.html">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -163,15 +163,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/SU-OSPO_white_border.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/SU-OSPO_white_border.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../01_r/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../01_r/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -180,19 +180,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_r/r-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_r/r-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_r/r-tidydata.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_r/r-tidydata.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R for Data Cleaning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_r/r-plotting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_r/r-plotting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plotting in R with ggplot2</span></a>
   </div>
 </li>
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../02_python/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../02_python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../02_python/python-intro/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../02_python/python-intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Python</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -218,37 +218,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/01-Intro-to-Python-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/01-Intro-to-Python-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What is Python?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/02-Intro-to-Python-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/02-Intro-to-Python-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Operations in Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/03-Intro-to-Python-numbers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/03-Intro-to-Python-numbers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Number Types in Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/04-Intro-to-Python-strings.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/04-Intro-to-Python-strings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Strings in Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/05-Intro-to-Python-lists.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/05-Intro-to-Python-lists.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-intro/06-Intro-to-Python-dictionaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using Dictionaries to Represent Single and Multiple Items</span></a>
   </div>
 </li>
@@ -256,13 +256,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-flow-loops-classes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-flow-loops-classes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Flow, Loops, and Classes</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../02_python/python-apps/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../02_python/python-apps/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Advanced Applications</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -271,19 +271,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-apps/data_with_pandas.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-apps/data_with_pandas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Handling Data with Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-apps/visualization_with_matplotlib.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-apps/visualization_with_matplotlib.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Visualization with Matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_python/python-apps/decisionTree_sklearn.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_python/python-apps/decisionTree_sklearn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision Trees with Scikit-learn</span></a>
   </div>
 </li>
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../03_github/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../03_github/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><code>git</code> and GitHub</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -302,34 +302,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../03_github/appendix-cli/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../03_github/appendix-cli/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Appendix: git and GitHub with the Command Line Interface</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/appendix-cli/exercise1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/appendix-cli/exercise1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 1: Practice with <code>git</code> on a local repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/appendix-cli/exercise2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/appendix-cli/exercise2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/appendix-cli/exercise3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/appendix-cli/exercise3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise 3: Collaborating in GitHub using the Fork and Pull Model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/appendix-cli/ssh_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/appendix-cli/ssh_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Create and add an ssh key to GitHub</span></a>
   </div>
 </li>
@@ -337,19 +337,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/exercise1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/exercise1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Practice with GitHub Desktop on a local repository</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/exercise2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../03_github/exercise2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Interacting with remote repositories on GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03_github/exercise3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03_github/exercise3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. Collaborating in GitHub using the Fork and Pull Model</span></a>
   </div>
 </li>
@@ -357,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04_conda/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../04_conda/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash and Conda</span></a>
   </div>
 </li>
@@ -366,28 +366,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#i.-add-a-repository-on-github" id="toc-i.-add-a-repository-on-github" class="nav-link active" data-scroll-target="#i.-add-a-repository-on-github">I. Add a repository on GitHub</a>
-  <ul class="collapse">
-  <li><a href="#publish-a-local-repository" id="toc-publish-a-local-repository" class="nav-link" data-scroll-target="#publish-a-local-repository">1. Publish a local repository</a></li>
-  <li><a href="#create-a-repository-on-github" id="toc-create-a-repository-on-github" class="nav-link" data-scroll-target="#create-a-repository-on-github">2. Create a repository on GitHub</a></li>
-  </ul></li>
-  <li><a href="#ii.-cloning-a-repository-from-github.com" id="toc-ii.-cloning-a-repository-from-github.com" class="nav-link" data-scroll-target="#ii.-cloning-a-repository-from-github.com">II. Cloning a repository from GitHub.com</a></li>
-  <li><a href="#iii.-pushing-to-your-remote-repository" id="toc-iii.-pushing-to-your-remote-repository" class="nav-link" data-scroll-target="#iii.-pushing-to-your-remote-repository">III. Pushing to your remote repository</a></li>
-  <li><a href="#iv.-fetching-changes-on-github-creating-pull-requests" id="toc-iv.-fetching-changes-on-github-creating-pull-requests" class="nav-link" data-scroll-target="#iv.-fetching-changes-on-github-creating-pull-requests">IV. Fetching changes on GitHub &amp; creating pull requests</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/03_github/exercise2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03_github/index.html"><code>git</code> and GitHub</a></li><li class="breadcrumb-item"><a href="../03_github/exercise2.html">2. Interacting with remote repositories on GitHub</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../03_github/index.html"><code>git</code> and GitHub</a></li><li class="breadcrumb-item"><a href="../../03_github/appendix-cli/index.html">Appendix: git and GitHub with the Command Line Interface</a></li><li class="breadcrumb-item"><a href="../../03_github/appendix-cli/exercise2.html">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">2. Interacting with remote repositories on GitHub</h1>
+<h1 class="title">Exercise 2: Using <code>git pull</code> and <code>push</code> with GitHub</h1>
 </div>
 
 
@@ -404,137 +391,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Exercise 1 illustrated how to create a new git repository on your local computer. In this exercise we’ll learn how to use GitHub to manage a repository.</p>
-<section id="i.-add-a-repository-on-github" class="level2">
-<h2 class="anchored" data-anchor-id="i.-add-a-repository-on-github">I. Add a repository on GitHub</h2>
-<p>There are two ways to add a repository to GitHub: (1) publish a repository to GitHub you initially created on your computers; (2) create a new repository on GitHub using their online interface, then <em>clone</em> it to your local computer. Below we illustrate both methods.</p>
-<section id="publish-a-local-repository" class="level3">
-<h3 class="anchored" data-anchor-id="publish-a-local-repository">1. Publish a local repository</h3>
-<ol type="1">
-<li><p>If it’s not already open, open the <code>test-git-repo</code> you created in <a href="../03_github/exercise1.html">Exercise 1</a> with GitHub Desktop.</p></li>
-<li><p>Click the “Publish repository” button:</p>
-<p><img src="figures/ghd-publish_repo_highlight.png" class="img-fluid"></p></li>
-<li><p>This will open a new window. On the GitHub.com tab enter a brief description for the repo (e.g., “My test repository”), select “Keep this code private”, and set Organization to None (it should be by default):</p>
-<p><img src="figures/ghd-publish_repo_options.png" class="img-fluid"></p>
-<p>Now click “Publish repository”.</p></li>
-<li><p>When you return to the GitHub desktop home screen you will notice a few differences:</p>
-<p><img src="figures/ghd-home_with_github.png" class="img-fluid"></p>
-<p>In the top right you’ll see it now says “Fetch origin”. We will see what this means below. You will also see a button that sees “View on GitHub”. Click that.</p></li>
-<li><p>When you click on “View on GitHub”, your web browser will open. You’ll be at the website for your GitHub repository, which will live in your GitHub account.</p>
-<p>Congratulations! You’ve published a repository to GitHub. We’ll see what we can do with GitHub below.</p></li>
-</ol>
-</section>
-<section id="create-a-repository-on-github" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-repository-on-github">2. Create a repository on GitHub</h3>
-<p>More often then not, you will copy already existing repositories on GitHub to your local computer. This is called <strong>cloning</strong>. To illustrate that, let’s create a new repository directly on GitHub, then clone that to our local computer.</p>
+<p>Exercise 1 illustrated how to create a new git repository on your local computer. In this exercise we’ll create a new repository on GitHub, <em>clone</em> it to our local computer, make changes, then <em>push</em> it back to GitHub. This is the more common way to create git repositories on GitHub.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ssh key setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In order to do this exercise you will need an <code>ssh</code> key uploaded to GitHub. If you have not done that yet, follow the <a href="../../03_github/appendix-cli/ssh_setup.html">ssh setup instructions</a> before starting this exercise.</p>
+</div>
+</div>
 <ol type="1">
 <li><p>Go to https://github.com and sign in if you are not already. Then go to https://github.com/new to create a new repository.</p></li>
 <li><p>In the Owner section, click the drop down “Choose an owner” and select yourself.</p></li>
 <li><p>You’ll need to put a name in the “Repository name” field. GitHub will offer a suggestion (where it says “Need inspiration? How about …”). Use the suggested name. That should ensure that the repostiory name is unique, which will make doing Exercise 3 easier.</p></li>
-<li><p>Under “Description” put “My other test repository.”</p></li>
-<li><p>Make sure “Public” is selected. We’ll make this repository public so that you can collaborate with a partner on it in <a href="../03_github/exercise3.html">Exercise 3</a>.</p></li>
+<li><p>Under “Description” put “My test git repository.”</p></li>
+<li><p>Make sure “Public” is selected.</p></li>
 <li><p>Check the box for “Add a README file”. This will cause your repo to be initialized with a README.md file in it. It isn’t strictly necessary, but is good to have, as it’s what GitHub will show by default when people go to your repository.</p></li>
 <li><p>Under “Choose a license” select “GNU General Public License v3.0”. This will cause your repository to be initialized with a LICENSE file that has the GNU Public License v3.0 in it (an open source license). Choosing a license isn’t strictly necessary, but it’s good practice.</p></li>
 <li><p>Now click the “Create repository” green button. This will create your repository. You will have the repository webpage open.</p></li>
+<li><p>We want to add things to your repository. You can do that through the web interface, but it’s easier to do it on your local computer, esepcially for code development so that you can test things. To do that we’ll need a local copy of your repository. This is what <code>git clone</code> does: it downloads a local copy of your remote repository (which lives on GitHub) that can <em>track</em> the remote repository.</p></li>
 </ol>
-</section>
-</section>
-<section id="ii.-cloning-a-repository-from-github.com" class="level2">
-<h2 class="anchored" data-anchor-id="ii.-cloning-a-repository-from-github.com">II. Cloning a repository from GitHub.com</h2>
-<p>We want to add things to your repository. You can do that through the web interface, but it’s easier to do it on your local computer, especially for code development so that you can test things. To do that we’ll need a local copy of your repository. This is what <code>git clone</code> does: it downloads a local copy of your remote repository (which lives on GitHub) that can <em>track</em> the remote repository.</p>
-<p>To clone the repository, click the Green <code>&lt;&gt; Code</code> button in the upper right. Then click “Open with GitHub Desktop”:</p>
-<p><img src="figures/github-clone.png" class="img-fluid"></p>
-<p>This will open the “Clone a Repository” window in GitHub Desktop:</p>
-<p><img src="figures/ghd-clone_window.png" class="img-fluid"></p>
-<p>Don’t change any values. Just click “Clone”.</p>
-<p>You will now have a new directory in your GitHub folder on your computer that has the same name as the repo on github.com. Click the “Show in Explorer/Finder” button to see the contents of the repo. You should see the <code>README.md</code> file and the <code>LICENSE</code> file listed.</p>
-<p>This is your local copy of your repository. It’s setup to track your repo on GitHub, which is called the <strong>origin</strong> repository.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For the rest of this exercise we will work with the repository you created on GitHub and cloned to your local computer.</p>
-</div>
-</div>
-</section>
-<section id="iii.-pushing-to-your-remote-repository" class="level2">
-<h2 class="anchored" data-anchor-id="iii.-pushing-to-your-remote-repository">III. Pushing to your remote repository</h2>
-<ol type="1">
-<li><p>Let’s add a file to your repository. Use your text editor to create a file called <code>mymath.R</code> (refer to <a href="../03_github/exercise1.html">Exercise 1</a> if you forgot how to do that) and put the following in it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="co">#/usr/bin/env R</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Some math functions</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (a <span class="sc">+</span> b)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<p>To clone the repository, click the Green <code>&lt;&gt; Code</code> button in the upper right, then select the “SSH” tab. We’ll want the SSH version so that we can push changes later.</p>
+<ol start="10" type="1">
+<li>Copy the URL in the SSH tab. Now open a terminal (you may want to open the terminal side-by-side with your web browser; it’ll make doing the rest of this exercise easier). <code>cd</code> to the directory that you want your local copy of the repository to live, then type:</li>
 </ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone SSH_URL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>where <code>SSH_URL</code> is the URL you copied from GitHub.</p>
+<ol start="11" type="1">
+<li><p>When git clone finishes, you will have a new directory that has the same name as your repo on your computer. <code>cd</code> into that and type <code>ls</code>. You should see the <code>README.md</code> file and the <code>LICENSE</code> file.</p></li>
+<li><p>This is your local copy of your repository. It’s setup to track your repo on GitHub, which is called the <code>origin</code> repository. You can verify that by typing:</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That will show you the URL of the origin. Note that this is printed twice: once for <em>fetching</em> (i.e., the default repo you will <em>pull</em> new updates from) and one for <em>pushing</em> (i.e., the repo to which you will <em>push</em> changes from your local computer).</p>
+<ol start="13" type="1">
+<li>Now let’s add a file. In your terminal, use your favorite text editor to create a file called <code>mymath.R</code> and put the following in it:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="co">#/usr/bin/env R</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Some math functions</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (a <span class="sc">+</span> b)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is a simple R program that contains a function to add two numbers.</p>
-<ol type="1">
-<li><p>Add and commit your file to your repo using GitHub Desktop. (Review <a href="../03_github/exercise1.html">Exercise 1</a> if your forgot how.)</p></li>
-<li><p>Now look at your copy of the repository on GitHub in your web browser. (You may want to open your web browser side-by-side with GitHub Desktop to make the rest of the exercise easier.) Is <code>mymath.R</code> there? No.&nbsp;Try refreshing the page. Is it there? Still no. This is because you have only committed the file to your <em>local</em> copy of the repository. The origin repository on GitHub doesn’t know about these changes.</p></li>
-<li><p>You may have noticed that after you committed <code>mymath.R</code>, a button appeared in GitHub desktop telling you to <em>push</em> the changes to the origin repository on GitHub:</p>
-<p><img src="figures/ghd-push.png" class="img-fluid"></p>
-<p><em>Pushing</em> changes is how you update your remote repository on GitHub.</p>
-<p>Click the “Push origin” button to send the changes to GitHub.</p></li>
-<li><p>Go back to your web browser and refresh your repository page. You should now see the <code>mymath.R</code> file there. You can click on it to view it if you like. You can also see your commit history on GitHub (click the icon that looks like a clock just below the green <code>&lt;&gt; Code</code> button on the front page of your repository). Notice that the history on GitHub is the same as your history on your local computer. Your repos are in sync!</p></li>
+<ol start="14" type="1">
+<li>Add and commit your file to your repo:</li>
 </ol>
-</section>
-<section id="iv.-fetching-changes-on-github-creating-pull-requests" class="level2">
-<h2 class="anchored" data-anchor-id="iv.-fetching-changes-on-github-creating-pull-requests">IV. Fetching changes on GitHub &amp; creating pull requests</h2>
-<p>Let’s create a branch to do some development work. We could do this on our local computer, but let’s do it on GitHub instead.</p>
-<ol type="1">
-<li><p>Click the drop down button that says “main” in the upper left corner of the website. Then click “View all branches”. This will bring you to another page that shows you all your branches. Currently we only have one, <code>main</code>. Create a new branch by clicking the green <code>New branch</code> button in the upper right. In the “New branch name” field type <code>dev1</code> then click <code>Create new branch</code>. This will create the new branch.</p></li>
-<li><p>Now let’s make some changes on the <code>dev1</code> branch on our local computer. To do that, we’ll need to update our local repo to pickup the new branch. Go to GitHub Desktop and click “Fetch origin” in the upper right:</p>
-<p><img src="figures/ghd-fetch.png" class="img-fluid"></p></li>
-<li><p>Now click “Current Branch”. You’ll see under “Other branches” <code>origin/dev1</code>. Click on it to switch to that branch. You now have a <code>dev1</code> branch on your local repository that is set to <em>track</em> the remote one on GitHub. This means that when we push from this branch it will by default push changes to the <code>dev1</code> branch on GitHub, not the <code>main</code> branch.</p></li>
-<li><p>Let’s modify <code>mymath.R</code> on <code>dev1</code>. On your local computer, use your text editor to open <code>mymath.R</code> and add the following to it:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>subtract <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (a <span class="sc">-</span> b)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Save the changes.</p></li>
-<li><p>Commit the changes to <code>mymath.R</code> to the dev1 branch on your local repo using GitHub Desktop.</p></li>
-<li><p>Again, your changes to your local <code>dev1</code> are not on GitHub yet. To do that, push the changes by clicking the “Push origin” button on GitHub Dekstop.</p></li>
-<li><p>Now look at your web browser. As soon pushed the changes a message popped up that said “<code>dev1</code> had recent pushes” with a green <code>Compare and pull request</code> button popping up.</p>
-<p>On GitHub Desktop you’ll also see see a button pop up on GitHub Desktop that says “Preview Pull Request.” If you click that, another window will pop up. This shows all the differences between <code>dev1</code> and <code>main</code>. There will also be a button that says “Create Pull Request”.</p></li>
-<li><p>Clicking “Create Pull Request” in GitHub Desktop or clicking the green “Compare &amp; pull request” button on github.com will open the “pull request” page on github.com in your web browser. Open the pull request by clicking either button.</p></li>
-<li><p>The pull request page on GitHub will automatically have a title that is the message from your last commit. You can optionally add a longer description. Then click the <code>Create pull request</code> button.</p></li>
-<li><p>This will open a <em>Pull request</em> (or PR for short). Pull requests are GitHub’s way of managing new development. This is particularly useful for collaborating with others on a project. You can use the pull request page to discuss changes before they are merged on to the main branch. You can also have multiple pull requests open at once.</p></li>
-<li><p>There’s a green <code>Merge pull request</code> button at the bottom of the page. There’s also a drop down arrow next to it. If you click that, you will see Merge, Squash &amp; Merge, and Rebase options, just as we did when merging branches in GitHub Desktop in <a href="../03_github/exercise1.html">Exercise 1</a>.</p>
-<p>Let’s use Squash &amp; Merge to merge the pull request. Click the drop down arrow next to “Merge pull request”, then select “Squash and merge”. The green button will change to read “Squash and merge”. Click it, then “Confirm squash and merge”. This will merge your changes on <code>dev1</code> on to <code>main</code>. You now have the option to delete <code>dev1</code>. Feel free to click the delete dev1 branch button.</p></li>
-<li><p>Now that your <code>main</code> branch on GitHub has the merged changes, your <code>main</code> branch on your local copy is out of sync. To update it, switch to your <code>main</code> branch on GitHub Desktop (click “Current Branch” -&gt; <code>main</code>). Now click the “Fetch origin” in the upper right of GitHub Desktop.</p></li>
-<li><p>After you fetch, a message will pop up that says “Pull 1 commit from the origin remote”:</p>
-<p><img src="figures/ghd-pull.png" class="img-fluid"></p>
-<p>Even though you clicked “Fetch origin” the changes on your remote repository have not actually been merged into your local repository yet! You can verify this by looking at the History tab: your pull request commit is not there. This is becausing fetching only lets your local repository know what the <em>status</em> of your remote repository is; it doesn’t actually change your local repository. In order to get the changes into your local repository you need to <strong>pull</strong> the changes. Do that by clicking the “Pull origin” button.</p></li>
-<li><p>Once you pull the changes, your local repository’s main branch will be up to date with your remote. You can verify this selecting the “History” tab. You’ll see that the Squash &amp; Merge commit is now listed in your history. GitHub has also added the pull request number <code>(#1)</code> in the commit message. Notice that this is actually a hyperlink:</p>
-<p><img src="figures/ghd-pr_link.png" class="img-fluid"></p>
-<p>If you click on the PR number it will open the pull request page on github.com in your browser. This is way, you can easily see the entire history of the changes that were made and any discussion / review that occurred before it was merged.</p></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add mymath.R</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add mymath file"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check your history to see the commit by typing <code>git log</code>.</p>
+<ol start="15" type="1">
+<li>Now look at your copy of the repository on GitHub in your web browser. Is <code>mymath.R</code> there? No.&nbsp;Try refreshing the page. Is it there? Still no. This is because you have only commited the file to your <em>local</em> copy of the repository. The origin repository on GitHub doesn’t know about these changes. To get the changes on to your origin repository, type:</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Even though you deleted the <code>dev1</code> branch on github.com, <code>dev1</code> still exists in your local repository, even though you fetched the changes to your local repository. <strong>Git will not delete a local branch even if it’s deleted remotely.</strong> There’s good reason for that: if a collaborator accidentally deleted a branch on the remote repository that you were working on locally, you’d be in for an unpleasant surprise the next time you fetched.</p>
-<p>You’ll need to explicitly delete your local copy of <code>dev1</code> using GitHub Desktop. To do that, click “Current Branch”, then right click <code>dev1</code>, then “Delete”.</p>
-</div>
-</div>
-<p>Congratulations! You’ve made your first pull request! Pull requests are a key part of collaborating with others on a project, and one of the most useful attributes about GitHub. In the <a href="../03_github/exercise3.html">next exercise</a> you’ll see how to use PRs to collaborate with others.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go back to your web browser and refresh your repository page. You should now see the <code>mymath.R</code> file there. You can click on it to view it if you like. You can also see your commit history on GitHub (click the icon that looks like a clock just below the green <code>&lt;&gt; Code</code> button on the front page of your repository). Notice that the history on GitHub is the same as your history on your local computer. Your repos are in sync!</p>
+<ol start="16" type="1">
+<li><p>Let’s create a branch to do some development work. We could do this on our local computer, but let’s do it on GitHub instead. Click the drop down button that says “main” in the upper left corner of the website. Then click “View all branches”. This will bring you to another page that shows you all your branches. Currently we only have one, <code>main</code>. Create a new branch by clicking the green <code>New branch</code> button in the upper right. In the “New branch name” field type <code>dev1</code> then click <code>Create new branch</code>. This will create the new branch.</p></li>
+<li><p>Now let’s make some changes on the <code>dev1</code> branch on our local computer. To do that, we’ll need to update our local repo to pickup the new branch. Go to your terminal and type:</p></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll see a message telling you about the new branch <code>origin/dev1</code>. You still don’t have this branch on your local repo! If you type <code>git branch</code>, you’ll only see <code>* main</code>. The fetch command just informed your local repo about the existence of the <code>dev1</code> branch on GitHub. You can verify this by typing <code>git branch -r</code> to see the remote branches.</p>
+<ol start="18" type="1">
+<li>Let’s checkout a local copy of the <code>dev1</code> branch. Type:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> dev1 origin/dev1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Adding the extra <code>origin/dev1</code> instructs git to make your local <code>dev1</code> <em>track</em> the remote one. This means that when we <code>git push</code> from this branch it will by default push changes to the <code>dev1</code> branch on GitHub, not the <code>main</code> branch. You can verify which branch you will push to by typing:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-vv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="19" type="1">
+<li>Let’s modify <code>mymath.R</code> on <code>dev1</code>. On your local computer, use your favorite text editor to open <code>mymath.R</code> and add the following to it:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>subtract <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (a <span class="sc">-</span> b)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commit your changes to your local repo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-u</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add subtraction"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="20" type="1">
+<li>Again, your changes to your local <code>dev1</code> are not on GitHub yet. To do that, push the changes by typing:</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that when you did this, it pushed to the <code>dev1</code> branch on git hub (you’ll see a message like <code>dev1 -&gt; dev1</code>).</p>
+<ol start="21" type="1">
+<li><p>Now look at your web browser. As soon as you typed <code>git push</code> a message popped up that said “<code>dev1</code> had recent pushes” with a green <code>Compare and pull request</code> button popping up. Click that button. This will open a “pull request” page. The pull request page will automatically have a title that is the message from your last commit. You can optionally add a longer description. Then click the <code>Create pull request</code> button.</p></li>
+<li><p>This will open “Pull request”. Pull requests are GitHub’s way of managing new development. This is particularly useful for collaborating with others on a project. You can use the pull request page to discuss changes before they are merged on to the main branch. You can alos have multiple pull requests open at once.</p></li>
+<li><p>Let’s merge your pull request. There’s a green <code>Merge pull request</code> button at the bottom of the page. Click it, then “Confirm merge”. This will merge your changes on <code>dev1</code> on to <code>main</code>. You now have the option to delete <code>dev1</code>. Feel free to click the delete dev1 branch button.</p></li>
+<li><p>Now that your <code>main</code> branch on GitHub has the merged changes, your <code>main</code> branch on your local copy is out of sync. To update it, go to your terminal and switch to your main branch:</p></li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can now bring it up to date with your remote repository by running <code>git pull</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once that’s done, you can also delete your local copy of the <code>dev1</code> branch by typing:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> dev1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -938,13 +893,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../03_github/exercise1.html" class="pagination-link" aria-label="1. Practice with GitHub Desktop on a local repository">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Practice with GitHub Desktop on a local repository</span>
+      <a href="../../03_github/appendix-cli/exercise1.html" class="pagination-link" aria-label="Exercise 1: Practice with `git` on a local repository">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise 1: Practice with <code>git</code> on a local repository</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../03_github/exercise3.html" class="pagination-link" aria-label="3. Collaborating in GitHub using the Fork and Pull Model">
-        <span class="nav-page-text">3. Collaborating in GitHub using the Fork and Pull Model</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../03_github/appendix-cli/exercise3.html" class="pagination-link" aria-label="Exercise 3: Collaborating in GitHub using the Fork and Pull Model">
+        <span class="nav-page-text">Exercise 3: Collaborating in GitHub using the Fork and Pull Model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -956,7 +911,7 @@ Note
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/03_github/exercise2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/03_github/appendix-cli/exercise2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
