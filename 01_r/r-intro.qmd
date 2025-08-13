@@ -355,7 +355,7 @@ Notice how in this example, we didn't include any argument names. But you can
 use argument names if you want:
 
 ```{r FunctionAndArgumentEcho, eval = FALSE}
-read_csv(file = 'data/chinstrap_data.csv')
+round(x = 3.1415, digits = 3)
 ```
 
 :::: {.callout-note}
