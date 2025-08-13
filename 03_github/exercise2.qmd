@@ -1,5 +1,5 @@
 ---
-title: "Exercise 2: Interacting with remote repositories on GitHub"
+title: "2. Interacting with remote repositories on GitHub"
 index: 3
 ---
 
@@ -165,7 +165,7 @@ Let's create a branch to do some development work. We could do this on our local
 
 
 ::: {.callout-note}
-Note that even though you deleted the `dev1` branch on github.com, `dev1` still exists in your local repository, even though you fetched the changes to your local repository. **Git will not delete a local branch even if it's deleted remotely.** There's good reason for that: if a collaborator accidentally deleted a branch on the remote repository that you were working on locally, you'd be in for an unpleasant surprise the next time you fetched.
+Even though you deleted the `dev1` branch on github.com, `dev1` still exists in your local repository, even though you fetched the changes to your local repository. **Git will not delete a local branch even if it's deleted remotely.** There's good reason for that: if a collaborator accidentally deleted a branch on the remote repository that you were working on locally, you'd be in for an unpleasant surprise the next time you fetched.
 
 You'll need to explicitly delete your local copy of `dev1` using GitHub Desktop. To do that, click "Current Branch", then right click `dev1`, then "Delete".
 :::

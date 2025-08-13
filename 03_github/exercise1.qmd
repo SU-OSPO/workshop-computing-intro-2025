@@ -1,5 +1,5 @@
 ---
-title: "Exercise 1: Practice with GitHub Desktop on a local repository"
+title: "1. Practice with GitHub Desktop on a local repository"
 index: 2
 ---
 

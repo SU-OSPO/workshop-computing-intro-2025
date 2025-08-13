@@ -8,7 +8,7 @@ order: 3
 +------------------------------------------------------------+
 | Objectives                                                 |
 +============================================================+
-| -   Learn how to use `git` with command-line instructions. |
+| -   Learn how to use git with GitHub Desktop.              |
 | -   Learn how to do version control with `git`.            |
 | -   Understand the differences between `git` and GitHub.   |
 | -   Use GitHub to collaborate with others on a project.    |
@@ -43,10 +43,14 @@ The first time you open GitHub Desktop you will need to sign into GitHub.
 2. Follow the on-screen instructions to sign in.
 3. After you sign in, GitHub Desktop will ask you to "Configure Git". We recommend you select the option "Use my GitHub account name and email address". Click "Finish".
 
-You will next be prompted with a "Let's get started!" screen that will ask you to add a repository to GitHub Desktop. **Stop here** and go to  [Exercise1](exercise1.qmd).
+You will next be prompted with a "Let's get started!" screen that will ask you to add a repository to GitHub Desktop. **Stop here** and go to  [Part 1](exercise1.qmd).
 
 ## Exercises
 
--   [Exercise1](exercise1.qmd): Practice with `git` on a local repository
--   [Exercise2](exercise2.qmd): `git` and GitHub
--   [Exercise3](exercise3.qmd): Collaborating in GitHub using the Fork and Pull Model
+-   [Part 1](exercise1.qmd): Practice with GitHub Desktop on a local repository
+-   [Part 2](exercise2.qmd): Interacting with remote repositories on GitHub
+-   [Part 3](exercise3.qmd): Collaborating in GitHub using the Fork and Pull Model
+
+## Appendix
+
+The above exercises all use GitHub Desktop. In the [appendix](appendix-cli/index.qmd), the exercises are repeated using the command-line interface for `git`.
