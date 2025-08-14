@@ -10,3 +10,5 @@ listing:
 ---
 
 Scratch notebook for the miscellaneous applications: [![Open Python Apps Tutorial](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SU-OSPO/workshop-computing-intro-2025/blob/main/02_python/python-apps/_Applications-scratch.ipynb)
+
+You will need the [diabetes.csv](diabetes.csv) file (click to download) to do the tutorials.
