@@ -115,7 +115,7 @@
     "href": "02_python/python-apps/index.html",
     "title": "Advanced Applications",
     "section": "",
-    "text": "Scratch notebook for the miscellaneous applications: \n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nReading Time\n\n\n\n\n\n\n\n\nHandling Data with Pandas\n\n\n\n\n\n7 min\n\n\n\n\n\n\nData Visualization with Matplotlib\n\n\n\n\n\n3 min\n\n\n\n\n\n\nDecision Trees with Scikit-learn\n\n\n\n\n\n2 min\n\n\n\n\n\n\nNo matching items",
+    "text": "Scratch notebook for the miscellaneous applications: \nYou will need the diabetes.csv file (click to download) to do the tutorials.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nReading Time\n\n\n\n\n\n\n\n\nHandling Data with Pandas\n\n\n\n\n\n7 min\n\n\n\n\n\n\nData Visualization with Matplotlib\n\n\n\n\n\n3 min\n\n\n\n\n\n\nDecision Trees with Scikit-learn\n\n\n\n\n\n2 min\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Python",
       "Advanced Applications"
