@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04_conda/conda.html" rel="next">
+<link href="../04_conda/shell-intro.html" rel="next">
 <link href="../03_github/appendix-cli/ssh_setup.html" rel="prev">
 <link href="..//images/SU-OSPO.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -331,8 +331,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../04_conda/shell-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction to the Unix Shell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../04_conda/conda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>conda</code> and <code>mamba</code></span></a>
+ <span class="menu-text">2. Environments and <code>conda</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04_conda/00-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shell Lesson Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04_conda/01-setup_conda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda Lesson Setup</span></a>
   </div>
 </li>
       </ul>
@@ -342,8 +360,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons">Lessons</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/04_conda/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -368,8 +393,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This session covers an introduction to the command line (specifically, <code>bash</code>), environments, and the package manager <code>conda</code>.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>In order to do the bash tutorial session you will shell software installed. Follow these instructions to do so:</p>
+<ul>
+<li><a href="../04_conda/00-setup.html">Install shell</a></li>
+</ul>
+<p>For the conda tutorial you will need to have Miniconda installed. Instructions to install that are here:</p>
+<ul>
+<li><a href="../04_conda/01-setup_conda.html">Install conda</a></li>
+</ul>
+</section>
+<section id="lessons" class="level2">
+<h2 class="anchored" data-anchor-id="lessons">Lessons</h2>
+<ol type="1">
+<li><a href="../04_conda/shell-intro.html">Introduction to bash</a></li>
+<li><a href="../04_conda/conda.html">Environments and conda</a></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -778,8 +822,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../04_conda/conda.html" class="pagination-link" aria-label="`conda` and `mamba`">
-        <span class="nav-page-text"><code>conda</code> and <code>mamba</code></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../04_conda/shell-intro.html" class="pagination-link" aria-label="1. Introduction to the Unix Shell">
+        <span class="nav-page-text">1. Introduction to the Unix Shell</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -791,7 +835,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/04_conda/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/04_conda/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
