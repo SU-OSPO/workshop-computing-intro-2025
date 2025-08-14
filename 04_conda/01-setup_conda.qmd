@@ -1,0 +1,28 @@
+---
+title: "Conda Lesson Setup"
+format: html
+order: 4
+---
+
+## Install `conda`
+
+The conda lesson needs `conda` to be installed. There are several different ways to install `conda` (Anaconda, Miniconda, Miniforge); we will use [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main). To install, do the following:
+
+::: {.callout-note}
+To install `conda` you'll first need a shell installed. If you haven't done it yet, install a shell following the instructions [here](00-setup.qmd).
+:::
+
+
+1.  Open your terminal application and `cd` into your home directory by typing:
+
+    ```bash
+    cd
+    ```
+
+1.  Follow the instructions [Quickstart install instructions](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions) on the Miniconda website. Take note:
+
+    *   **Windows users**: **do not select the "Windows Command Prompt" or "Windows PowerShell" tab**. Instead, click the **Linux** tab and follow those instructions. This is because you will either be using git bash or WSL, both of which emulate Linux. Mac users, follow the macOS instructions.
+    *   Run the commands listed in the instructions from your home directory by copying and pasting the commands into the terminal that you opened in the first step.
+
+1.  Once the installatino is done, open a new terminal window for the installation to take effect. If the installation was successful, you should see `(base)` to the left of your command prompt. This means that you're in the `base` environment.
+

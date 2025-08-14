@@ -4,3 +4,20 @@ subtitle: "Overview of Bash and Conda Tutorial"
 order: 4
 ---
 
+This session covers an introduction to the command line (specifically, `bash`), environments, and the package manager `conda`.
+
+
+## Prerequisites
+
+In order to do the bash tutorial session you will shell software installed. Follow these instructions to do so:
+
+*   [Install shell](00-setup.qmd)
+
+For the conda tutorial you will need to have Miniconda installed. Instructions to install that are here:
+
+*   [Install conda](01-setup_conda.qmd)
+
+## Lessons
+
+1.  [Introduction to bash](shell-intro.qmd)
+1.  [Environments and conda](conda.qmd)

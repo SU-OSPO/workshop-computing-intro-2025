@@ -1,7 +1,7 @@
 ---
-title: "`conda` and `mamba`"
-subtitle: "Using `conda` and `mamba` to create environments and install packages."
-order: 3
+title: "2. Environments and `conda`"
+subtitle: "Bash environments and using `conda` to manage them."
+order: 2
 ---
 
 *Note: This task requires that you have conda installed already. Follow the instructions [here](../index.qmd) to do that if you have not done so already.*
