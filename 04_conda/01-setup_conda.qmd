@@ -33,7 +33,7 @@ To install `conda` you'll first need a shell installed. If you haven't done it y
    - Click on “I agree”.
    - Select “Just me” and click on “Next”.
    - Click on “Next”.
-   - Check the option for “Add Anaconda to my PATH environment variable” and check the option for “Register Anaconda as my default Python 3.12”.
+   - Check the option for “Add Anaconda to my PATH environment variable” and check the option for “Register Anaconda as my default Python 3.x”.
      - Note that even though the installation is for Miniconda, the installer uses the word Anaconda in these options.
      - You will also see a message in red text that selecting “Add Anaconda to my PATH environment variable” is not recommended; continue with this selection to make using conda easier in Git Bash. If you have questions or concerns, please contact your instructor.
    - Click on “Install”.
