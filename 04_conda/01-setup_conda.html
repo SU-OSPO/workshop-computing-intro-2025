@@ -399,7 +399,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-conda" id="toc-install-conda" class="nav-link active" data-scroll-target="#install-conda">Install <code>conda</code></a></li>
+  <li><a href="#install-conda" id="toc-install-conda" class="nav-link active" data-scroll-target="#install-conda">Install <code>conda</code></a>
+  <ul class="collapse">
+  <li><a href="#maclinuxwindows-subsystem-for-linux-wsl" id="toc-maclinuxwindows-subsystem-for-linux-wsl" class="nav-link" data-scroll-target="#maclinuxwindows-subsystem-for-linux-wsl">Mac/Linux/Windows Subsystem for Linux (WSL)</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  </ul></li>
+  <li><a href="#verify-the-installation" id="toc-verify-the-installation" class="nav-link" data-scroll-target="#verify-the-installation">Verify the installation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/blob/main/04_conda/01-setup_conda.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/SU-OSPO/workshop-computing-intro-2025/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -441,16 +446,42 @@ Note
 <p>To install <code>conda</code> you’ll first need a shell installed. If you haven’t done it yet, install a shell following the instructions <a href="../04_conda/00-setup.html">here</a>.</p>
 </div>
 </div>
+<section id="maclinuxwindows-subsystem-for-linux-wsl" class="level3">
+<h3 class="anchored" data-anchor-id="maclinuxwindows-subsystem-for-linux-wsl">Mac/Linux/Windows Subsystem for Linux (WSL)</h3>
 <ol type="1">
 <li><p>Open your terminal application and <code>cd</code> into your home directory by typing:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Follow the instructions <a href="https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions">Quickstart install instructions</a> on the Miniconda website. Take note:</p>
-<ul>
-<li><strong>Windows users</strong>: <strong>do not select the “Windows Command Prompt” or “Windows PowerShell” tab</strong>. Instead, click the <strong>Linux</strong> tab and follow those instructions. This is because you will either be using git bash or WSL, both of which emulate Linux. Mac users, follow the macOS instructions.</li>
-<li>Run the commands listed in the instructions from your home directory by copying and pasting the commands into the terminal that you opened in the first step.</li>
-</ul></li>
-<li><p>Once the installatino is done, open a new terminal window for the installation to take effect. If the installation was successful, you should see <code>(base)</code> to the left of your command prompt. This means that you’re in the <code>base</code> environment.</p></li>
+<li><p>Follow the instructions <a href="https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions">Quickstart install instructions</a> on the Miniconda website. For WSL, select “Linux”.</p></li>
 </ol>
+</section>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<ol type="1">
+<li><p>Download the <a href="https://www.anaconda.com/download/success">Miniconda installer for Windows</a>.</p></li>
+<li><p>Run the installer by double-clicking on the downloaded file and follow the steps below.</p>
+<ul>
+<li>Click “Run”.</li>
+<li>Click on “Next”.</li>
+<li>Click on “I agree”.</li>
+<li>Select “Just me” and click on “Next”.</li>
+<li>Click on “Next”.</li>
+<li>Check the option for “Add Anaconda to my PATH environment variable” and check the option for “Register Anaconda as my default Python 3.12”.
+<ul>
+<li>Note that even though the installation is for Miniconda, the installer uses the word Anaconda in these options.</li>
+<li>You will also see a message in red text that selecting “Add Anaconda to my PATH environment variable” is not recommended; continue with this selection to make using conda easier in Git Bash. If you have questions or concerns, please contact your instructor.</li>
+</ul></li>
+<li>Click on “Install”.</li>
+<li>When the install is complete, Click on “Next”.</li>
+<li>Click on “Finish”.</li>
+</ul></li>
+<li><p>Open a new Git Bash window and type the following command to initialize conda:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+</section>
+<section id="verify-the-installation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-the-installation">Verify the installation</h2>
+<p>Once the installation is done, open a new terminal window (Terminal on Mac/Linux, WSL or Git Bash on Windows) for the installation to take effect. If you see “(base)”, then Miniconda has been installed properly.</p>
 
 
 </section>
