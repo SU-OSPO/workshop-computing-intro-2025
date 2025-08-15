@@ -12,6 +12,7 @@ The conda lesson needs `conda` to be installed. There are several different ways
 To install `conda` you'll first need a shell installed. If you haven't done it yet, install a shell following the instructions [here](00-setup.qmd).
 :::
 
+### Mac/Linux/Windows Subsystem for Linux (WSL)
 
 1.  Open your terminal application and `cd` into your home directory by typing:
 
@@ -19,10 +20,33 @@ To install `conda` you'll first need a shell installed. If you haven't done it y
     cd
     ```
 
-1.  Follow the instructions [Quickstart install instructions](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions) on the Miniconda website. Take note:
+2.  Follow the instructions [Quickstart install instructions](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions) on the Miniconda website. For WSL, select "Linux".
 
-    *   **Windows users**: **do not select the "Windows Command Prompt" or "Windows PowerShell" tab**. Instead, click the **Linux** tab and follow those instructions. This is because you will either be using git bash or WSL, both of which emulate Linux. Mac users, follow the macOS instructions.
-    *   Run the commands listed in the instructions from your home directory by copying and pasting the commands into the terminal that you opened in the first step.
 
-1.  Once the installatino is done, open a new terminal window for the installation to take effect. If the installation was successful, you should see `(base)` to the left of your command prompt. This means that you're in the `base` environment.
+### Windows
+
+1. Download the [Miniconda installer for Windows](https://www.anaconda.com/download/success).
+2. Run the installer by double-clicking on the downloaded file and follow the steps below.
+
+   - Click “Run”.
+   - Click on “Next”.
+   - Click on “I agree”.
+   - Select “Just me” and click on “Next”.
+   - Click on “Next”.
+   - Check the option for “Add Anaconda to my PATH environment variable” and check the option for “Register Anaconda as my default Python 3.12”.
+     - Note that even though the installation is for Miniconda, the installer uses the word Anaconda in these options.
+     - You will also see a message in red text that selecting “Add Anaconda to my PATH environment variable” is not recommended; continue with this selection to make using conda easier in Git Bash. If you have questions or concerns, please contact your instructor.
+   - Click on “Install”.
+   - When the install is complete, Click on “Next”.
+   - Click on “Finish”.
+
+3. Open a new Git Bash window and type the following command to initialize conda:
+
+    ```bash
+    conda init bash
+    ```
+
+## Verify the installation
+
+Once the installation is done, open a new terminal window (Terminal on Mac/Linux, WSL or Git Bash on Windows) for the installation to take effect. If you see "(base)", then Miniconda has been installed properly.
 
