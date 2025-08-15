@@ -1,113 +1,390 @@
 ---
-title: "2. Environments and `conda`"
+title: "2. Bash variables, environments, and `conda`"
 subtitle: "Bash environments and using `conda` to manage them."
 order: 2
 ---
 
 *Note: This task requires that you have conda installed already. Follow the instructions [here](../index.qmd) to do that if you have not done so already.*
 
-1. Create a conda environment called `conda-test`.
+# 1. Bash Customization
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
+Customizing your Bash shell can improve your workflow and make frequently used commands easier to run.
+
+## Example: Enabling Color Output in `ls`
+
+On many systems, the output of `ls` returns text that is the same color, regardless of if it's a file, folder, or something else. However, if you run:
+
 ```bash
-conda create -n conda-test
+ls -G
 ```
+Then the output text will be colored depending on what item is; e.g., directory names will be in blue and files in white.
+
+## Aliases
+
+Aliases map a short command to a longer one. For example, if we always want the output of `ls` to be colored, we can alias `ls -G` with `ls` with:
+
+```bash
+alias ls="ls -hG"
+```
+
+## Customization with `.bash_profile` and `.bashrc`
+
+You may find an alias like the above so useful that you want it to run everytime you open a terminal. There are files that are run automatically when Bash starts that allow you to do just that. They are:
+
+- **`~/.bash_profile`**  
+  Runs for *login shells*. Good for commands that should only run once when you log in (e.g., setting environment variables).
+
+- **`~/.bashrc`**  
+  Runs for *interactive non-login shells*. Good for commands you want every interactive shell to run (e.g., aliases, functions).
+
+On many systems, `.bash_profile` will call `.bashrc` so settings apply in both contexts.
+
+> **Tip:** If unsure where to put something, put it in `.bashrc` and make sure `.bash_profile` sources `.bashrc`.
+
+::: callout-note
+## Using Zsh?
+If your default shell is **zsh** (common on macOS Catalina and later), the equivalent files are:
+- `~/.zprofile` – similar to `.bash_profile`
+- `~/.zshrc` – similar to `.bashrc`
+
+Configuration changes should go into `~/.zshrc` for most use cases.
 :::
 
-2. Activate your `conda-test` environment and install `numpy` into it.
+You can put any bash command you like in these scripts to further customize your shell. For example, you can configure your shell so that pressing the **up arrow** searches backward through your command history for commands starting with the text you have typed, and the **down arrow** searches forward with:
+
+*   **for bash** (add this to your `~/.bashrc`):
+
+    ```bash
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+    ```
+
+*   **for Zsh** (add this to your `~/.zshrc`):
+
+    ```zsh
+    bindkey "^[[A" history-search-backward
+    bindkey "^[[B" history-search-forward
+    ```
+
+# 2. Redirection and Append
+
+**Redirect output to a file:**
+
+```bash
+echo "Hello" > file.txt
+```
+
+Overwrites `file.txt` with "Hello".
+
+**Append output to a file:**
+
+```bash
+echo "World" >> file.txt
+```
+
+Adds "World" to the end of `file.txt`.
+
+
+:::: {.callout-caution appearance="simple" icon="false"}
+#### Challenge:
+
+Create a file called `input.txt` that contains the text "To be, or not to be," on the first line. Then add "that is the question." on the second line.
 
 ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
 ##### Solution
+
 ```bash
-conda activate conda-test
-conda install numpy
+echo "To be, or not to be," > input.txt
+echo "that is the question." >> input.txt
 ```
 :::
+::::
 
-3. Print your `$PATH`; you should see that the first couple of paths point to a conda directory with the name of your environment (`conda-test`) in it.
+# 3. Text Manipulation with `sed`
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
+It frequently happens that you need to search for and replace text in a file. The program `sed` is used for that. For example, let's modify the text in the `input.txt` you created above, and replace the word "be" with "use AI":
+
+```bash
+sed 's/ be/ use AI/g' input.txt
+```
+
+We can write results to a new file:
+
+```bash
+sed 's/ be/ use AI/g' input.txt > output.txt
+```
+
+# 4. File Permissions and Ownership
+
+## Viewing Permissions
+
+```bash
+ls -l
+```
+Example output:
+```
+-rw-r--r--  1 user  staff   1234 Aug 14 12:00 file.txt
+```
+
+- First character: file type (`-` = file, `d` = directory)
+- Next three: owner permissions
+- Next three: group permissions
+- Next three: others' permissions
+
+## Changing Permissions
+
+```bash
+chmod u+x script.sh   # add execute permission for owner
+chmod u-w file.txt    # remove write permission for owner
+```
+
+## Changing Ownership
+
+```bash
+sudo chown newuser file.txt
+```
+
+# 5. Variables
+
+Just as in any programming language, we can set variables in bash using the `=`
+*with no spaces around it*. For example:
+
+```bash
+GREETING=Hello
+```
+
+To print the value of the variable use `$`; e.g.:
+
+```bash
+echo $GREETING
+```
+
+Always use quotes if variable contains spaces:
+
+```bash
+GREETING="Hello World"
+echo $GREETING
+```
+
+Use curly braces to distinguish a variable from surrounding text. For example:
+
+```bash
+echo "${GREETING}, how are you today?"
+```
+
+Unset a variable:
+
+```bash
+unset GREETING
+```
+
+# 6. Conditionals
+
+Check if file exists:
+
+```bash
+if [ -f "file.txt" ]; then
+  echo "File exists"
+else
+  echo "File does not exist"
+fi
+```
+
+# 7. Variable Scope and Environment
+
+Export to make variable available to child processes:
+
+```bash
+export GREETING="Hello"
+```
+
+View environment variables:
+
+```bash
+env
+```
+
+## The PATH Variable
+
 ```bash
 echo $PATH
 ```
-:::
 
-4. See what version of Python and numpy you installed by running the included `check_versions.py` script:
+Controls where Bash searches for executables.
+
+
+# 8. Conda Basics
+
+Conda is a package and environment manager. It allows you to:
+- Create isolated environments, each with its own set of packages.
+- Install, update, and remove packages.
+- Manage multiple versions of the same software without conflicts.
+
+## Create Environment
+
 ```bash
-./check_versions.py
+conda create --name py311 python=3.11
 ```
-   This will print out the current time followed by the versions of Python and numpy you are using.
+This creates a new environment called `py311` with Python version 3.11 installed.
 
-5. Suppose that you need to use an older version of Python and numpy for a project. Create another conda environment called `conda-test2` and install Python version 3.9 and numpy 1.24.1 into it.
+## Activate/Deactivate Environments
+
+```bash
+conda activate py311
+```
+Activating an environment changes your shell's environment variables (especially `PATH`) so that commands use the software installed in that environment. You'll see the environment name in parentheses at the start of your shell prompt.
+
+```bash
+conda deactivate
+```
+Deactivating an environment restores your shell to its previous state, removing the environment-specific entries from `PATH` and other variables.
+
+## Install Packages
+
+```bash
+conda install numpy
+```
+Installs the package `numpy` into the currently active environment.
+
+## Channels
+
+A *channel* is a location (usually online) where Conda looks for packages. When you install or search for a package, Conda queries one or more channels.
+
+- **Default channel:** If you installed Conda via Miniforge, the default channel is `conda-forge`, a large community-maintained repository.
+- **Specialized channels:** Some fields use dedicated channels, such as `bioconda` for bioinformatics software.
+
+To install from a specific channel:
+
+```bash
+conda install -c bioconda package_name
+```
+
+Here, `-c bioconda` tells Conda to search the `bioconda` channel for the package.
+
+## Challenge questions
+
+1.  Create a conda environment called `conda-test`.
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    conda create -n conda-test
+    ```
+    :::
+
+2.  Activate your `conda-test` environment and install `numpy` into it.
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    conda activate conda-test
+    conda install numpy
+    ```
+    :::
+
+3.  Print your `$PATH`; you should see that the first couple of paths point to a conda directory with the name of your environment (`conda-test`) in it.
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    echo $PATH
+    ```
+    :::
+
+4.  Create a python script called `check_versions.py` that contains the following code:
+
+    ```python
+    #!/usr/bin/env python
+    import platform
+    import numpy
+    print("Python version: ", platform.python_version())
+    npvers = numpy.__version__
+    print("Numpy version: ", npvers)
+    ```
+    
+    Change the permissions on `check_versions.py` to make it executable.
 
 ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
 ##### Solution
-```bash
-conda create -n conda-test2 python=3.9 numpy=1.24.1
-```
+
+1.  Run:
+
+    ```bash
+    nano check_versions.py
+    ```
+
+2.  Type/paste in the code. Then type Ctrl+O to save, then Ctrl+X to exit.
+
+3.  Run:
+
+    ```bash
+    chmod +x check_versions.py
+    ```
 :::
 
-6. Activate `conda-test2` and run check versions to verify that you have the desired versions.
+5.  See what version of Python and numpy you installed by running `check_versions.py` script:
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
+    ```bash
+    ./check_versions.py
+    ```
+   
+    This will print out the current time followed by the versions of Python and numpy you are using.
+
+6.  Suppose that you need to use an older version of Python and numpy for a project. Create another conda environment called `conda-test2` and install Python version 3.9 and numpy 1.24.1 into it.
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    conda create -n conda-test2 python=3.9 numpy=1.24.1
+    ```
+    :::
+
+7.  Activate `conda-test2` and run check versions to verify that you have the desired versions.
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    conda activate conda-test2
+    ./check_versions.py
+    ```
+    :::
+
+8.  Create an environment called `biotest` and install `gofasta` in it using the `bioconda` channel. (You can specify the channel for `conda create` and/or `conda install` using the `-c` flag, just as we did the in search command above.)
+
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
+    ```bash
+    conda create -n biotest -c bioconda gofasta
+    ```
+    :::
+
+    Now activate the `bioconda` channel and test that `gofasta` is installed by running:
+
+    ```bash
+    conda activate biotest
+    gofasta --help
+    ```
+    
+    You should get a help message giving information about `gofasta`.
+
+## Removing environments
+
+Lets remove some of the environments we created to save space. You can see all the environments you have installed by running:
+    
 ```bash
-conda activate conda-test2
-./check_versions.py
+conda info --envs
 ```
-:::
 
-7. Miniforge comes with a faster re-implementation of `conda` called `mamba`. Generally, you can use `mamba` in the same way you use `conda` -- it takes the same arguments -- just replace `conda` with `mamba`. Redo steps 1-6 using `mamba` (call the environments `mamba-test` and `mamba-test2`). Is it faster?
+Let's uninstall the conda-test environment. First, if you are not in the base environment, go to it by running `conda deactivate`. This will take you to your last active environment. Keep deactivating until you see `(base)` on the left of the prompt. Alternatively, just type `conda activate` (with no environment name) to go directly to the `base` environment. Now let's remove the `conda-test` environment by running:
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
 ```bash
-mamba create -n mamba-test
-mamba activate mamba-test
-mamba install numpy
-./check_versions.py
-mamba create -n mamba-test2 python=3.9 numpy=1.24.1
-mamba activate mamba-test2
-./check_versions.py
+conda remove --all -n conda-test
 ```
-:::
 
-8. Different repositories or "[channels](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html)" exist within the conda ecosystem from which you can download and install packages. The default channel for Miniforge is the [conda-forge](https://conda-forge.org/) channel. Generally, conda-forge has many of the packages you will need. However, there are some specialized packages that you need to go to other channels to download. For example, the [Bioconda](https://bioconda.github.io/) contains many packages that are used in biomedical research. Let's illustrate that by trying to install the [gofast](https://github.com/virus-evolution/gofasta) package. Lets start by searching for the package. Run:
-```bash
-mamba search gofasta
-```
-(*Note: here and below I'll use `mamba`, but you can use `conda` instead.*) You should get `No match found for: gofasta` followed by suggestions of what else to do. The package couldn't be found because your installation of mamba/conda searches `conda-forge` by default, but `gofasta` is not in conda-forge.
+Now run `conda info --envs` again to check that the environment is installed. Repeat for any other environments you'd like to remove.
 
-9. Let's search the `bioconda` channel instead. Run:
-```bash
-mamba search -c bioconda gofasta
-```
-You should see that `gofasta` is available, along with the version.
 
-10. Create an environment called `biotest` and install `gofasta` in it using the `bioconda` channel. (You can specify the channel for `mamba create` and/or `mamba install` using the `-c` flag, just as we did the in search command above.)
+# Summary
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
-```bash
-mamba create -n biotest -c bioconda gofasta
-```
-:::
+This tutorial covered customizing Bash, managing files, using variables, conditionals, working with environments, and managing packages with Conda.
 
-11. Activate the `bioconda` channel and test that `gofasta` is installed by running:
-```bash
-mamba activate biotest
-gofasta --help
-```
-You should get a help message giving information about `gofasta`.
-
-12. Lets uninstall some of the environments we created to save space. You can see all the environments you have installed by running:
-```bash
-mamba info --envs
-```
-Let's uninstall the conda-test environment. First, if you are not in the base environment, go to it by running `mamba deactivate`. This will take you to your last active environment. Keep deactivating until you see `(base)` on the left of the prompt. Alternatively, just type `mamba activate` (with no environment name) to go directly to the `base` environment. Now let's remove the `conda-test` environment by running:
-```bash
-mamba remove --all -n conda-test
-```
-Now run `mamba info --envs` again to check that the environment is installed. Repeat for any other environments you'd like to remove.
