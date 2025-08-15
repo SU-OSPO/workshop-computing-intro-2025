@@ -180,7 +180,32 @@ unset GREETING
 
 # 6. Conditionals
 
-Check if file exists:
+In Bash, as with any language, *conditionals* allow you to execute commands only if certain conditions are true. They help control the flow of your script, enabling decisions based on system state, user input, or computation results.
+
+The basic syntax for an `if` statement in Bash is:
+
+```bash
+if [ CONDITION ]; then
+  # commands to run if CONDITION is true
+elif [ OTHER_CONDITION ]; then
+  # commands to run if OTHER_CONDITION is true
+else
+  # commands to run if no conditions are true
+fi
+```
+
+### Key points:
+- The square brackets `[ ]` are a synonym for the `test` command.
+- You must have spaces after `[` and before `]`.
+- Common tests:
+  - `-f file` — file exists and is a regular file
+  - `-d directory` — directory exists
+  - `string1 = string2` — strings are equal
+  - `n1 -eq n2` — numbers are equal
+  - `! CONDITION` — logical NOT (true if CONDITION is false)
+
+
+For example, to check if a file exists:
 
 ```bash
 if [ -f "file.txt" ]; then
@@ -190,15 +215,87 @@ else
 fi
 ```
 
-# 7. Variable Scope and Environment
+# 7. Variable Scope
 
-Export to make variable available to child processes:
+### The `export` Command
+
+In Bash, variables normally exist only in the shell where they were defined.  
+The `export` command marks a variable so that it is **passed to child processes** (programs or scripts started from the current shell).
+
+#### Example:
 
 ```bash
-export GREETING="Hello"
+MYVAR="Hello"
+bash -c 'echo $MYVAR'
+# (No output — MYVAR was not exported)
+
+export MYVAR="Hello"
+bash -c 'echo $MYVAR'
+# Output: Hello
 ```
 
-View environment variables:
+In the first case, the new Bash process doesn't know about `MYVAR`.  
+In the second case, `export` makes it available to the child process.
+
+
+### The `source` Command
+
+When you run a Bash script normally, it executes in a **subshell** (a separate process).  
+Any variables set inside that script will only exist in that subshell and disappear when the script finishes.
+
+The `source` command runs a script **in the current shell**.  
+This means variables or changes made by the script persist after it finishes.
+
+#### Example: Difference between `source` and `export`
+
+**test.sh**:
+```bash
+MYVAR="Hello"
+```
+
+**Case 1 — Running normally:**
+```bash
+bash test.sh
+echo $MYVAR
+# (No output — MYVAR is not set in current shell)
+```
+
+**Case 2 — Using `source`:**
+```bash
+source test.sh
+echo $MYVAR
+# Output: Hello
+```
+
+**Case 3 — Using `export` in a script:**
+```bash
+# test_export.sh
+export MYVAR="Hello"
+```
+
+```bash
+bash test_export.sh
+echo $MYVAR
+# (No output — export makes it available to child processes, not the parent shell)
+```
+
+# 8. Environments
+
+An **environment** in Bash is the collection of variables that are available to the current shell session and any processes started from it.
+
+Environment variables store settings that affect the behavior of the shell and programs.  
+Examples include:
+- `PATH` — where to search for executables
+- `HOME` — your home directory
+- `USER` — your username
+
+### How environments work
+- Each shell session has its own environment.
+- When you start a new process (run a command or script), it inherits a **copy** of your current environment.
+- Variables you define with `export` become part of the environment and are visible to child processes.
+- Variables defined without `export` are shell variables — they exist only in the current shell and are not passed to child processes.
+
+You can view all your current environment variables by running:
 
 ```bash
 env
@@ -206,14 +303,16 @@ env
 
 ## The PATH Variable
 
+The `PATH` variable controls where Bash searches for executables. It points to a `:` separated list of absolute paths. See what yours is set to by running:
+
 ```bash
 echo $PATH
 ```
 
-Controls where Bash searches for executables.
+When you execute any program in the shell, bash cycles through the list of paths specified in `PATH` until it finds an executable file that matches the name.
 
 
-# 8. Conda Basics
+# 9. Conda
 
 Conda is a package and environment manager. It allows you to:
 - Create isolated environments, each with its own set of packages.
@@ -304,23 +403,23 @@ Here, `-c bioconda` tells Conda to search the `bioconda` channel for the package
     
     Change the permissions on `check_versions.py` to make it executable.
 
-::: {.callout-caution collapse="true" appearance="simple" icon="false"}
-##### Solution
+    ::: {.callout-caution collapse="true" appearance="simple" icon="false"}
+    ##### Solution
 
-1.  Run:
+    1.  Run:
 
-    ```bash
-    nano check_versions.py
-    ```
+        ```bash
+        nano check_versions.py
+        ```
 
-2.  Type/paste in the code. Then type Ctrl+O to save, then Ctrl+X to exit.
+    2.  Type/paste in the code. Then type Ctrl+O to save, then Ctrl+X to exit.
 
-3.  Run:
+    3.  Run:
 
-    ```bash
-    chmod +x check_versions.py
-    ```
-:::
+        ```bash
+        chmod +x check_versions.py
+        ```
+    :::
 
 5.  See what version of Python and numpy you installed by running `check_versions.py` script:
 
