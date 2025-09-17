@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/02_python/python-apps/index.html",
+    "items": [
+      "/02_python/python-apps/data_with_pandas.html",
+      "/02_python/python-apps/visualization_with_matplotlib.html",
+      "/02_python/python-apps/decisionTree_sklearn.html"
+    ]
+  },
+  {
     "listing": "/02_python/python-intro/index.html",
     "items": [
       "/02_python/python-intro/01-Intro-to-Python-basic.html",
@@ -8,14 +16,6 @@
       "/02_python/python-intro/04-Intro-to-Python-strings.html",
       "/02_python/python-intro/05-Intro-to-Python-lists.html",
       "/02_python/python-intro/06-Intro-to-Python-dictionaries.html"
-    ]
-  },
-  {
-    "listing": "/02_python/python-apps/index.html",
-    "items": [
-      "/02_python/python-apps/data_with_pandas.html",
-      "/02_python/python-apps/visualization_with_matplotlib.html",
-      "/02_python/python-apps/decisionTree_sklearn.html"
     ]
   }
 ]
