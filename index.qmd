@@ -28,8 +28,8 @@ This 3-day workshop will cover some of the common tools used in open source deve
 | Thursday, August 14 | 10:00 AM - 12:00 PM | Hinds 117 | [Advanced R: data cleaning with the tidyverse](01_r/r-tidydata.qmd)                      | Jessie Trudeau  |
 | Thursday, August 14 | 2:00 PM - 4:00 PM   | Hinds 111 | [Advanced Python: miscellaneous applications](02_python/python-apps/index.qmd)                 | Xuebin Yang     |
 | Thursday, August 14 | 2:00 PM - 4:00 PM   | Hinds 117 | [Advanced R: data vizualization with ggplot2](01_r/r-plotting.qmd)                       | Will Gearty     |
-| Friday, August 15   | 10:00 AM - 12:00 PM | Hinds 111 | Bash and Conda                                                                           | Collin Capano   |
-| Friday, August 15   | 2:00 PM - 4:00 PM   | Hinds 111 | Bash and Conda (cont.)                                                                   | Collin Capano   |
+| Friday, August 15   | 10:00 AM - 12:00 PM | Hinds 111 | [Bash and Conda](04_conda/index.qmd)                                                                           | Collin Capano   |
+| Friday, August 15   | 2:00 PM - 4:00 PM   | Hinds 111 | [Bash and Conda (cont.)](04_conda/index.qmd)                                                                   | Collin Capano   |
 
 ## Installation
 
